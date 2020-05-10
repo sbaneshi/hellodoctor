@@ -1,45 +1,17 @@
 package ui.hellodoctor;
 
+import lombok.Data;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
+@Data
 public class Visit {
     @Id
     private int id;
-    private int drID;
-    private int patientID;
+    private int drId;
+    private int patientId;
     private String time;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getDrID() {
-        return drID;
-    }
-
-    public void setDrID(int drID) {
-        this.drID = drID;
-    }
-
-    public int getPatientID() {
-        return patientID;
-    }
-
-    public void setPatientID(int patientID) {
-        this.patientID = patientID;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
 }
