@@ -2,14 +2,16 @@ package domain;
 
 import lombok.Data;
 
-import javax.annotation.security.DenyAll;
-import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
-@Entity
 @Data
-public class User {
+@MappedSuperclass
+public abstract class User {
+
     @Id
+    @GeneratedValue
     private int id;
     private String name;
     private String userName;
