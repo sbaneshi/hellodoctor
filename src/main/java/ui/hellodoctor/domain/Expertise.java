@@ -1,5 +1,6 @@
-package domain;
+package ui.hellodoctor.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,12 +13,12 @@ import javax.persistence.Id;
 @Entity
 @Builder
 @NoArgsConstructor
-public class WorkTime {
+@AllArgsConstructor
+public class Expertise {
 
     @Id
     @GeneratedValue
     private int id;
-    private int drId;
-    private int startTime;
-    private int endTime;
+    private String name;
+
 }

@@ -1,5 +1,6 @@
-package domain;
+package ui.hellodoctor.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,6 +13,7 @@ import javax.persistence.Id;
 @Entity
 @Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class Visit {
 
     @Id

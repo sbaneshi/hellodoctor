@@ -1,4 +1,4 @@
-package domain;
+package ui.hellodoctor.domain;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -12,12 +12,8 @@ import javax.persistence.Entity;
 @EqualsAndHashCode(callSuper = true)
 @SuperBuilder
 @NoArgsConstructor
-public class Doctor extends User {
+public class Patient extends User {
 
-    private int visitTime;
-    private String address;
-    private int MACode; //medical association Code
-    private String workTime;
-    private int visits;
+    private int insuranceID;
 
 }
