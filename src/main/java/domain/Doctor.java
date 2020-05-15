@@ -1,13 +1,20 @@
-package ui.hellodoctor;
+package domain;
+
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 @Data
-public class  Doctor extends User{
+@EqualsAndHashCode(callSuper = true)
+public class  Doctor extends User {
+
     private int visitTime;
     private String address;
     @Id

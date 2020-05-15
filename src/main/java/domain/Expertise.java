@@ -1,4 +1,4 @@
-package ui.hellodoctor;
+package domain;
 
 import lombok.Data;
 

@@ -1,5 +1,8 @@
-package ui.hellodoctor;
+package repository;
 
+import domain.Patient;
+import domain.Visit;
+import domain.WorkTime;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
