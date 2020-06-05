@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Data
 @Entity
@@ -14,6 +16,9 @@ import javax.persistence.Entity;
 @NoArgsConstructor
 public class Patient extends User {
 
-    private int insuranceID;
+    private int insuranceId;
+
+    @OneToMany
+    private List<Visit> visits;
 
 }

@@ -5,10 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -20,8 +17,23 @@ public class Visit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int drId;
-    private int patientId;
-    private String time;
 
+    @ManyToOne
+    private Doctor doctor;
+
+    @ManyToOne
+    private Patient patient;
+
+    private long time;
+
+    private State state;
+
+
+    public enum State {
+        PENDING,
+        DOCTOR_ABSENCE,
+        PATIENT_ABSENCE,
+        DONE,
+        ;
+    }
 }

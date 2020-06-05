@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.DayOfWeek;
 
 @Data
 @Entity
@@ -20,8 +21,11 @@ public class WorkTime {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int drId;
-    private int startTime;
-    private int endTime;
+
+    private DayOfWeek dayOfWeek;
+
+    private int startHour24;
+
+    private int endHour24;
 
 }

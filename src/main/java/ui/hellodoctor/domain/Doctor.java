@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Data
 @Entity
@@ -14,10 +17,14 @@ import javax.persistence.Entity;
 @NoArgsConstructor
 public class Doctor extends User {
 
-    private int visitTime;
     private String address;
+
     private int MACode; //medical association Code
-    private String workTime;
-    private int visits;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<WorkTime> workTime;
+
+    @OneToMany
+    private List<Visit> visits;
 
 }

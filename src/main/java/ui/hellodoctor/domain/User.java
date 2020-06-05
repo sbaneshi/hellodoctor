@@ -20,8 +20,8 @@ public abstract class User {
     private int id;
     private String name;
     private String userName;
-    private int phoneNumber;
     private String password;
     private String email;
+    private String phoneNumber;
 
 }
