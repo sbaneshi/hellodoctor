@@ -1,4 +1,4 @@
-package ui.hellodoctor.domain;
+package ui.hellodoctor.data.domain;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

@@ -6,7 +6,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.2.6.RELEASE</version>
-        <relativePath/> <!-- lookup parent from ui.hellodoctor.repository -->
+        <relativePath/> <!-- lookup parent from ui.hellodoctor.data.repository -->
     </parent>
     <groupId>ui</groupId>
     <artifactId>hellodoctor</artifactId>
