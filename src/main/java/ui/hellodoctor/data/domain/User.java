@@ -1,6 +1,7 @@
 package ui.hellodoctor.data.domain;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -13,6 +14,7 @@ import javax.persistence.MappedSuperclass;
 @Data
 @SuperBuilder
 @MappedSuperclass
+@NoArgsConstructor
 public abstract class User {
 
     public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
