@@ -2,7 +2,7 @@ package ui.hellodoctor.data.domain;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
@@ -13,7 +13,7 @@ import java.util.List;
 @Entity
 @EqualsAndHashCode(callSuper = true)
 @SuperBuilder
-@NoArgsConstructor
+@ToString(callSuper = true)
 public class Patient extends User {
 
     private int insuranceId;
