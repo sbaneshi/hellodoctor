@@ -1,5 +1,6 @@
 package ui.hellodoctor.data.domain;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -26,9 +27,11 @@ public class Doctor extends User {
     private String expertise;
 
     @OneToMany(fetch = FetchType.LAZY)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private List<WorkTime> workTimes;
 
     @OneToMany
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private List<Visit> visits;
 
 }

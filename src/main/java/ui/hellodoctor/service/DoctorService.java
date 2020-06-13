@@ -2,7 +2,9 @@ package ui.hellodoctor.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
 import ui.hellodoctor.data.domain.Doctor;
+import ui.hellodoctor.data.domain.User;
 import ui.hellodoctor.data.repository.DoctorRepository;
 
 import java.util.stream.Collectors;
@@ -23,5 +25,16 @@ public class DoctorService {
                     .build());
         }).collect(Collectors.toList()));
         return doctor;
+    }
+
+    public Doctor login(String phoneNumber, String password) {
+        Doctor doctor = doctorRepository.findByPhoneNumber(phoneNumber).orElseThrow(() ->
+                new IllegalArgumentException("No doctor found with phoneNumber=" + phoneNumber));
+        Assert.isTrue(User.PASSWORD_ENCODER.matches(password, doctor.getPassword()), "Wrong Credentials!");
+
+        return doctor.toBuilder()
+                .visits(null)
+                .workTimes(null)
+                .build();
     }
 }
