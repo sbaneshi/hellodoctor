@@ -14,7 +14,7 @@ import java.util.List;
 @Data
 @Entity
 @EqualsAndHashCode(callSuper = true)
-@SuperBuilder
+@SuperBuilder(toBuilder = true)
 @ToString(callSuper = true)
 @NoArgsConstructor
 public class Doctor extends User {
@@ -23,8 +23,10 @@ public class Doctor extends User {
 
     private int MACode; //medical association Code
 
+    private String expertise;
+
     @OneToMany(fetch = FetchType.LAZY)
-    private List<WorkTime> workTime;
+    private List<WorkTime> workTimes;
 
     @OneToMany
     private List<Visit> visits;

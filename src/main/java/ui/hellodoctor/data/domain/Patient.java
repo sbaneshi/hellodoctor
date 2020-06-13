@@ -7,20 +7,21 @@ import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import java.util.List;
 
 @Data
 @Entity
 @EqualsAndHashCode(callSuper = true)
-@SuperBuilder
+@SuperBuilder(toBuilder = true)
 @ToString(callSuper = true)
 @NoArgsConstructor
 public class Patient extends User {
 
     private int insuranceId;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY)
     private List<Visit> visits;
 
 }

@@ -26,12 +26,12 @@ public class JpaUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<Patient> optPatient = patientRepo.findByUsername(username);
+        Optional<Patient> optPatient = patientRepo.findByPhoneNumber(username);
         if (optPatient.isPresent()) {
             return getUserDetails(optPatient.get(), Collections.singleton(SecurityUtils.ROLE_PATIENT));
         }
 
-        Optional<Doctor> optDoctor = doctorRepo.findByUsername(username);
+        Optional<Doctor> optDoctor = doctorRepo.findByPhoneNumber(username);
         if (optDoctor.isPresent()) {
             return getUserDetails(optDoctor.get(), Collections.singleton(SecurityUtils.ROLE_DOCTOR));
         }
@@ -41,7 +41,7 @@ public class JpaUserDetailsService implements UserDetailsService {
 
     private UserDetails getUserDetails(User user, Set<String> roles) {
         return new org.springframework.security.core.userdetails.User(
-                user.getUsername(), user.getPassword(),
+                user.getPhoneNumber(), user.getPassword(),
                 roles.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toSet())
         );
     }

@@ -1,5 +1,6 @@
 package ui.hellodoctor.data.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
@@ -12,7 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 @Data
-@SuperBuilder
+@SuperBuilder(toBuilder = true)
 @MappedSuperclass
 @NoArgsConstructor
 public abstract class User {
@@ -23,7 +24,7 @@ public abstract class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    private String username;
+    @JsonIgnore
     private String password;
     private String email;
     private String phoneNumber;
