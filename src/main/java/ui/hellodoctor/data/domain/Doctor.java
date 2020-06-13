@@ -22,7 +22,7 @@ public class Doctor extends User {
 
     private String address;
 
-    private int MACode; //medical association Code
+    private int maCode; //medical association Code
 
     private String expertise;
 

@@ -1,7 +1,10 @@
 package ui.hellodoctor.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import ui.hellodoctor.data.domain.Doctor;
 import ui.hellodoctor.service.DoctorService;
 
@@ -17,7 +20,12 @@ public class DoctorController {
     }
 
     @PostMapping("/login/doctor")
-    public Doctor login(@RequestParam String phoneNumber, String password) {
+    public Doctor login(@RequestParam String phoneNumber, @RequestParam String password) {
         return doctorService.login(phoneNumber, password);
+    }
+
+    @PostMapping("/signup/doctor")
+    public Doctor signUp(@RequestParam String phoneNumber, @RequestParam String password, @RequestParam String expertise, @RequestParam int maCode) {
+        return doctorService.signUp(phoneNumber, password, expertise, maCode);
     }
 }

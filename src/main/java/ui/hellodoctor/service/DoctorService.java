@@ -37,4 +37,15 @@ public class DoctorService {
                 .workTimes(null)
                 .build();
     }
+
+    public Doctor signUp( String phoneNumber,  String password,  String expertise,  int maCode) {
+        Doctor doctor = Doctor.builder()
+                .phoneNumber(phoneNumber)
+                .expertise(expertise)
+                .maCode(maCode)
+                .build();
+        doctor.setPassword(password);
+
+        return doctorRepository.save(doctor);
+    }
 }
