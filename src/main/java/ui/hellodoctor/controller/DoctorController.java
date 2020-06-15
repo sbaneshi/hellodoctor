@@ -6,6 +6,7 @@ import ui.hellodoctor.data.domain.Doctor;
 import ui.hellodoctor.service.DoctorService;
 @CrossOrigin
 @RestController
+@CrossOrigin
 @RequiredArgsConstructor
 public class DoctorController {
 
