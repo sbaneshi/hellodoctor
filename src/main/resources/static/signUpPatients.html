@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Material Login Form</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+</head>
+
+<body>
+
+    <!-- Mixins-->
+    <!-- Pen Title-->
+    <div class="pen-title">
+        <h1>عضو دکتر سلام شوید</h1>
+    </div>
+    <div class="rerun"><a href="">بازگشت به سایت</a></div>
+    <div class="container">
+
+        <div class="btn-group " role="group" aria-label="Basic example" style="width:100%;
+        padding: 0 13px;">
+            <button type="button" class="btn btn-secondary  leftborder" style="background-color: #038b8b;"><a href="signUpPatients.html" style="display: block; color: white; text-decoration: none;">بیمار</a></button>
+            <button type="button" class="btn btn-secondary  rightborder"><a href="index.html" style="display: block; color: white; text-decoration: none;">دکتر</a></button>
+        </div>
+
+        <div class="card"></div>
+        <div class="card">
+            <h1 class="title">ورود به حساب کاربری</h1>
+            <form method="POST" action="index.html">
+                <div class="input-container">
+                    <input type="tel" id="phone-numberlogin" required />
+                    <label for="phone-numberlogin">شماره موبایل</label>
+                    <div class="bar"></div>
+                </div>
+                <div class="input-container">
+                    <input type="password" id="password-login" required="required" />
+                    <label for="password-login">گذرواژه</label>
+                    <div class="bar"></div>
+                </div>
+                <div class="button-container">
+                    <button id="login"><span>وارد شوید</span></button>
+                </div>
+                <div style="text-align: center;" class=" pb-2 mt-4">نام کاربری یارمز ورود اشتباه است</div>
+                <div class="footer mt-0"><a href="#">گذرواژه خود را فراموش کرده اید؟</a></div>
+            </form>
+        </div>
+        <div class="card alt">
+            <div class="toggle"></div>
+            <h1 class="title" style="text-align: right;">ثبت نام
+                <div class="close"></div>
+            </h1>
+            <form id="signup" method="POST" action="">
+                <div class="input-container">
+                    <input type="tel" id="phone-number" required="required" />
+                    <label for="phone-number">شماره موبایل خود را وارد کنید</label>
+                    <div id="phone-bar" class="bar"></div>
+                </div>
+
+
+                <div class="input-container">
+                    <input type="password" id="password" required="required" />
+                    <label for="password">گذرواژه خود را وارد کنید</label>
+                    <div id="pass-bar" class="bar"></div>
+                </div>
+                <div class="input-container">
+                    <input type="password" id="repeat-password" required="required" />
+                    <label for="repeat-password">بار دیگر گذرواژه خود را وارد کنید</label>
+                    <div id="rpass-bar" class="bar"></div>
+                </div>
+
+
+
+
+                <div class="button-container">
+                    <div class="row">
+                        <div class="col-6">
+                            <button type="submit" id="submit"><span>ادامه</span></button>
+                        </div>
+                        <div class="col-6">
+                            <button type="button" id="clear"><span>پاک کردن</span></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Portfolio-
+<a id="portfolio" href="http://andytran.me/" title="View my portfolio!"><i class="fa fa-link"></i></a>
+CodePen
+<a id="codepen" href="http://codepen.io/andytran/" title="Follow me!"><i class="fa fa-codepen"></i></a> -->
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js"></script>
+
+</body>
+
+</html>
