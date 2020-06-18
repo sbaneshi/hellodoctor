@@ -17,12 +17,18 @@ public class DoctorController extends BaseController {
 
     private final DoctorService doctorService;
 
+    @GetMapping("/")
+    public String index() {
+        return "ajax.html";
+    }
+
     @GetMapping("/api/doctor/full")
     public Doctor getFullDoctor() {
         assertRole(SecurityUtils.ROLE_DOCTOR);
         return doctorService.getFullDoctor(getPhoneNumber());
     }
 
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @PostMapping("/login/doctor")
     public Doctor login(@RequestParam String phoneNumber, @RequestParam String password) {
         return doctorService.login(phoneNumber, password);
