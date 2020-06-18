@@ -84,7 +84,8 @@ function signUpRequest(e) {
     e.preventDefault();
     let userInformation = {
         phoneNumber: $('#phone-number').val(),
-        password: $('#password').val()
+        password: $('#password').val(),
+        insuranceId: $('#insurance').val()
     };
 
     var settings = {
@@ -103,6 +104,8 @@ function signUpRequest(e) {
         $.ajax(settings).done(function (response) {
             console.log(response);
         });
+        localStorage.setItem("token", btoa(response.phoneNumber + ":" + userInformation.password + ":" + response.name ));
+
     }
 
 }
@@ -113,7 +116,7 @@ function clearForm(e) {
 }
 
 
-function loginRequest(e) {
+async function loginRequest(e) {
     e.preventDefault();
     let userInformation = {
         phoneNumber: $('#phone-numberlogin').val(),
@@ -121,17 +124,18 @@ function loginRequest(e) {
     };
 
     var settings = {
-        url: "http://localhost:8080/",
+        url: "http://localhost:8080/login/patient",
         method: "POST",
         timeout: 100000,
         cache:false,
         data: userInformation
     };
     if (!error) {
-        $.ajax(settings).done(function (response) {
-            localStorage.setItem("token", btoa(response.phoneNumber + ":" + pho + ":" + response.name ));
-            console.log(response);
+          $.ajax(settings).done(function (response) {
+            localStorage.setItem("token", btoa(response.phoneNumber + ":" + userInformation.password + ":" + response.name ));
+            window.location = "home.html";
         });
+
     }
 
 }
