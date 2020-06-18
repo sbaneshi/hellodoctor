@@ -23,29 +23,29 @@ $(document).ready(function() {
     $('#submit').click(signUpRequest);
     $('#password').blur(function() {
         let password = $('#password').val();
-        // if (password.length < 8) {
-        //     error = true
-        //     $('#pass-bar').html('رمز عبور باید بیشتر از 8 حرف باشد.');
-        //     $('#pass-bar').css('background', 'red');
-        // } else {
-        //     error = false
-        //     $('#pass-bar').css('background', 'green');
-        //     $('#pass-bar').html('');
+        if (password.length < 8) {
+            error = true
+            $('#pass-bar').html('رمز عبور باید بیشتر از 8 حرف باشد.');
+            $('#pass-bar').css('background', 'red');
+        } else {
+            error = false
+            $('#pass-bar').css('background', 'green');
+            $('#pass-bar').html('');
 
-        // }
+        }
     });
     $('#repeat-password').blur(function() {
         let password = $('#password').val();
         let repeatPassword = $('#repeat-password').val();
-        // if (password !== repeatPassword) {
-        //     error = true
-        //     $('#rpass-bar').html('عدم تطابق.');
-        //     $('#rpass-bar').css('background', 'red');
-        // } else {
-        //     error = false
-        //     $('#rpass-bar').css('background', 'green');
-        //     $('#rpass-bar').html('');
-        // }
+        if (password !== repeatPassword) {
+            error = true
+            $('#rpass-bar').html('عدم تطابق.');
+            $('#rpass-bar').css('background', 'red');
+        } else {
+            error = false
+            $('#rpass-bar').css('background', 'green');
+            $('#rpass-bar').html('');
+        }
     });
     $("#phone-number").blur(function() {
 
@@ -64,23 +64,23 @@ $(document).ready(function() {
         }
 
     });
-    // $("#phone-numberlogin").blur(function() {
+    $("#phone-numberlogin").blur(function() {
 
-    //     var regexp = /^(\+98|0098|98|0)?9\d{9}$/;
+        var regexp = /^(\+98|0098|98|0)?9\d{9}$/;
 
-    //     var no = $("#phone-numberlogin").val();
+        var no = $("#phone-numberlogin").val();
 
-    //     if (!regexp.test(no)) {
-    //         error = true;
-    //         $('#ph-login-bar').html('شماره تلفن را صحیح وارد کنید.');
-    //         $('#ph-login-bar').css('background', 'red');
-    //     } else {
-    //         error = false;
-    //         $('#ph-login-bar').css('background', 'green');
-    //         $('#ph-login-bar').html('');
-    //     }
+        if (!regexp.test(no)) {
+            error = true;
+            $('#ph-login-bar').html('شماره تلفن را صحیح وارد کنید.');
+            $('#ph-login-bar').css('background', 'red');
+        } else {
+            error = false;
+            $('#ph-login-bar').css('background', 'green');
+            $('#ph-login-bar').html('');
+        }
 
-    // });
+    });
     $("#mid").blur(function() {
 
         var regexp = /^[0-9]{1,10}$/;
@@ -104,37 +104,49 @@ $(document).ready(function() {
 
 
 function signUpRequest(e) {
+    e.preventDefault();
     let userInformation = {
         phoneNumber: $('#phone-number').val(),
         password: $('#password').val(),
         expertise: $('#expertise').val(),
-        mid: $('#mid').val()
+        maCode: parseInt($('#mid').val())
     };
 
-    // $.ajax({
-    //     type: 'POST',
-    //     url: 'http://localhost',
-    //     data: JSON.stringify(userInformation),
-    //     success: function(msg) {
-    //         alert('wow' + msg);
-    //     }
-    //
-    // });
+    var settings = {
+        url: "http://localhost:8080/signup/doctor",
+        method: "POST",
+        timeout: 100000,
+        cache:false,
+        data: userInformation,
+        status:{
+            200:function (response) {
+                alert(response);
+            }
+        }
+    };
+    if (!error) {
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+    }
 
 }
 
 function clearform() {
-    console.log($.ajax({
-        type: 'GET',
-        headers: {"Authorization" : "Basic " + btoa('1234:1234')},
-        url: 'http://localhost:8080/api/doctor/full?id=1',
-        success: function(msg,st) {
-            // console.log('wow' + (msg.responseText));
-        }
 
-    }).done(function(msg){
-        console.log(msg);
-    }));
+    $('#signup')[0].reset();
+
+    // console.log($.ajax({
+    //     type: 'GET',
+    //     headers: {"Authorization" : "Basic " + btoa('1234:1234')},
+    //     url: 'http://localhost:8080/api/doctor/full?id=1',
+    //     success: function(msg,st) {
+    //         // console.log('wow' + (msg.responseText));
+    //     }
+    //
+    // }).done(function(msg){
+    //     console.log(msg);
+    // }));
 
 }
 
@@ -142,16 +154,27 @@ function clearform() {
 
 
 
-function loginRequest() {
-    let userInformation = {
-        phoneNumber: $('#phone-numberlogin').val(),
-        password: $('#password-login').val()
+function loginRequest(e) {
+    e.preventDefault();
+    let password = $("#password-login").val();
+    let pho = $("#phone-numberlogin").val();
+
+    var settings = {
+        url: "http://localhost:8080/login/doctor",
+        method: "POST",
+        timeout: 100000,
+        cache:false,
+        data: { phoneNumber:pho,
+            password:password}
     };
-    // var url = "http://localhost:8080/api/doctor/full?id=1";
-    // $.get(url, null, function(data) {
-    //     alert(data);
-    // });
+    if (!error) {
+        $.ajax(settings).done(function (response) {
+            localStorage.setItem("token", btoa(response.phoneNumber + ":" + pho + ":" + response.name ));
+            console.log(response);
+        });
+    }
+    }
 
 
 
-}
+

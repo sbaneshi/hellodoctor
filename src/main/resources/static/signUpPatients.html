@@ -2,9 +2,9 @@
 <html lang="fa" dir="rtl">
 
 <head>
+
     <meta charset="UTF-8">
     <title>Material Login Form</title>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
@@ -23,7 +23,7 @@
     <div class="pen-title">
         <h1>عضو دکتر سلام شوید</h1>
     </div>
-    <div class="rerun"><a href="">بازگشت به سایت</a></div>
+    <div class="rerun"><a href="home.html">بازگشت به سایت</a></div>
     <div class="container">
 
         <div class="btn-group " role="group" aria-label="Basic example" style="width:100%;
@@ -35,11 +35,11 @@
         <div class="card"></div>
         <div class="card">
             <h1 class="title">ورود به حساب کاربری</h1>
-            <form method="POST" action="index.html">
+            <form>
                 <div class="input-container">
                     <input type="tel" id="phone-numberlogin" required />
                     <label for="phone-numberlogin">شماره موبایل</label>
-                    <div class="bar"></div>
+                    <div id="ph-login-bar" class="bar"></div>
                 </div>
                 <div class="input-container">
                     <input type="password" id="password-login" required="required" />
@@ -49,7 +49,6 @@
                 <div class="button-container">
                     <button id="login"><span>وارد شوید</span></button>
                 </div>
-                <div style="text-align: center;" class=" pb-2 mt-4">نام کاربری یارمز ورود اشتباه است</div>
                 <div class="footer mt-0"><a href="#">گذرواژه خود را فراموش کرده اید؟</a></div>
             </form>
         </div>
@@ -58,7 +57,7 @@
             <h1 class="title" style="text-align: right;">ثبت نام
                 <div class="close"></div>
             </h1>
-            <form id="signup" method="POST" action="">
+            <form id="signup">
                 <div class="input-container">
                     <input type="tel" id="phone-number" required="required" />
                     <label for="phone-number">شماره موبایل خود را وارد کنید</label>
@@ -99,7 +98,7 @@ CodePen
 <a id="codepen" href="http://codepen.io/andytran/" title="Follow me!"><i class="fa fa-codepen"></i></a> -->
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-    <script src="js"></script>
+    <script src="js/patients.js"></script>
 
 </body>
 

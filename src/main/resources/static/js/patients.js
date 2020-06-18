@@ -59,8 +59,8 @@ $(document).ready(function() {
         }
 
     });
-    $("#phone-numberlogin").blur(function() {
-
+    $("#phone-numberlogin").blur(function(e) {
+        e.preventDefault();
         var regexp = /^(\+98|0098|98|0)?9\d{9}$/;
 
         var no = $("#phone-numberlogin").val();
@@ -81,20 +81,29 @@ $(document).ready(function() {
 
 
 function signUpRequest(e) {
+    e.preventDefault();
     let userInformation = {
         phoneNumber: $('#phone-number').val(),
         password: $('#password').val()
     };
 
-    $.ajax({
-        type: 'POST',
-        url: 'http://localhost',
-        data: JSON.stringify(userInformation),
-        success: function(msg) {
-            alert('wow' + msg);
+    var settings = {
+        url: "http://localhost:8080/signup/patient",
+        method: "POST",
+        timeout: 100000,
+        cache:false,
+        data: userInformation,
+        status:{
+            200:function (response) {
+                alert(response);
+            }
         }
-
-    });
+    };
+    if (!error) {
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+    }
 
 }
 
@@ -104,20 +113,25 @@ function clearForm(e) {
 }
 
 
-function loginRequest() {
+function loginRequest(e) {
+    e.preventDefault();
     let userInformation = {
         phoneNumber: $('#phone-numberlogin').val(),
         password: $('#password-login').val()
     };
 
-    $.ajax({
-        type: 'POST',
-        url: 'http://localhost',
-        data: JSON.stringify(userInformation),
-        success: function(msg) {
-            alert('wow' + msg);
-        }
-
-    });
+    var settings = {
+        url: "http://localhost:8080/",
+        method: "POST",
+        timeout: 100000,
+        cache:false,
+        data: userInformation
+    };
+    if (!error) {
+        $.ajax(settings).done(function (response) {
+            localStorage.setItem("token", btoa(response.phoneNumber + ":" + pho + ":" + response.name ));
+            console.log(response);
+        });
+    }
 
 }
