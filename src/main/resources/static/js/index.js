@@ -109,7 +109,9 @@ function signUpRequest(e) {
         phoneNumber: $('#phone-number').val(),
         password: $('#password').val(),
         expertise: $('#expertise').val(),
+        city: "LA",
         maCode: parseInt($('#mid').val())
+
     };
 
     var settings = {
@@ -167,12 +169,13 @@ function loginRequest(e) {
         data: { phoneNumber:pho,
             password:password}
     };
-    if (!error) {
+    // if (!error) {
         $.ajax(settings).done(function (response) {
             localStorage.setItem("token", btoa(response.phoneNumber + ":" + pho + ":" + response.name ));
             console.log(response);
+            window.location.href = "http://localhost:8080/home.html";
         });
-    }
+
     }
 
 

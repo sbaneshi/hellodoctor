@@ -42,7 +42,7 @@ public class DoctorService {
                 .build();
     }
 
-    public Doctor signUp(String phoneNumber, String password, String city, String expertise, int maCode) {
+    public Doctor signUp(String phoneNumber, String password, String expertise, String city, int maCode) {
         Doctor doctor = Doctor.builder()
                 .phoneNumber(phoneNumber)
                 .city(city)
