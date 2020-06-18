@@ -63,6 +63,7 @@ public class DummyDataProvider implements ApplicationContextAware {
                 .phoneNumber("1234")
                 .expertise("a")
                 .workTimes(Arrays.asList(w1, w2))
+                .city("c1")
                 .build();
         d1.setPassword("1234");
 
@@ -70,6 +71,7 @@ public class DummyDataProvider implements ApplicationContextAware {
                 .phoneNumber("5678")
                 .expertise("b")
                 .workTimes(Arrays.asList(w3, w4))
+                .city("c2")
                 .build();
         d2.setPassword("1234");
 

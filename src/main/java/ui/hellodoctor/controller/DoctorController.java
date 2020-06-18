@@ -6,8 +6,8 @@ import ui.hellodoctor.data.domain.Doctor;
 import ui.hellodoctor.security.SecurityUtils;
 import ui.hellodoctor.service.DoctorService;
 
-@RestController
 @CrossOrigin
+@RestController
 @RequiredArgsConstructor
 public class DoctorController extends BaseController {
 
@@ -25,7 +25,9 @@ public class DoctorController extends BaseController {
     }
 
     @PostMapping("/signup/doctor")
-    public Doctor signUp(@RequestParam String phoneNumber, @RequestParam String password, @RequestParam String expertise, @RequestParam int maCode) {
-        return doctorService.signUp(phoneNumber, password, expertise, maCode);
+    public Doctor signUp(@RequestParam String phoneNumber, @RequestParam String password, @RequestParam String expertise, @RequestParam String city, @RequestParam int maCode) {
+        return doctorService.signUp(phoneNumber, password, expertise, city, maCode);
     }
+
+
 }

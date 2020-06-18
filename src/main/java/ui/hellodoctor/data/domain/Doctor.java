@@ -20,6 +20,8 @@ import java.util.List;
 @NoArgsConstructor
 public class Doctor extends User {
 
+    private String city;
+
     private String address;
 
     private int maCode; //medical association Code

@@ -16,20 +16,19 @@ public class DoctorService {
     private final DoctorRepository doctorRepository;
 
     public Doctor getFullDoctor(String phoneNumber) {
-        Doctor doctor = doctorRepository.findByPhoneNumber(phoneNumber).orElseThrow(() ->
-                new IllegalArgumentException("No doctor found with phoneNumber=" + phoneNumber));
+        Doctor doctor = doctorRepository.findByPhoneNumber(phoneNumber).orElseThrow(IllegalArgumentException::new);
         doctor.setVisits(doctor.getVisits().stream().peek(v -> {
             v.setDoctor(null);
             v.setPatient(v.getPatient().toBuilder()
                     .visits(null)
+                    .phoneNumber(null)
                     .build());
         }).collect(Collectors.toList()));
         return doctor;
     }
 
     public Doctor login(String phoneNumber, String password) {
-        Doctor doctor = doctorRepository.findByPhoneNumber(phoneNumber).orElseThrow(() ->
-                new IllegalArgumentException("No doctor found with phoneNumber=" + phoneNumber));
+        Doctor doctor = doctorRepository.findByPhoneNumber(phoneNumber).orElseThrow(IllegalArgumentException::new);
         Assert.isTrue(User.PASSWORD_ENCODER.matches(password, doctor.getPassword()), "Wrong Credentials!");
 
         return doctor.toBuilder()
@@ -38,9 +37,10 @@ public class DoctorService {
                 .build();
     }
 
-    public Doctor signUp( String phoneNumber,  String password,  String expertise,  int maCode) {
+    public Doctor signUp(String phoneNumber, String password, String city, String expertise, int maCode) {
         Doctor doctor = Doctor.builder()
                 .phoneNumber(phoneNumber)
+                .city(city)
                 .expertise(expertise)
                 .maCode(maCode)
                 .build();
