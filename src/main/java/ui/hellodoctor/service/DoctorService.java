@@ -15,9 +15,9 @@ public class DoctorService {
 
     private final DoctorRepository doctorRepository;
 
-    public Doctor getFullDoctor(int id) {
-        Doctor doctor = doctorRepository.findById(id).orElseThrow(() ->
-                new IllegalArgumentException("No doctor found with id=" + id));
+    public Doctor getFullDoctor(String phoneNumber) {
+        Doctor doctor = doctorRepository.findByPhoneNumber(phoneNumber).orElseThrow(() ->
+                new IllegalArgumentException("No doctor found with phoneNumber=" + phoneNumber));
         doctor.setVisits(doctor.getVisits().stream().peek(v -> {
             v.setDoctor(null);
             v.setPatient(v.getPatient().toBuilder()

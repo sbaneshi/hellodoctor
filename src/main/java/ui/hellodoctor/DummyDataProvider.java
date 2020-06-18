@@ -28,7 +28,7 @@ public class DummyDataProvider implements ApplicationContextAware {
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        if (doctorRepository.existsById(1)) return;
+        if (doctorRepository.existsById("1234")) return;
 
         WorkTime w1 = WorkTime.builder()
                 .dayOfWeek(DayOfWeek.SATURDAY)

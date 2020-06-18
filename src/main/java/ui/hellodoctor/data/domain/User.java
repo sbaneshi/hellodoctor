@@ -1,16 +1,14 @@
 package ui.hellodoctor.data.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 
 @Data
 @SuperBuilder(toBuilder = true)
@@ -23,10 +21,16 @@ public abstract class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String name;
+
     @JsonIgnore
     private String password;
+
     private String email;
+
+    @Column(unique = true)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String phoneNumber;
 
     public void setPassword(String password) {

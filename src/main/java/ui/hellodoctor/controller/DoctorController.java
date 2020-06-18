@@ -3,18 +3,20 @@ package ui.hellodoctor.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ui.hellodoctor.data.domain.Doctor;
+import ui.hellodoctor.security.SecurityUtils;
 import ui.hellodoctor.service.DoctorService;
 
 @RestController
 @CrossOrigin
 @RequiredArgsConstructor
-public class DoctorController {
+public class DoctorController extends BaseController {
 
     private final DoctorService doctorService;
 
     @GetMapping("/api/doctor/full")
-    public Doctor getFullDoctor(@RequestParam int id) {
-        return doctorService.getFullDoctor(id);
+    public Doctor getFullDoctor() {
+        assertRole(SecurityUtils.ROLE_DOCTOR);
+        return doctorService.getFullDoctor(getPhoneNumber());
     }
 
     @PostMapping("/login/doctor")
