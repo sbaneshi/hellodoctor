@@ -59,8 +59,8 @@ $(document).ready(function() {
         }
 
     });
-    $("#phone-numberlogin").blur(function() {
-
+    $("#phone-numberlogin").blur(function(e) {
+        e.preventDefault();
         var regexp = /^(\+98|0098|98|0)?9\d{9}$/;
 
         var no = $("#phone-numberlogin").val();
@@ -81,20 +81,34 @@ $(document).ready(function() {
 
 
 function signUpRequest(e) {
+    e.preventDefault();
     let userInformation = {
         phoneNumber: $('#phone-number').val(),
-        password: $('#password').val()
+        password: $('#password').val(),
+        insuranceId: $('#insurance').val()
     };
 
-    $.ajax({
-        type: 'POST',
-        url: 'http://localhost',
-        data: JSON.stringify(userInformation),
-        success: function(msg) {
-            alert('wow' + msg);
+    var settings = {
+        url: "http://localhost:8080/signup/patient",
+        method: "POST",
+        timeout: 100000,
+        cache:false,
+        data: userInformation,
+        status:{
+            200:function (response) {
+                alert(response);
+            }
         }
+    };
+    if (!error) {
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+            localStorage.setItem("token", btoa(response.phoneNumber + ":" + userInformation.password + ":"+userInformation.name +":" + response.insuranceId)) ;
+            window.location = "home.html";
 
-    });
+        });
+
+    }
 
 }
 
@@ -104,20 +118,26 @@ function clearForm(e) {
 }
 
 
-function loginRequest() {
+async function loginRequest(e) {
+    e.preventDefault();
     let userInformation = {
         phoneNumber: $('#phone-numberlogin').val(),
         password: $('#password-login').val()
     };
 
-    $.ajax({
-        type: 'POST',
-        url: 'http://localhost',
-        data: JSON.stringify(userInformation),
-        success: function(msg) {
-            alert('wow' + msg);
-        }
+    var settings = {
+        url: "http://localhost:8080/login/patient",
+        method: "POST",
+        timeout: 100000,
+        cache:false,
+        data: userInformation
+    };
+    if (!error) {
+          $.ajax(settings).done(function (response) {
+            localStorage.setItem("token", btoa(response.phoneNumber + ":" + userInformation.password + ":" + response.name ));
+            window.location = "home.html";
+        });
 
-    });
+    }
 
 }

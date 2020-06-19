@@ -1,0 +1,141 @@
+/* Show it is fixed to the top */
+
+body {
+    min-height: 75rem;
+    padding-top: 4.5rem;
+    font-family: Montserrat, sans-serif;
+    min-height: 100vh;
+}
+
+
+/* external css: flickity.css */
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.gallery {
+    background-color: #7ecec6;
+}
+
+.card-container {
+    background-color: #def4f0;
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+    color: black;
+    padding-top: 30px;
+    position: relative;
+    width: 350px;
+    max-width: 100%;
+    text-align: center;
+    margin: 10px;
+    counter-increment: card-container;
+}
+
+
+/*
+.card-container.is-selected {
+
+}*/
+
+
+/* cell number */
+
+.card-container:before {
+    display: block;
+}
+
+h4 {
+    margin: 10px 0;
+}
+
+h6 {
+    margin: 5px 0;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.card-container .pro {
+    color: #231E39;
+    background-color: #d92027;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 3px 7px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.card-container .round {
+    border: 1px solid #03BFCB;
+    border-radius: 50%;
+    padding: 7px;
+}
+
+button.primary {
+    background-color: #03BFCB;
+    border: 1px solid #03BFCB;
+    border-radius: 3px;
+    color: #231E39;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    padding: 10px 25px;
+}
+
+button.primary.ghost {
+    background-color: transparent;
+    color: #02899C;
+    margin-top: 8px;
+}
+
+button.primary.ghost:hover {
+    background-color: #02899C;
+    color: white;
+}
+
+.small-btn {
+    margin: 5px;
+    text-align: center;
+    border-radius: 20px;
+    line-height: 15px;
+}
+
+.skills {
+    background-color: #1F1A36;
+    color: #B3B8CD;
+    text-align: right;
+    padding: 15px;
+    margin-top: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.skills ul {
+    list-style-type: none;
+    margin: 7px;
+    padding: 0;
+    direction: rtl;
+}
+
+.skills ul li {
+    border: 1px solid #2D2747;
+    border-radius: 7px;
+    display: inline-block;
+    font-size: 12px;
+    margin: 0 5px 5px 0;
+    padding: 7px;
+}
+
+h3 {
+    text-align: right;
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 700;
+    color: black;
+}

@@ -1,0 +1,676 @@
+<!--
+
+=========================================================
+* Now UI Dashboard - v1.5.0
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/now-ui-dashboard
+* Copyright 2019 Creative Tim (http://www.creative-tim.com)
+
+* Designed by www.invisionapp.com Coded by www.creative-tim.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+-->
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon.png">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    پنل کاربر
+  </title>
+  <script src="js/core/jquery.min.js"></script>
+    <script src="js/core/jquery.min.js"></script>
+  <script src="js/plugins/perfect-scrollbar.jquery.min.js"></script>
+
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- CSS Files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="demo/demo.css" rel="stylesheet" />
+
+  <link href="dash.css" rel="stylesheet" />
+
+</head>
+
+<body class="">
+  <div class="wrapper "   >
+  
+    <div class="sidebar" data-color="blue" >
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+      
+     -->  
+        <div class="card card-user my-user-card" style="">
+              <div class="image">
+              </div>
+              <div class="card-body" style="height:10px; min-height:10px;">
+                <div class="author">
+                  <a href="#" style="text-decoration:none;">
+                    <img class="avatar my-avatar border-gray" src="https://mdbootstrap.com/img/Photos/Others/placeholder-avatar.jpg" alt="..." style="margin-top:-90px;">
+
+                    <h5 class="title" style="color:#134E5E; "><i class="fa fa-user" style="margin-left:10px;"></i>سجاد رحیمی</h5>
+                  </a>
+                  <p class="description">
+                    
+                  </p>
+            
+                </div>
+                 
+              </div>
+              
+                           
+            </div>
+            
+      
+      <div class="sidebar-wrapper" id="sidebar-wrapper">
+      <hr class="my-hr">
+        <ul class="nav" style="text-align:right; font-size:25px; ">
+          <li class="active " >
+            <a href="./dashboard.html">
+                <i class="fa fa-cube" style="float:right;"></i>
+
+              <p class="mypanel">پنل من</p>
+            </a>
+          </li>
+          
+          <li>
+            <a href="./my-doctors.html">
+              <i class="fa  fa-leanpub" style="float:right;"></i>
+              <p>پزشکان من</p>
+            </a>
+          </li>
+          
+          <li>
+            <a href="./user.html">
+              <i class="fa fa-user" style="float:right;"></i>
+              <p>پروفایل من</p>
+            </a>
+          </li>
+
+
+          <li >
+            <a href="#">
+              <i class="fa fa-sign-out" style="float:right;"></i>
+              <p>خروج از حساب</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    
+    <div class="main-panel" id="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute " >
+        <div class="container-fluid" >
+          <div class="navbar-wrapper" >
+            <div class="navbar-toggle">
+              <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+            <a class="navbar-brand" href="#">بازگشت به سایت</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navigation"  style="">
+            <!--<form style="direction:ltr; ">
+              <div class="input-group no-border" style="">
+                <input type="text" value="" class="form-control" placeholder="Search...">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <i class="now-ui-icons ui-1_zoom-bold"></i>
+                  </div>
+                </div>
+              </div>
+            </form> -->  
+            <ul class="navbar-nav">
+              <!--<li class="nav-item">
+                <a class="nav-link" href="#pablo">
+                  <i class="now-ui-icons media-2_sound-wave"></i>
+                  <p>
+                    <span class="d-lg-none d-md-block">Stats</span>
+                  </p>
+                </a>
+              </li> -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                  <i class="now-ui-icons location_world"></i>
+                  <p>
+                    <span class="d-lg-none d-md-block">Some Actions</span>
+                  </p>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+              <!--<li class="nav-item">
+                <a class="nav-link" href="#pablo">
+                  <i class="now-ui-icons users_single-02"></i>
+                  <p>
+                    <span class="d-lg-none d-md-block">Account</span>
+                  </p>
+                </a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="panel-header panel-header-sm" >
+      <div class="col-md-4" style="text-align:center;">
+            
+      </div>
+        <!----------------------------------------------------------------   
+        
+        something
+        
+        
+        
+        
+        -->
+      </div>
+      <div class="content">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="card card-chart">
+              <div class="card-header">
+                <h4 class="card-title"><span class="my-primary-btn " ><b>نسخه های من</b></span></h4>
+                
+              </div>
+              <div class="card-body" >
+                <div class="chart-area" id="prescriptions" style="overflow:auto;" >
+                    <div class="table-responsive" >
+                  <table class="table" style="text-align:right; ">
+                    <thead class=" text-info">
+                      <th>
+                        نام پزشک
+                      </th>
+                      <th>
+                        شهر
+                      </th>
+                      <th>
+                        تخصص
+                      </th>
+                      <th class="text-right">
+                        شماره شناسایی
+                      </th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          -------------
+                        </td>
+                        <td>
+                          ------
+                        </td>
+                        <td>
+                          -----------
+                        </td>
+                        <td class="text-right">
+                          -----
+                        </td>
+                          <td>
+                            <button type="button" class="btn btn-info btn-group-xs" style="border-radius:20px;">مشاهده نسخه</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          -------------
+                        </td>
+                        <td>
+                          ------
+                        </td>
+                        <td>
+                          -----------
+                        </td>
+                        <td class="text-right">
+                          -----
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-info btn-group-xs " style="border-radius:20px;">مشاهده نسخه</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          -------------
+                        </td>
+                        <td>
+                          ------
+                        </td>
+                        <td>
+                          -----------
+                        </td>
+                        <td class="text-right">
+                          -----
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-info btn-group-xs " style="border-radius:20px;">مشاهده نسخه</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          -------------
+                        </td>
+                        <td>
+                          ------
+                        </td>
+                        <td>
+                          -----------
+                        </td>
+                        <td class="text-right">
+                          -----
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-info btn-group-xs " style="border-radius:20px;">مشاهده نسخه</button>
+                        </td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card card-chart" id="notifications">
+              <div class="card-header">
+                <h4 class="card-title"><span class="my-primary-btn  " ><b><i class="fa fa-info-circle" style="color:white; margin-left:10px;"></i>پیام ها</b></h4></span>
+                <button type="button" class=" icon-label removeAll" style="left:10px; top:20px;">
+                   پاک کردن همه
+                  </button>
+                
+              </div>
+              <div class="card-body">
+                <div class="chart-area" id="notifArea" style="overflow:auto;" >
+                <div class="alert alert-info alert-with-icon" data-notify="container" style="" >
+                      <button type="button" aria-hidden="true" class="close" >
+                        <i class="fa  fa-times-circle" style="margin-right:-2px; "></i>
+                      </button>
+                      <span data-notify="icon" class="fa fa-bell"></span>
+                      <span data-notify="message" style="text-align:right; margin-right:25px;">1111</span>
+                    </div>
+                
+                    <div class="alert alert-info alert-with-icon" data-notify="container" >
+                      <button type="button" aria-hidden="true" class="close" >
+                        <i class="fa fa-times-circle" style="margin-right:-2px;"></i>
+                      </button>
+                      <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
+                      <span data-notify="message" style="text-align:right; margin-right:25px;">2222</span>
+                    </div>
+                    <div class="alert alert-info alert-with-icon" data-notify="container" >
+                      <button type="button" aria-hidden="true" class="close" >
+                        <i class="fa  fa-times-circle"style="margin-right:-2px;"></i>
+                      </button>
+                      <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
+                      <span data-notify="message" style="text-align:right; margin-right:25px;">3333</span>
+                    </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <div class="row justify-content-center">
+         <!-- <div class="col-md-6">
+            <div class="card ">
+              <div class="card-header ">
+                <h4 class="card-title"><span class="my-primary-btn " ><b>آخرین تراکنش های مالی</b></span></h4>
+              </div>
+              <div class="card-body " id="financials" >
+                <div class=" table-full-width table-responsive">
+                  <table class="table" style="text-align:right; direction:rtl;">
+                    <thead class=" text-info">
+                      <th>
+                        شناسه پرداخت
+                      </th>
+                      <th>
+                        نام پزشک
+                      </th>
+                      <th>
+                        تخصص
+                      </th>
+                      
+                      <th>
+                        تاریخ پرداخت
+                      </th>
+                      <th>
+                        مبلغ ویزیت
+                      </th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          -------------
+                        </td>
+                        <td>
+                          ------
+                        </td>
+                        <td>
+                          -----------
+                        </td>
+                        
+                        <td>
+                          -----------
+                        </td>
+                        <td>
+                          -----------
+                        </td>
+                        <td>
+                          <button type="button" class="btn btn-info btn-group-xs " style="border-radius:20px; line-height:0.21;">جزئیات تراکنش</button>
+
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          -------------
+                        </td>
+                        <td>
+                          ------
+                        </td>
+                        <td>
+                          -----------
+                        
+                        <td>
+                          -----------
+                        </td>
+                        <td>
+                          -----------
+                        </td>
+                        <td>
+                          <button type="button" class="btn btn-info btn-group-xs " style="border-radius:20px;line-height:0.21;"> جزئیات تراکنش</button>
+
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          -------------
+                        </td>
+                        <td>
+                          ------
+                        </td>
+                        <td>
+                          -----------
+                        
+                        <td>
+                          -----------
+                        </td>
+                        <td>
+                          -----------
+                        </td>
+                        <td>
+                          <button type="button" class="btn btn-info btn-group-xs " style="border-radius:20px;line-height:0.21;">جزئیات تراکنش</button>
+
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          -------------
+                        </td>
+                        <td>
+                          ------
+                        </td>
+                        <td>
+                          -----------
+                        
+                        <td>
+                          -----------
+                        </td>
+                        <td>
+                          -----------
+                        </td>
+                        <td>
+                          <button type="button" class="btn btn-info btn-group-xs " style="border-radius:20px;line-height:0.21;">جزئیات تراکنش </button>
+
+                        </td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              
+            </div>
+          </div> -->
+          <div class="col-md-10">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title"> <span class="my-primary-btn" ><b>آخرین نوبت های من</b></span></h4>
+              </div>
+              <div class="card-body" id="appointments">
+<!--                <div class="table-responsive">-->
+<!--                  <table class="table" style="text-align:right; direction:rtl;">-->
+<!--                    <thead class=" text-info">-->
+<!--                      <th>-->
+<!--                        نام پزشک-->
+<!--                      </th>-->
+<!--                      <th>-->
+<!--                        شهر-->
+<!--                      </th>-->
+<!--                      <th>-->
+<!--                        تخصص-->
+<!--                      </th>-->
+<!--                      <th class="text-right">-->
+<!--                        تاریخ اخذ نوبت-->
+<!--                      </th>-->
+<!--                    </thead>-->
+<!--                    <tbody>-->
+<!--                      <tr>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          &#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td class="text-right">-->
+<!--                          -&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                      </tr>-->
+<!--                      <tr>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          &#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td class="text-right">-->
+<!--                          -&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                      </tr>-->
+<!--                      <tr>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          &#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td class="text-right">-->
+<!--                          -&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                      </tr>-->
+<!--                      <tr>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          &#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td class="text-right">-->
+<!--                          -&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                      </tr>-->
+<!--                      -->
+<!--                    </tbody>-->
+<!--                  </table>-->
+<!--                </div>-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="my-footer page-footer font-small mdb-color pt-4" style="">
+
+        <div class="container text-center text-md-left">
+
+            <div class="row text-center text-md-left mt-3 pb-3">
+
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3" style="text-align:right;">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">درباره دکتر سلام</h6>
+                    <p style="text-align:right;">-------------------------------------------------------------------------------------------------------------------</p>
+                </div>
+
+                <hr class="w-100 clearfix d-md-none">
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3" style="text-align:right;">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">صفحات سایت</h6>
+                    <p>
+                        <a href="#!">-------------</a>
+                    </p>
+                    <p>
+                        <a href="#!">-------------</a>
+                    </p>
+                    <p>
+                        <a href="#!">-------------</a>
+                    </p>
+                    <p>
+                        <a href="#!">-------------</a>
+                    </p>
+                </div>
+
+                <hr class="w-100 clearfix d-md-none">
+
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3" style="text-align:right;">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">خدمات دکتر سلام</h6>
+                    <p>
+                        <a href="#!">--------------</a>
+                    </p>
+                    <p>
+                        <a href="#!">--------------</a>
+                    </p>
+                    <p>
+                        <a href="#!">--------------</a>
+                    </p>
+                    <p>
+                        <a href="#!">--------------</a>
+                    </p>
+                </div>
+
+                <hr class="w-100 clearfix d-md-none">
+
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3" style="text-align:right;">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">ارتباط با ما</h6>
+                    <p>
+                        <i class="fa fa-home mr-3"></i>---------------</p>
+                    <p>
+                        <i class="fa fa-envelope mr-3"></i>---------------</p>
+                    <p>
+                        <i class="fa fa-phone mr-3"></i>---------------</p>
+                    <p>
+                        <i class="fa fa-print mr-3"></i>---------------</p>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="row d-flex align-items-center">
+
+                <div class="col-md-7 col-lg-8">
+
+                    <p class="text-center text-md-left">
+                        <strong> تمامی حقوق این سایت متعلق به ماست</strong>
+                        </a>
+                    </p>
+
+                </div>
+
+                <div class="col-md-5 col-lg-4 ml-lg-0">
+
+                    <div class="text-center text-md-right">
+                        <ul class="list-unstyled list-inline">
+
+                            <li class="list-inline-item">
+                                <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+    </div>
+  </div>
+  <!--   Core JS Files   -->
+  
+
+  <script src="js/core/popper.min.js"></script>
+  <script src="js/core/bootstrap.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Chart JS -->
+  <script src="js/plugins/chartjs.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script><!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
+  <script src="js/dashboard-app.js"></script>
+
+  <script src="demo/demo.js"></script>
+    <script src="dash.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/js/demos.js
+      demo.initDashboardPageCharts();
+
+    });
+  </script>
+</body>
+
+</html>

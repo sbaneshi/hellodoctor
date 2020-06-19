@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+body {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+i {
+    margin-right: 10px;
+}
+
+
+/*----------multi-level-accordian-menu------------*/
+
+.navbar-logo {
+    padding-bottom: 15px;
+    padding-left: 20px;
+}
+
+.navbar-mainbg {
+    background-color: #134E5E;
+    padding: 0px;
+    height: 60px;
+}
+
+#navbarSupportedContent {
+    overflow: hidden;
+    position: relative;
+}
+
+#navbarSupportedContent ul {
+    text-align: right;
+    padding: 0px;
+    margin: 0px;
+}
+
+#navbarSupportedContent ul li a i {
+    margin-right: 10px;
+}
+
+#navbarSupportedContent li {
+    list-style-type: none;
+    float: left;
+}
+
+#navbarSupportedContent ul li a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    padding: 20px 20px;
+    transition-duration: 0.6s;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+}
+
+#navbarSupportedContent>ul>li.active>a {
+    color: #134E5E;
+    background-color: transparent;
+    transition: all 0.7s;
+}
+
+#navbarSupportedContent a:not(:only-child):after {
+    content: "\f105";
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 14px;
+    font-family: "Font Awesome 5 Free";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+    transition: 0.5s;
+}
+
+#navbarSupportedContent .active>a:not(:only-child):after {
+    transform: rotate(90deg);
+}
+
+.hori-selector {
+    text-align: right;
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    transition-duration: 0.6s;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background-color: #fff;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    margin-top: 10px;
+}
+
+.hori-selector .right,
+.hori-selector .left {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    bottom: 10px;
+}
+
+.hori-selector .right {
+    right: -25px;
+}
+
+.hori-selector .left {
+    left: -25px;
+}
+
+.hori-selector .right:before,
+.hori-selector .left:before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #134E5E;
+}
+
+.hori-selector .right:before {
+    bottom: 0;
+    right: -25px;
+}
+
+.hori-selector .left:before {
+    bottom: 0;
+    left: -25px;
+}
+
+@media (max-width: 991px) {
+    #navbarSupportedContent ul li a {
+        padding: 12px 30px;
+    }
+    .hori-selector {
+        margin-top: 0px;
+        margin-left: 18px;
+        border-top-left-radius: 25px;
+        border-bottom-left-radius: 25px;
+    }
+    .hori-selector .left,
+    .hori-selector .right {
+        right: 10px;
+    }
+    .hori-selector .left {
+        top: -25px;
+        left: auto;
+    }
+    .hori-selector .right {
+        bottom: -25px;
+        direction: ltr;
+    }
+    .hori-selector .left:before {
+        left: -25px;
+        top: -25px;
+    }
+    .hori-selector .right:before {
+        bottom: -25px;
+        left: -25px;
+    }
+}
+
+.login-profile-container {
+    left: 20px;
+    text-align: center;
+    height: 50px;
+    min-width: 130px;
+    padding: 5px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    background-color: #def4f0;
+    position: relative;
+}
+
+.login-profile-container-img {
+    position: relative;
+    height: 60px;
+    width: 60px;
+    z-index: 1000;
+    right: 25px;
+    color: #134E5E;
+    border-radius: 50%;
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-logo span {
+    display: block;
+    margin-top: 5px;
+}
+
+.dropdown-menu {
+    border: 0;
+    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, .2);
+    border-radius: .125rem;
+    transition: all .15s linear;
+    font-size: 14px
+}
+
+.dropdown-menu.dropdown-menu-right:before {
+    left: auto;
+    right: 10px
+}
+
+.dropdown-menu i {
+    margin-right: 5px;
+    position: relative;
+    top: 1px
+}
+
+.dropdown-menu .now-ui-icons {
+    margin-right: 10px;
+    position: relative;
+    top: 4px;
+    font-size: 18px;
+    margin-top: -5px;
+    opacity: .5
+}
+
+.dropdown-menu .dropdown-item.active,
+.dropdown-menu .dropdown-item:active {
+    color: inherit
+}
+
+.dropup .dropdown-menu:before {
+    display: none
+}
+
+.dropup .dropdown-menu:after {
+    display: inline-block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    content: "";
+    top: auto;
+    bottom: -5px;
+    right: auto;
+    left: 10px;
+    color: #fff;
+    border-top: .4em solid;
+    border-right: .4em solid transparent;
+    border-left: .4em solid transparent
+}
+
+.dropup .dropdown-menu.dropdown-menu-right:after {
+    right: 10px;
+    left: auto
+}
+
+.dropdown-menu:before {
+    display: inline-block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    content: "";
+    top: -5px;
+    left: 10px;
+    right: auto;
+    color: #fff;
+    border-bottom: .4em solid;
+    border-right: .4em solid transparent;
+    border-left: .4em solid transparent
+}
+
+.dropdown-menu.dropdown-menu-right {
+    right: 0 !important;
+    left: auto !important
+}
+
+.bootstrap-select .dropdown-menu.inner li a,
+.dropdown-menu .dropdown-item {
+    font-size: .8571em;
+    padding-top: .6rem;
+    padding-bottom: .6rem;
+    margin-top: 5px;
+    transition: all .15s linear
+}
+
+.bootstrap-select .dropdown-menu.inner li a:focus,
+.bootstrap-select .dropdown-menu.inner li a:hover,
+.dropdown-menu .dropdown-item:focus,
+.dropdown-menu .dropdown-item:hover {
+    background-color: hsla(0, 0%, 87%, .3);
+    outline: 0
+}
+
+.bootstrap-select .dropdown-menu.inner li a.disabled,
+.bootstrap-select .dropdown-menu.inner li a:disabled,
+.dropdown-menu .dropdown-item.disabled,
+.dropdown-menu .dropdown-item:disabled {
+    color: hsla(0, 0%, 71%, .6)
+}
+
+.bootstrap-select .dropdown-menu.inner li a.disabled:focus,
+.bootstrap-select .dropdown-menu.inner li a.disabled:hover,
+.bootstrap-select .dropdown-menu.inner li a:disabled:focus,
+.bootstrap-select .dropdown-menu.inner li a:disabled:hover,
+.dropdown-menu .dropdown-item.disabled:focus,
+.dropdown-menu .dropdown-item.disabled:hover,
+.dropdown-menu .dropdown-item:disabled:focus,
+.dropdown-menu .dropdown-item:disabled:hover {
+    background-color: transparent
+}
+
+.dropdown-menu .dropdown-divider {
+    background-color: hsla(0, 0%, 87%, .5)
+}
+
+.dropdown-menu .dropdown-header:not([href]):not([tabindex]) {
+    color: hsla(0, 0%, 71%, .6);
+    font-size: .7142em;
+    text-transform: uppercase;
+    font-weight: 700
+}
