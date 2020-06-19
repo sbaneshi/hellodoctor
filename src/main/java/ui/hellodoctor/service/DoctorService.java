@@ -72,11 +72,41 @@ public class DoctorService {
     }
 
     public void deleteWorkTime(String doctorPhoneNumber, int workTimeId) {
-        Doctor doctor  = doctorRepository.findByPhoneNumber(doctorPhoneNumber).orElseThrow(IllegalArgumentException::new);
+        Doctor doctor = doctorRepository.findByPhoneNumber(doctorPhoneNumber).orElseThrow(IllegalArgumentException::new);
         List<WorkTime> workTimes = doctor.getWorkTimes();
         workTimes = workTimes.stream().filter(workTime -> workTime.getId() != workTimeId).collect(Collectors.toList());
         doctor.setWorkTimes(workTimes);
 
         workTimeRepository.deleteById(workTimeId);
+    }
+
+    public Doctor editDoctor(String phoneNumber, String firstName, String lastName,
+                             String email, String province,
+                             String city, String address,
+                             Double geoX, Double geoY,
+                             String expertise) {
+        Doctor.DoctorBuilder<?, ?> builder = doctorRepository.findByPhoneNumber(phoneNumber).get().toBuilder();
+
+        if (firstName != null)
+            builder.firstName(firstName);
+        if (lastName != null)
+            builder.lastName(lastName);
+        if (email != null)
+            builder.email(email);
+        if (province != null)
+            builder.province(province);
+        if (city != null)
+            builder.city(city);
+        if (address != null)
+            builder.address(address);
+        if (geoX != null)
+            builder.geoX(geoX);
+        if (geoY != null)
+            builder.geoY(geoY);
+        if (expertise != null)
+            builder.expertise(expertise);
+
+        doctorRepository.save(builder.build());
+        return getFullDoctor(phoneNumber);
     }
 }
