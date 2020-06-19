@@ -32,9 +32,10 @@
 
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <!-- CSS Files -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- CSS Files -->
   <link href="css/bootstrap.min.css" rel="stylesheet" />
   <link href="css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
@@ -72,46 +73,37 @@
       <div class="sidebar-wrapper" id="sidebar-wrapper" >
         <hr style="background-color:#134E5E ; margin-right:20px; margin-left:20px">
 
-        <ul class="nav" style="text-align:right; font-size:25px; margin-right:-40px; ">
-          <li >
-            <a href="./dashboard.html">
-              <i class="now-ui-icons design_app " style="float:right;"></i>
-              <p >پنل من</p>
-            </a>
-          </li>
-          
-          <li>
-            <a href="./my-doctors.html">
-              <i class="now-ui-icons location_map-big" style="float:right;"></i>
-              <p>پزشکان من</p>
-            </a>
-          </li>
-          
-          <li class="active ">
-            <a href="./user.html">
-              <i class="now-ui-icons users_single-02" style="float:right;"></i>
-              <p>پروفایل من</p>
-            </a>
-          </li>
-          <li>
-            <a href="./appoinments.html">
-              <i class="fa fa-list-alt design_bullet-list-67" style="float:right;"></i>
-              <p>نوبت های من</p>
-            </a>
-          </li>
-          <li>
-            <a href="./financial.html">
-              <i class="fa fa-credit-card text_caps-small"style="float:right;"></i>
-              <p>تراکنش ها</p>
-            </a>
-          </li>
-          <li >
-            <a href="#">
-              <i class="fa fa-share-square arrows-1_cloud-download-93" style="float:right;"></i>
-              <p>خروج از حساب</p>
-            </a>
-          </li>
-        </ul>
+          <ul class="nav" style="text-align:right; font-size:25px; margin-right:-40px; ">
+              <li  >
+                  <a href="./dashboard.html">
+                      <i class="fa fa-cube" style="float:right;"></i>
+
+                      <p class="mypanel">پنل من</p>
+                  </a>
+              </li>
+
+              <li>
+                  <a href="./my-doctors.html">
+                      <i class="fa  fa-leanpub" style="float:right;"></i>
+                      <p>پزشکان من</p>
+                  </a>
+              </li>
+
+              <li class="active">
+                  <a href="./user.html">
+                      <i class="fa fa-user" style="float:right;"></i>
+                      <p>پروفایل من</p>
+                  </a>
+              </li>
+
+
+              <li >
+                  <a href="#">
+                      <i class="fa fa-sign-out" style="float:right;"></i>
+                      <p>خروج از حساب</p>
+                  </a>
+              </li>
+          </ul>
       </div>
     </div>
     <div class="main-panel" id="main-panel">
@@ -193,43 +185,39 @@
                 <form>
                   <div class="row">
                     
-                    <div class="col-md-4 px-1">
+                    <div class="col-md-6 px-1">
                       <div class="form-group">
-                        <label ><button class="btn btn-info btn-group-xs small-btn" style="border-radius:20px;margin:0px;">نام کاربری</button></label>
-                        <input type="text" class="form-control" placeholder="Username" value="michael23">
+                        <label class="label info " style="border-radius:20px;margin:0px;">نام</label>
+                        <input type="text" class="form-control" placeholder="Firstame" value="michael23">
                       </div>
                     </div>
-                    <div class="col-md-4 px-1">
+                    <div class="col-md-6 px-1">
                       <div class="form-group">
-                        <label ><button class="btn btn-info btn-group-xs small-btn" style="border-radius:20px;margin:0px;">گذرواژه</button></label>
-                        <input type="text" class="form-control" placeholder="Username" value="michael23">
+                        <label ><button class="btn btn-info btn-group-xs small-btn" style="border-radius:20px;margin:0px;">نام خانوادگی</button></label>
+                        <input type="text" class="form-control" placeholder="Lastname" value="michael23">
                       </div>
                     </div>
-                    <div class="col-md-4 px-1">
-                      <div class="form-group">
-                        <label for="exampleInputEmail1"><button class="btn btn-info btn-group-xs small-btn" style="border-radius:20px; margin:0px;">پست الکرترونیکی</button></label>
-                        <input type="email" class="form-control" placeholder="Email">
-                      </div>
-                    </div>
+
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-md-4 pr-1">
                       <div class="form-group">
-                        <label><button class="btn btn-info btn-group-xs small-btn" style="border-radius:20px;margin:0px;">نام</button></label>
-                        <input type="text" class="form-control" placeholder="Company" value="Mike">
+                        <label><button class="btn btn-info btn-group-xs small-btn" style="border-radius:20px;margin:0px;">گذرواژه</button></label>
+                        <input type="text" class="form-control" placeholder="Password" value="Mike">
                       </div>
                     </div>
-                    <div class="col-md-4 pl-1">
-                      <div class="form-group">
-                        <label><button class="btn btn-info btn-group-xs small-btn" style="border-radius:20px;margin:0px;">نام خانوادگی</button></label>
-                        <input type="text" class="form-control" placeholder="Last Name" value="Andrew">
+                      <div class="col-md-4 px-1">
+                          <div class="form-group">
+                              <label for="exampleInputEmail1"><button class="btn btn-info btn-group-xs small-btn" style="border-radius:20px; margin:0px;">پست الکرترونیکی</button></label>
+                              <input type="email" class="form-control" placeholder="Email">
+                          </div>
                       </div>
-                    </div>
+
                     <div class="col-md-4 pl-1">
                       <div class="form-group">
-                        <label><button class="btn btn-info btn-group-xs small-btn" style="border-radius:20px;margin:0px;">شهر</button></label>
-                        <input type="text" class="form-control" placeholder="Last Name" value="Andrew">
+                        <label><button class="btn btn-info btn-group-xs small-btn" style="border-radius:20px;margin:0px;">استان</button></label>
+                        <input type="text" class="form-control" placeholder="City" value="Andrew">
                       </div>
                     </div>
                     
@@ -239,7 +227,7 @@
                     <div class="col-md-12 px-1">
                       <div class="form-group">
                         <label><button class="btn btn-info btn-group-xs small-btn" style="border-radius:20px;margin:0px;">نشانی محل سکونت</button></label>
-                        <input type="text" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
+                        <input type="text" class="form-control" placeholder="Home-address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
                       </div>
                     </div>
                   </div>
@@ -248,13 +236,13 @@
                     <div class="col-md-2 pr-1">
                       <div class="form-group">
                         <label><button class="btn btn-info btn-group-xs small-btn" style="border-radius:20px;margin:0px;">جنسیت</button></label>
-                        <input type="text" class="form-control" placeholder="City" value="Mike">
+                        <input type="text" class="form-control" placeholder="Sex" value="Mike">
                       </div>
                     </div>
                     <div class="col-md-2 px-1">
                       <div class="form-group">
                         <label><button class="btn btn-info btn-group-xs small-btn" style="border-radius:20px;margin:0px;">گروه خونی</button></label>
-                        <input type="text" class="form-control" placeholder="Country" value="Andrew">
+                        <input type="text" class="form-control" placeholder="blood-range" value="Andrew">
                       </div>
                     </div>
                     <div class="col-md-3 pl-1">

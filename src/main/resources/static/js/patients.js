@@ -103,8 +103,10 @@ function signUpRequest(e) {
     if (!error) {
         $.ajax(settings).done(function (response) {
             console.log(response);
+            localStorage.setItem("token", btoa(response.phoneNumber + ":" + userInformation.password + ":"+userInformation.name +":" + response.insuranceId)) ;
+            window.location = "home.html";
+
         });
-        localStorage.setItem("token", btoa(response.phoneNumber + ":" + userInformation.password + ":" + response.name ));
 
     }
 

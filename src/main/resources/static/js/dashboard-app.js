@@ -1,27 +1,23 @@
-//variables
-$("#prescriptions"),
-   $(" #notifications"),
-$(" #financials"),
-$(" #appointments"),
-$("button .removeAll");
+
 
 
 
 
 //eventlisteners
 $(document).ready(function() {
-    loadPrescriptions();
-    loadFinancials();
+    //setPanel();
+    // loadPrescriptions();
+    // loadFinancials();
     loadAppointments();
-    $('#upload').on('change', function() {
-        readURL(input);
-    });
+    // $('#upload').on('change', function() {
+    //     readURL(input);
+    // });
 
 
 
 
 });
-$(" #notifications").click( removeNotif());
+// $(" #notifications").click( removeNotif());
 //classes
 
 
@@ -33,13 +29,11 @@ $(" #notifications").click( removeNotif());
 
 //functions
 function setPanel(){
-    var PanelName='';
     var token=localStorage.getItem("token");
 
         var decode = (atob(token));
         var userInformation = decode.split(':');
-        $('#nav-login').css("display","none");
-        $('#nav-profile .btn').text(`${userInformation[2]}`);
+        $('.card-body .author h5').html(`<i class="fa fa-user" style="margin-left:10px;"></i>${userInformation[2]}`);
 
 
 }
@@ -48,15 +42,29 @@ function loadPrescriptions() {
     var Prescription = '';
     var html = '';
 
-    $.ajax({
+    var token=localStorage.getItem("token");
 
-        header: {
+    var decode = (atob(token));
+    var userInformation = decode.split(':');
 
-        },
-        type: 'GET',
-        url: 'http://localhost:8080/getPrescriptions',
-        success: function(data, msg) {
-            if (msg) {
+        var settings = {
+            url: "http://localhost:8080//api/pateint/full",
+            method: "GET",
+            timeout: 100000,
+            cache:false,
+            header:{
+                "Authorization" : "Basic " + btoa(userInformation[0]+ ":"+ userInformation[1])
+            },
+            status:{
+                200:function (response) {
+                    alert(response);
+                }
+            }
+        };
+        if (!error) {
+            $.ajax(settings).done(function (response) {
+
+
                 // localStorage.setItem()
                 Prescription = JSON.parse(data);
                 html += `
@@ -80,19 +88,19 @@ function loadPrescriptions() {
                                 < tbody >
                         `;
                 Prescription.forEach(prescriptions => {
-                        html += `
+                    html += `
                         <tr>
                           <td>
-                            ${data.DoctorName}
+                            ${response.visits.doctor.name}
                           </td>
                           <td>
-                            ${data.city}
+                            ${response.visits.doctor.city}
                           </td>
                           <td>
-                            ${data.DoctorExpertise}
+                            ${response.visits.doctor.expertise}
                           </td>
                           <td class="text-right">
-                            ${data.uploadDate}
+                            ${response.visits.doctor.name}
                           </td>
                             <td>
                               <button type="button" class="btn btn-info btn-group-xs" style="border-radius:20px;">مشاهده نسخه</button>
@@ -100,117 +108,139 @@ function loadPrescriptions() {
                         </tr>
                         
                         `;
-                        html += `
+                    html += `
                                 </tbody>
                             </table>
                          </div>
                          
                          `;
 
-                    })
-                    //saveToLocalStorage("myPrescriptions" , html)
+                })
+                //saveToLocalStorage("myPrescriptions" , html)
                 myPrescriptions.appendChild(html);
-
-            } else {
+            });
+        }
+             else {
                 myPrescriptions.appendChild(document.createTextNode("هنوز نسخه ای برای شما آپلود نشده است"));
             }
-        }
-    })
-}
+};
 
-function loadFinancials() {
-    var Financial = '';
-    var html = '';
-
-    $.ajax({
-        header: {
-
-        },
-        type: 'GET',
-        url: 'http://localhost:8080/getFinancials',
-        success: function(data, msg) {
-            if (msg) {
-                // localStorage.setItem()
-                Prescription = JSON.parse(data);
-                html += `
-                            <div class=" table-full-width table-responsive"  >
-                                <table class="table" style="text-align:right; direction:rtl;">
-                                    <thead class=" text-info">
-                                    <th>
-                                        شناسه پرداخت
-                                    </th>
-                                    <th>
-                                        نام پزشک
-                                    </th>
-                                    <th>
-                                        تخصص
-                                    </th>
-                                    
-                                    <th>
-                                        تاریخ پرداخت
-                                    </th>
-                                    <th>
-                                        مبلغ ویزیت
-                                    </th>
-                                    </thead>
-                                    <tbody>
-                        `;
-                for (var i = 0; i < 4; i++) {
-                    html += `
-                        <tr>
-                                <td>
-                                ${data.payId}
-                                </td>
-                                <td>
-                                ${data.DoctorName}
-                                </td>
-                                <td>
-                                ${data.DoctorExpertise}
-                                </td>
-                                
-                                <td>
-                                ${data.payDate}
-                                </td>
-                                <td>
-                                ${data.PayCost}
-                                </td>
-                                <td>
-                                <button type="button" class="btn btn-info btn-group-xs " style="border-radius:20px;">جزئیات تراکنش</button>
-
-                                </td>
-                        </tr>
-                        
-                        `;
-                    html += `
-                                </tbody>
-                            </table>
-                         </div>
-                         
-                         `;
-                }
-                //saveToLocalStorage("myPrescriptions" , html)
-                myFinancials.appendChild(html);
-
-            } else {
-                myFinancials.appendChild(document.createTextNode("شما هنوز تراکنشی نداشته اید"));
-            }
-        }
-    })
-}
+// function loadFinancials() {
+//     var Financial = '';
+//     var html = '';
+//
+//     $.ajax({
+//         header: {
+//
+//         },
+//         type: 'GET',
+//         url: 'http://localhost:8080/getFinancials',
+//         success: function(data, msg) {
+//             if (msg) {
+//                 // localStorage.setItem()
+//                 Prescription = JSON.parse(data);
+//                 html += `
+//                             <div class=" table-full-width table-responsive"  >
+//                                 <table class="table" style="text-align:right; direction:rtl;">
+//                                     <thead class=" text-info">
+//                                     <th>
+//                                         شناسه پرداخت
+//                                     </th>
+//                                     <th>
+//                                         نام پزشک
+//                                     </th>
+//                                     <th>
+//                                         تخصص
+//                                     </th>
+//
+//                                     <th>
+//                                         تاریخ پرداخت
+//                                     </th>
+//                                     <th>
+//                                         مبلغ ویزیت
+//                                     </th>
+//                                     </thead>
+//                                     <tbody>
+//                         `;
+//                 for (var i = 0; i < 4; i++) {
+//                     html += `
+//                         <tr>
+//                                 <td>
+//                                 ${data.payId}
+//                                 </td>
+//                                 <td>
+//                                 ${data.DoctorName}
+//                                 </td>
+//                                 <td>
+//                                 ${data.DoctorExpertise}
+//                                 </td>
+//
+//                                 <td>
+//                                 ${data.payDate}
+//                                 </td>
+//                                 <td>
+//                                 ${data.PayCost}
+//                                 </td>
+//                                 <td>
+//                                 <button type="button" class="btn btn-info btn-group-xs " style="border-radius:20px;">جزئیات تراکنش</button>
+//
+//                                 </td>
+//                         </tr>
+//
+//                         `;
+//                     html += `
+//                                 </tbody>
+//                             </table>
+//                          </div>
+//
+//                          `;
+//                 }
+//                 //saveToLocalStorage("myPrescriptions" , html)
+//                 myFinancials.appendChild(html);
+//
+//             } else {
+//                 myFinancials.appendChild(document.createTextNode("شما هنوز تراکنشی نداشته اید"));
+//             }
+//         }
+//     })
+// }
 
 function loadAppointments() {
-    var Appointment = '';
     var html = '';
 
-    $.ajax({
-        header: {
+    var token=localStorage.getItem("token");
+    console.log(token);
+    var decode = (atob(token));
+    var userInformation = decode.split(':');
+    // $.ajax({
+    //     type: 'GET',
+    //     headers: {"Authorization" : "Basic " + btoa('09358358474:12345678')},
+    //     url: 'http://localhost:8080/api/patient/full',
+    //     success: function(msg,st) {
+    //         // console.log('wow' + (msg.responseText));
+    //     }
+    //
+    // }).done(function(msg){
+    //     console.log(msg);
+    // });
 
+    var settings = {
+
+        type: "GET",
+        headers:{
+            "Authorization" : "Basic " + btoa( "4321:1234")
         },
-        type: 'GET',
-        url: 'http://localhost:8080/getAppointments',
-        success: function(data, msg) {
-            if (msg) {
-                Prescription = JSON.parse(data);
+        url: "http://localhost:8080/api/patient/full",
+        status:{
+            200:function (response) {
+                alert(response);
+            }
+        }
+    };
+  //  if (!error) {
+        $.ajax(settings).done(function (response) {
+                var Appointment=response.visits;
+                console.log(Appointment);
                 html += `
                             <div class="table-responsive" >
                                 <table class="table" style="text-align:right; direction:rtl;">
@@ -230,45 +260,44 @@ function loadAppointments() {
                                     </thead>
                                     <tbody>
                         `;
-                for (var i = 0; i < 4; i++) {
+                Appointment.forEach(function(appointment){
                     html += `
                         <tr>
                           <td>
-                            ${data.DoctorName}
+                            ${appointment.doctor.name}
                           </td>
                           <td>
-                            ${data.city}
+                            ${appointment.doctor.city}
                           </td>
                           <td>
-                            ${data.DoctorExpertise}
+                            ${appointment.doctor.expertise}
                           </td>
                           <td class="text-right">
-                            ${data.appointmentDate}
+                            ${appointment.doctor.name}
                           </td>
-                            
+                            <td>
+                              <button type="button" class="btn btn-info btn-group-xs" style="border-radius:20px;">لغو نوبت</button>
+                          </td>
                         </tr>
                         
                         `;
+
+                })
                     html += `
                                 </tbody>
                             </table>
                          </div>
-                         
+
                          `;
-                }
+
                 //saveToLocalStorage("myPrescriptions" , html)
-                myPrescriptions.appendChild(html);
+            $(" #appointments").append(html);
 
-            } else {
-                myPrescriptions.appendChild(document.createTextNode("هنوز نسخه ای برای شما آپلود نشده است"));
-            }
+        });
 
-        }
-
-
-
-    })
-
+    // else {
+    //     $(" #appointments").append(document.createTextNode("هنوز نسخه ای برای شما آپلود نشده است"));
+    // }
 }
 
 function removeNotif(event) {

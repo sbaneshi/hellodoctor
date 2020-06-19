@@ -34,7 +34,8 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <!-- CSS Files -->
-  <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
   <link href="css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="demo/demo.css" rel="stylesheet" />
@@ -58,7 +59,7 @@
                 <div class="author">
                   <a href="#" style="text-decoration:none;">
                     <img class="avatar my-avatar border-gray" src="https://mdbootstrap.com/img/Photos/Others/placeholder-avatar.jpg" alt="..." style="margin-top:-90px;">
-                    
+
                     <h5 class="title" style="color:#134E5E; "><i class="fa fa-user" style="margin-left:10px;"></i>سجاد رحیمی</h5>
                   </a>
                   <p class="description">
@@ -75,42 +76,33 @@
       
       <div class="sidebar-wrapper" id="sidebar-wrapper">
       <hr class="my-hr">
-        <ul class="nav" style="text-align:right; font-size:25px; margin-right:-40px;">
+        <ul class="nav" style="text-align:right; font-size:25px; ">
           <li class="active " >
             <a href="./dashboard.html">
-              <i class="now-ui-icons design_app " style="float:right;"></i>
-              <p >پنل من</p>
+                <i class="fa fa-cube" style="float:right;"></i>
+
+              <p class="mypanel">پنل من</p>
             </a>
           </li>
           
           <li>
             <a href="./my-doctors.html">
-              <i class="now-ui-icons location_map-big" style="float:right;"></i>
+              <i class="fa  fa-leanpub" style="float:right;"></i>
               <p>پزشکان من</p>
             </a>
           </li>
           
           <li>
             <a href="./user.html">
-              <i class="now-ui-icons users_single-02" style="float:right;"></i>
+              <i class="fa fa-user" style="float:right;"></i>
               <p>پروفایل من</p>
             </a>
           </li>
-          <li>
-            <a href="./appoinments.html">
-              <i class="fa fa-list-alt design_bullet-list-67" style="float:right;"></i>
-              <p>نوبت های من</p>
-            </a>
-          </li>
-          <li>
-            <a href="./financial.html">
-              <i class="fa fa-credit-card text_caps-small"style="float:right;"></i>
-              <p>تراکنش ها</p>
-            </a>
-          </li>
+
+
           <li >
             <a href="#">
-              <i class="fa fa-share-square arrows-1_cloud-download-93" style="float:right;"></i>
+              <i class="fa fa-sign-out" style="float:right;"></i>
               <p>خروج از حساب</p>
             </a>
           </li>
@@ -198,8 +190,8 @@
         -->
       </div>
       <div class="content">
-        <div class="row">
-          <div class="col-lg-6">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
             <div class="card card-chart">
               <div class="card-header">
                 <h4 class="card-title"><span class="my-primary-btn " ><b>نسخه های من</b></span></h4>
@@ -314,22 +306,22 @@
                 <div class="chart-area" id="notifArea" style="overflow:auto;" >
                 <div class="alert alert-info alert-with-icon" data-notify="container" style="" >
                       <button type="button" aria-hidden="true" class="close" >
-                        <i class="now-ui-icons ui-1_simple-remove" style="margin-right:-2px; "></i>
+                        <i class="fa  fa-times-circle" style="margin-right:-2px; "></i>
                       </button>
-                      <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
+                      <span data-notify="icon" class="fa fa-bell"></span>
                       <span data-notify="message" style="text-align:right; margin-right:25px;">1111</span>
                     </div>
                 
                     <div class="alert alert-info alert-with-icon" data-notify="container" >
                       <button type="button" aria-hidden="true" class="close" >
-                        <i class="now-ui-icons ui-1_simple-remove" style="margin-right:-2px;"></i>
+                        <i class="fa fa-times-circle" style="margin-right:-2px;"></i>
                       </button>
                       <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
                       <span data-notify="message" style="text-align:right; margin-right:25px;">2222</span>
                     </div>
                     <div class="alert alert-info alert-with-icon" data-notify="container" >
                       <button type="button" aria-hidden="true" class="close" >
-                        <i class="now-ui-icons ui-1_simple-remove"style="margin-right:-2px;"></i>
+                        <i class="fa  fa-times-circle"style="margin-right:-2px;"></i>
                       </button>
                       <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
                       <span data-notify="message" style="text-align:right; margin-right:25px;">3333</span>
@@ -339,22 +331,10 @@
 
             </div>
           </div>
-          <div class="col-lg-2 col-md-6">
-            <div class="card card-chart">
-              <div class="card-header">
-                <h4 class="card-title">نمیدونم چی بذارم</h4>
-              </div>
-              <div class="card-body">
-                <div class="chart-area">
-                
-                </div>
-              </div>
-              
-            </div>
-          </div>
+
         </div>
-        <div class="row">
-          <div class="col-md-6">
+        <div class="row justify-content-center">
+         <!-- <div class="col-md-6">
             <div class="card ">
               <div class="card-header ">
                 <h4 class="card-title"><span class="my-primary-btn " ><b>آخرین تراکنش های مالی</b></span></h4>
@@ -473,90 +453,90 @@
               </div>
               
             </div>
-          </div>
-          <div class="col-md-6">
+          </div> -->
+          <div class="col-md-10">
             <div class="card">
               <div class="card-header">
                 <h4 class="card-title"> <span class="my-primary-btn" ><b>آخرین نوبت های من</b></span></h4>
               </div>
               <div class="card-body" id="appointments">
-                <div class="table-responsive">
-                  <table class="table" style="text-align:right; direction:rtl;">
-                    <thead class=" text-info">
-                      <th>
-                        نام پزشک
-                      </th>
-                      <th>
-                        شهر
-                      </th>
-                      <th>
-                        تخصص
-                      </th>
-                      <th class="text-right">
-                        تاریخ اخذ نوبت
-                      </th>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          -------------
-                        </td>
-                        <td>
-                          ------
-                        </td>
-                        <td>
-                          -----------
-                        </td>
-                        <td class="text-right">
-                          -----
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          -------------
-                        </td>
-                        <td>
-                          ------
-                        </td>
-                        <td>
-                          -----------
-                        </td>
-                        <td class="text-right">
-                          -----
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          -------------
-                        </td>
-                        <td>
-                          ------
-                        </td>
-                        <td>
-                          -----------
-                        </td>
-                        <td class="text-right">
-                          -----
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          -------------
-                        </td>
-                        <td>
-                          ------
-                        </td>
-                        <td>
-                          -----------
-                        </td>
-                        <td class="text-right">
-                          -----
-                        </td>
-                      </tr>
-                      
-                    </tbody>
-                  </table>
-                </div>
+<!--                <div class="table-responsive">-->
+<!--                  <table class="table" style="text-align:right; direction:rtl;">-->
+<!--                    <thead class=" text-info">-->
+<!--                      <th>-->
+<!--                        نام پزشک-->
+<!--                      </th>-->
+<!--                      <th>-->
+<!--                        شهر-->
+<!--                      </th>-->
+<!--                      <th>-->
+<!--                        تخصص-->
+<!--                      </th>-->
+<!--                      <th class="text-right">-->
+<!--                        تاریخ اخذ نوبت-->
+<!--                      </th>-->
+<!--                    </thead>-->
+<!--                    <tbody>-->
+<!--                      <tr>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          &#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td class="text-right">-->
+<!--                          -&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                      </tr>-->
+<!--                      <tr>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          &#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td class="text-right">-->
+<!--                          -&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                      </tr>-->
+<!--                      <tr>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          &#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td class="text-right">-->
+<!--                          -&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                      </tr>-->
+<!--                      <tr>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          &#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td class="text-right">-->
+<!--                          -&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                      </tr>-->
+<!--                      -->
+<!--                    </tbody>-->
+<!--                  </table>-->
+<!--                </div>-->
               </div>
             </div>
           </div>
