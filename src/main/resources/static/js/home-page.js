@@ -10,8 +10,8 @@ function isLogin(){
     if(token!==null) {
         let decode = (atob(token));
         let userInformation = decode.split(':');
-        $('#nav-login').css("display","none");
-        $('#nav-profile .btn').text(`${userInformation[2]}`);
+        // $('#nav-login').css("display","none");
+        $('#nav-profile .btn');
 
     }
     else{

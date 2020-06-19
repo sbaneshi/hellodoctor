@@ -4726,8 +4726,17 @@ Created using IcoMoon - icomoon.io
 
 .card label {
     font-size: 0.8571em;
-    margin-bottom: 5px;
-    color: #9A9A9A;
+    margin:0 0 5px 0;
+    color: #134E5E;
+    border:2px solid #bce3dd;
+    font-weight: 700;
+    background-color: #bce3dd;
+    /*font-family: ;*/
+    font-size: 14px;
+    line-height: 1.5;
+    border-radius:15px;
+    padding: 5px;
+
 }
 
 .card .card-footer {

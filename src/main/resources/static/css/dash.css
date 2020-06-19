@@ -165,25 +165,24 @@ i {
     }
 }
 
+
 .login-profile-container {
-    left: 20px;
     text-align: center;
-    height: 50px;
-    min-width: 130px;
-    padding: 5px;
-    font-size: 1.1rem;
-    border-radius: 10px;
-    background-color: #def4f0;
-    position: relative;
+    max-width: 52px;
+    max-height: 52px;
+    margin-left: 20px;
+    border-radius: 50%;
+    border:2px solid #def4f0;
+    background-color: #134E5E;
 }
 
 .login-profile-container-img {
     position: relative;
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
     z-index: 1000;
-    right: 25px;
-    color: #134E5E;
+    color: #def4f0;
+
     border-radius: 50%;
     box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.5);
 }
@@ -275,10 +274,15 @@ i {
 
 .bootstrap-select .dropdown-menu.inner li a,
 .dropdown-menu .dropdown-item {
-    font-size: .8571em;
     padding-top: .6rem;
     padding-bottom: .6rem;
     margin-top: 5px;
+    background-color: #03BFCB;
+    border: 1px solid #134E5E;
+    border-radius: 10px;
+    color: #231E39;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
     transition: all .15s linear
 }
 
