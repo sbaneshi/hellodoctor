@@ -25,7 +25,7 @@ public class PatientController extends BaseController {
     }
 
     @PostMapping("/signup/patient")
-    public Patient signUp(@RequestParam String phoneNumber, @RequestParam String password, int insuranceId) {
-        return patientService.signUp(phoneNumber, password, insuranceId);
+    public Patient signUp(@RequestParam String phoneNumber, @RequestParam String password, @RequestParam String firstName, @RequestParam String lastName, @RequestParam int insuranceId) {
+        return patientService.signUp(phoneNumber, password, firstName, lastName, insuranceId);
     }
 }
