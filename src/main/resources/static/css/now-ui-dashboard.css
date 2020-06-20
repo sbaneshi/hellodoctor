@@ -1349,7 +1349,8 @@ fieldset[disabled] .btn-link.active {
 }
 
 .form-control:focus {
-    border: 1px solid #f96332;
+    /*border: 1px solid #f96332;*/
+    border:1px solid #134E5E;
     -webkit-box-shadow: none;
     box-shadow: none;
     outline: 0 !important;
@@ -1910,10 +1911,10 @@ h4.title+.category,
 
 h5,
 .h5 {
+    height: 47px;
     text-align: center;
     font-size: 1.57em;
     line-height: 1.4em;
-    margin-bottom: 15px;
 }
 
 h6,
@@ -3047,7 +3048,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 }
 
 .alert .close {
-    color: #FFFFFF !important;
+    color:#134E5E;
     opacity: .9;
     text-shadow: none;
     line-height: 0;
@@ -3055,7 +3056,8 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 }
 
 .alert span[data-notify="icon"] {
-    font-size: 22px;
+    font-size: 20px;
+    color:#134E5E;
     display: block;
     right: 19px;
     position: absolute;
@@ -4653,6 +4655,11 @@ Created using IcoMoon - icomoon.io
     min-height: 325px;
     padding: 15px 15px 10px 15px;
 }
+.card .card-body p{
+    font-size: 20px;
+    text-align: center;
+    text-shadow: 1px 1px 4px #134E5E;
+}
 
 .card .card-body.table-full-width {
     padding-left: 0;
@@ -4737,6 +4744,11 @@ Created using IcoMoon - icomoon.io
     border-radius:15px;
     padding: 5px;
 
+}
+.card .phonevalidate,.card .emailvalidate,.card .passvalidate{
+    margin-right: 5px;
+    color:#f96332;
+    font-size: 12px;
 }
 
 .card .card-footer {
@@ -5869,10 +5881,10 @@ Created using IcoMoon - icomoon.io
     color: #FF3636;
     background-color: white;
     border: 2px solid #FF3636;
-    border-radius: 15px;
-    font-size: 14px;
+    border-radius: 20px;
+    font-size: 20px;
     font-weight: bold;
-    padding: 3px 7px;
+    padding: 5px 7px;
     position: absolute;
 }
 
@@ -5934,8 +5946,6 @@ Created using IcoMoon - icomoon.io
 
 .my-md-form {
     position: relative;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
 }
 
 .my-file-field {
@@ -5947,7 +5957,6 @@ Created using IcoMoon - icomoon.io
     z-index: 1;
     display: inline-block;
     padding: 0;
-    margin: 10px;
     overflow: hidden;
     vertical-align: middle;
     cursor: pointer;
@@ -5985,11 +5994,11 @@ a:not([href]):not([tabindex]):hover {
 
 a.my-waves-effect,
 a.my-waves-light {
-    display: inline-block;
+    display: inline;
 }
 
 .my-mt-0 {
-    margin-top: 0 !important;
+    margin: 0 !important;
 }
 
 .my-float-right {
@@ -6003,11 +6012,10 @@ a.my-waves-light {
     width: inherit;
     color: #fff;
     text-align: center;
+    font-size: 1.25rem;
+
 }
 
-.my-btn-floating i {
-    font-size: 1.25rem;
-}
 
 .my-btn-floating .fa {
     margin-top: 13px;
@@ -6164,6 +6172,17 @@ position: absolute;
     display: inline-block;
     position: relative;
 }
+.valid{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #757575;
+    width: 100%;
+    height: 1px;
+    color: white;
+    text-align: right;
+}
+
 
 
 /*# sourceMappingURL=dashboard-free.css.map */

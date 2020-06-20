@@ -27,6 +27,10 @@
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <link rel="stylesheet" href="https://cdn.map.ir/web-sdk/1.4.2/css/mapp.min.css">
+<link rel="stylesheet" href="https://cdn.map.ir/web-sdk/1.4.2/css/fa/style.css">
+    <!-- Your styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- CSS Files -->
@@ -50,15 +54,25 @@
               </div>
               <div class="card-body" style="height:10px; min-height:10px;">
                 <div class="author">
-                  <a href="#" style="text-decoration:none;">
                     <img class="avatar border-gray" src="https://mdbootstrap.com/img/Photos/Others/placeholder-avatar.jpg" alt="..." style="margin-top:-90px;">
-                    
-                    <h5 class="title" style="color:#134E5E; "><i class="fa fa-user" style="margin-left:10px;"></i>سجاد رحیمی</h5>
-                  </a>
-                  <p class="description">
-                    
-                  </p>
-            
+                    <div class="title" >
+                        <form class="my-md-form" style="direction:rtl;" >
+                            <div class="my-file-field">
+                                <a class="my-btn-floating my-peach-gradient my-waves-effect my-waves-light my-mt-0 my-float-right">
+
+                                    <i class="fa fa-paperclip" aria-hidden="true" ></i>
+
+                                    <input type="file">
+                                </a>
+
+
+
+                            </div>
+                        </form>
+                        <h5 style="padding:5px; color:#134E5E;font-weight: 700;">
+                            سجاد رحیمی</h5></div>
+
+
                 </div>
                  
               </div>
@@ -114,7 +128,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="#pablo">----</a>
+            <a class="navbar-brand" href="home.html">بازگشت به سایت</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -177,7 +191,7 @@
                 Google Maps
               </div>
               <div class="card-body ">
-                <div id="map" class="map"></div>
+                <div id="app" class="map"></div>
               </div>
               <hr style=" margin:0px 50px 0px 50px;">
               <div class="card-footer" >
@@ -192,10 +206,10 @@
              <div class="col-md-12">
             <div class="card card-plain"> 
               <div class="card-header">
-                <h4 class="card-title"> <span class="primary " style="border-radius:10px; background-color:#ffcd3c;border: 1px solid #ffcd3c; color:white;"><b>جدول پزشکان من</b></span></h4>
+                <h4 class="card-title"> <span class="my-primary-btn"><b>جدول پزشکان من</b></span></h4>
                 <div class="dropdown">
                   <button type="button" class="btn btn-round btn-outline-default dropdown-toggle btn-simple btn-icon no-caret" data-toggle="dropdown">
-                    <i class="now-ui-icons loader_gear"></i>
+                    <i class="fa fa-pencil"></i>
                   </button>
                   <div class="dropdown-menu dropdown-menu-left" style="text-align:right;" >
                     <a class="dropdown-item" href="#"><button class="btn btn-info btn-group-xs small-btn" style="border-radius:20px;margin:0px;">پین کردن پزشکان روی نقشه</button></a>
@@ -205,116 +219,117 @@
                 </div>
               </div>
               
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table" style="text-align:right; direction:rtl;">
-                    <thead class=" text-info">
-                      <th>
-                        ردیف
-                      </th>
-                      <th>
-                        نام پزشک
-                      </th>
-                      <th>
-                        شهر
-                      </th>
-                      <th>
-                        تخصص
-                      </th>
-                      <th class="text-right">
-                        تاریخ اخذ نوبت
-                      </th>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          -------------
-                        </td>
-                        <td>
-                          ------
-                        </td>
-                        <td>
-                          -----------
-                        </td>
-                        <td>
-                          -----------
-                        </td>
-                        
-                        <td class="text-right">
-                          -----
-                        </td>
-                        <td>
-                          <button type="button" class="btn btn-info btn-group-xs " style="border-radius:20px;">مشاهده پروفایل</button>
+              <div class="card-body" id="mydoctors">
+                  <p></p>
+<!--                <div class="table-responsive">-->
+<!--                  <table class="table" style="text-align:right; direction:rtl;">-->
+<!--                    <thead class=" text-info">-->
+<!--                      <th>-->
+<!--                        ردیف-->
+<!--                      </th>-->
+<!--                      <th>-->
+<!--                        نام پزشک-->
+<!--                      </th>-->
+<!--                      <th>-->
+<!--                        شهر-->
+<!--                      </th>-->
+<!--                      <th>-->
+<!--                        تخصص-->
+<!--                      </th>-->
+<!--                      <th class="text-right">-->
+<!--                        تاریخ اخذ نوبت-->
+<!--                      </th>-->
+<!--                    </thead>-->
+<!--                    <tbody>-->
+<!--                      <tr>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          &#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        -->
+<!--                        <td class="text-right">-->
+<!--                          -&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          <a href="#" type="button" class="btn btn-info btn-group-xs " style="border-radius:20px;">مشاهده پروفایل</a>-->
 
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          -------------
-                        </td>
-                        <td>
-                          ------
-                        </td>
-                        <td>
-                          -----------
-                        </td>
-                        <td>
-                          -----------
-                        </td>
-                        <td class="text-right">
-                          -----
-                        </td>
-                        <td>
-                          <button type="button" class="btn btn-info btn-group-xs " style="border-radius:20px;">مشاهده پروفایل</button>
+<!--                        </td>-->
+<!--                      </tr>-->
+<!--                      <tr>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          &#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td class="text-right">-->
+<!--                          -&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          <button type="button" class="btn btn-info btn-group-xs " style="border-radius:20px;">مشاهده پروفایل</button>-->
 
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          -------------
-                        </td>
-                        <td>
-                          ------
-                        </td>
-                        <td>
-                          -----------
-                        </td>
-                        <td>
-                          -----------
-                        </td>
-                        <td class="text-right">
-                          -----
-                        </td>
-                        <td>
-                          <button type="button" class="btn btn-info btn-group-xs " style="border-radius:20px;">مشاهده پروفایل</button>
+<!--                        </td>-->
+<!--                      </tr>-->
+<!--                      <tr>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          &#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td class="text-right">-->
+<!--                          -&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          <button type="button" class="btn btn-info btn-group-xs " style="border-radius:20px;">مشاهده پروفایل</button>-->
 
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          -------------
-                        </td>
-                        <td>
-                          ------
-                        </td>
-                        <td>
-                          -----------
-                        </td>
-                        <td>
-                          -----------
-                        </td>
-                        <td class="text-right">
-                          -----
-                        </td>
-                        <td>
-                          <button type="button" class="btn btn-info btn-group-xs " style="border-radius:20px;">مشاهده پروفایل</button>
+<!--                        </td>-->
+<!--                      </tr>-->
+<!--                      <tr>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          &#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td class="text-right">-->
+<!--                          -&#45;&#45;&#45;&#45;-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                          <button type="button" class="btn btn-info btn-group-xs " style="border-radius:20px;">مشاهده پروفایل</button>-->
 
-                        </td>
-                      </tr>
-                      
-                    </tbody>
-                  </table>
-                </div>
+<!--                        </td>-->
+<!--                      </tr>-->
+<!--                      -->
+<!--                    </tbody>-->
+<!--                  </table>-->
+<!--                </div>-->
               </div>
             </div>
           </div>
@@ -425,13 +440,17 @@
     </footer>
     </div>
   </div>
+<script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/mapp.env.js"></script>
+<script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/mapp.min.js"></script>
+ 
+
   <!--   Core JS Files   -->
   <script src="js/core/jquery.min.js"></script>
   <script src="js/core/popper.min.js"></script>
   <script src="js/core/bootstrap.min.js"></script>
   <script src="js/plugins/perfect-scrollbar.jquery.min.js"></script>
   <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Chart JS -->
   <script src="js/plugins/chartjs.min.js"></script>
   <!--  Notifications Plugin    -->
@@ -444,7 +463,8 @@
   <script>
     $(document).ready(function() {
       // Javascript method's body can be found in assets/js/demos.js
-      demo.initGoogleMaps();
+
+
     });
   </script>
 </body>

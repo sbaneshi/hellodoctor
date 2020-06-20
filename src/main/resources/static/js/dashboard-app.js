@@ -17,7 +17,7 @@ $(document).ready(function() {
 
 
 });
-// $(" #notifications").click( removeNotif());
+ $(" #notifications").click( removeNotif);
 //classes
 
 
@@ -208,40 +208,31 @@ function loadPrescriptions() {
 function loadAppointments() {
     var html = '';
 
-    var token=localStorage.getItem("token");
+    var token = localStorage.getItem("token");
     console.log(token);
     var decode = (atob(token));
     var userInformation = decode.split(':');
-    // $.ajax({
-    //     type: 'GET',
-    //     headers: {"Authorization" : "Basic " + btoa('09358358474:12345678')},
-    //     url: 'http://localhost:8080/api/patient/full',
-    //     success: function(msg,st) {
-    //         // console.log('wow' + (msg.responseText));
-    //     }
-    //
-    // }).done(function(msg){
-    //     console.log(msg);
-    // });
+
 
     var settings = {
 
         type: "GET",
-        headers:{
-            "Authorization" : "Basic " + btoa( "4321:1234")
+        headers: {
+            "Authorization": "Basic " + btoa(userInformation[0]+":"+userInformation[1])
         },
         url: "http://localhost:8080/api/patient/full",
-        status:{
-            200:function (response) {
+        status: {
+            200: function (response) {
                 alert(response);
             }
         }
     };
-  //  if (!error) {
-        $.ajax(settings).done(function (response) {
-                var Appointment=response.visits;
-                console.log(Appointment);
-                html += `
+    //  if (!error) {
+    $.ajax(settings).done(function (response) {
+        var Appointment = response.visits;
+        console.log(Appointment);
+        if (Appointment) {
+            html += `
                             <div class="table-responsive" >
                                 <table class="table" style="text-align:right; direction:rtl;">
                                     <thead class=" text-info">
@@ -260,8 +251,8 @@ function loadAppointments() {
                                     </thead>
                                     <tbody>
                         `;
-                Appointment.forEach(function(appointment){
-                    html += `
+            Appointment.forEach(function (appointment) {
+                html += `
                         <tr>
                           <td>
                             ${appointment.doctor.name}
@@ -282,32 +273,27 @@ function loadAppointments() {
                         
                         `;
 
-                })
-                    html += `
+            })
+            html += `
                                 </tbody>
                             </table>
                          </div>
 
                          `;
 
-                //saveToLocalStorage("myPrescriptions" , html)
+            //saveToLocalStorage("myPrescriptions" , html)
             $(" #appointments").append(html);
-
-        });
-
-    // else {
-    //     $(" #appointments").append(document.createTextNode("هنوز نسخه ای برای شما آپلود نشده است"));
-    // }
+        } else {
+            $(" #appointments p").append(document.createTextNode("شما هنو نوبتی رزرو نکرده اید"));
+        }
+    });
 }
-
 function removeNotif(event) {
-    if (event.target.classList.contains('ui-1_simple-remove')) {
+    if (event.target.classList.contains('fa-times')) {
         event.target.parentElement.parentElement.remove();
+        localStorage.removeItem("notif");
     };
-    if (event.target.classList.contains('removeAll')) {
-        const notifAreaBody = $("#notifArea");
-        notifAreaBody.remove();
-    };
+
 }
 
 
