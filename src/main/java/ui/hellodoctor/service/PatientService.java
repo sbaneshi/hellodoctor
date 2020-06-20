@@ -38,9 +38,11 @@ public class PatientService {
                 .build();
     }
 
-    public Patient signUp(String phoneNumber, String password, int insuranceId) {
+    public Patient signUp(String phoneNumber, String password, String firsName, String lastName, int insuranceId) {
         Patient patient = Patient.builder()
                 .phoneNumber(phoneNumber)
+                .firstName(firsName)
+                .lastName(lastName)/**/
                 .insuranceId(insuranceId)
                 .build();
         patient.setPassword(password);

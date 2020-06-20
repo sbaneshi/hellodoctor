@@ -2,6 +2,7 @@ package ui.hellodoctor.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.*;
 import ui.hellodoctor.data.domain.Doctor;
 import ui.hellodoctor.data.domain.WorkTime;
@@ -35,8 +36,8 @@ public class DoctorController extends BaseController {
     }
 
     @PostMapping("/signup/doctor")
-    public Doctor signUp(@RequestParam String phoneNumber, @RequestParam String password, @RequestParam String expertise, @RequestParam String city, @RequestParam int maCode) {
-        return doctorService.signUp(phoneNumber, password, expertise, city, maCode);
+    public Doctor signUp(@RequestParam String phoneNumber, @RequestParam String password, @RequestParam String expertise, @RequestParam int maCode) {
+        return doctorService.signUp(phoneNumber, password, expertise, maCode);
     }
 
     @PostMapping("/api/doctor/worktime")
@@ -50,5 +51,14 @@ public class DoctorController extends BaseController {
         assertRole(SecurityUtils.ROLE_DOCTOR);
         doctorService.deleteWorkTime(getPhoneNumber(), id);
         return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/api/doctor/edit")
+    public Doctor edit(@RequestParam @Nullable String firstName, @RequestParam @Nullable String lastName,
+                       @RequestParam @Nullable String email, @RequestParam @Nullable String province,
+                       @RequestParam @Nullable String city, @RequestParam @Nullable String address,
+                       @RequestParam @Nullable Double geoX, @RequestParam @Nullable Double geoY,
+                       @RequestParam @Nullable String expertise) {
+        return doctorService.editDoctor(getPhoneNumber(), firstName, lastName, email, province, city, address, geoX, geoY, expertise);
     }
 }
