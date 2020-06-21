@@ -35,6 +35,12 @@ public abstract class User {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String phoneNumber;
 
+    private String province;
+
+    private String city;
+
+    private String address;
+
     public void setPassword(String password) {
         this.password = PASSWORD_ENCODER.encode(password);
     }

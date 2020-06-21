@@ -20,12 +20,6 @@ import java.util.List;
 @NoArgsConstructor
 public class Doctor extends User {
 
-    private String province;
-
-    private String city;
-
-    private String address;
-
     private double geoX;
 
     private double geoY;

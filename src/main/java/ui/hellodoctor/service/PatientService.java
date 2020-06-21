@@ -1,5 +1,6 @@
 package ui.hellodoctor.service;
 
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
@@ -48,5 +49,26 @@ public class PatientService {
         patient.setPassword(password);
 
         return patientRepository.save(patient);
+    }
+
+    public Patient editPatient(@NonNull String phoneNumber, String firstName, String lastName, String email, String province,
+                               String city, String address) {
+        Patient.PatientBuilder<?,?> builder = patientRepository.findByPhoneNumber(phoneNumber).get().toBuilder();
+
+        if (firstName != null)
+            builder.firstName(firstName);
+        if (lastName != null)
+            builder.lastName(lastName);
+        if (email != null)
+            builder.email(email);
+        if (province != null)
+            builder.province(province);
+        if (city != null)
+            builder.city(city);
+        if (address != null)
+            builder.address(address);
+
+        patientRepository.save(builder.build());
+        return getFullPatient(phoneNumber);
     }
 }
