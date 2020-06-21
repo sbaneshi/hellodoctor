@@ -28,6 +28,8 @@ public class Doctor extends User {
 
     private String expertise;
 
+    private String bio;
+
     @OneToMany(fetch = FetchType.LAZY)
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private List<WorkTime> workTimes;

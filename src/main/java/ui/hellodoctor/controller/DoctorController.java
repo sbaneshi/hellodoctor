@@ -2,6 +2,7 @@ package ui.hellodoctor.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import ui.hellodoctor.data.domain.Doctor;
 import ui.hellodoctor.data.domain.WorkTime;
@@ -9,6 +10,7 @@ import ui.hellodoctor.security.SecurityUtils;
 import ui.hellodoctor.service.DoctorService;
 
 import java.time.DayOfWeek;
+import java.util.List;
 
 @CrossOrigin
 @RestController
@@ -28,9 +30,17 @@ public class DoctorController extends BaseController {
         return doctorService.getFullDoctor(getPhoneNumber());
     }
 
-    @GetMapping("/api/doctor/full")
-    public Doctor getFullDoctor(int id) {
+    @GetMapping("/api/doctor/full_by_id")
+    public Doctor getFullDoctorById(int id) {
         return doctorService.getFullDoctor(id);
+    }
+
+    @GetMapping("/api/doctors")
+    public List<Doctor> getAllDoctors(String expertise, String city) {
+        return doctorService.getDoctors(
+                StringUtils.hasText(expertise) ? expertise : "",
+                StringUtils.hasText(city) ? city : ""
+        );
     }
 
     @CrossOrigin(origins = "http://127.0.0.1:5500")

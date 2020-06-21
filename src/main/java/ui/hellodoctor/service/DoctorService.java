@@ -30,6 +30,15 @@ public class DoctorService {
         return fullDoctor(doctor);
     }
 
+    public List<Doctor> getDoctors(String expertise, String city) {
+        return doctorRepository.findAllByExpertiseStartsWithAndCityStartsWith(expertise, city).stream()
+                .map(d -> d.toBuilder()
+                        .visits(null)
+                        .phoneNumber(null)
+                        .build())
+                .collect(Collectors.toList());
+    }
+
     public Doctor login(String phoneNumber, String password) {
         Doctor doctor = doctorRepository.findByPhoneNumber(phoneNumber).orElseThrow(IllegalArgumentException::new);
         Assert.isTrue(User.PASSWORD_ENCODER.matches(password, doctor.getPassword()), "Wrong Credentials!");
