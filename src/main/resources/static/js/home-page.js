@@ -1,18 +1,33 @@
-$(document).ready(function(){
+
+// external js: flickity.pkgd.js
+
+let $carousel = $('.carousel').flickity({
+    initialIndex: 0,
+    wrapAround:false,
+    pageDots:true
+});
+
+$('.button--append').on( 'click', function() {
+
+});
+
+var cellCount = 3;
+
+function makeCellHtml() {
+    cellCount++;
+    return '<div class="carousel-cell">' + cellCount + '</div>';
+}
+
+
+$(document).ready( function(){
 
 isLogin();
 $("#logout").click(logout);
 loadDoctor();
-$('#loginpage').click(Loadlogin);
-$(".dropdown-toggle").dropdown();
 
 
 })
-function Loadlogin() {
-    console.log("sss");
-    window.location="index.html"
-}
-function isLogin(){
+async function isLogin(){
     let token=localStorage.getItem("token");
 
     if(token!==null) {
@@ -46,12 +61,17 @@ function loadDoctor() {
         }
     };
     $.ajax(settings).done(function (response) {
+
+
+
+
+
+
         let html = '';
         let doctor=response;
-        console.log(doctor);
+        console.log(doctor)
         doctor.forEach(function(dr){
-            html += `
-<div class="carousel-cell">
+            html = `
                         <div class="card-container">
                         <span class="pro"><i class="fa fa-heartbeat" style="font-size:36px; color:white;"></i></span>
                         <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
@@ -75,14 +95,17 @@ function loadDoctor() {
                             </ul>
                         </div>
                     </div>
-                    </div>
-
                         `;
+            $("#doctor-list").flickity('append', $(makeCellHtml(html)));
 
+        });
+        // $("#doctor-list").flickity({
+        //     wrapAround: true,
+        //     pageDots: false
+        // });
+        var $cellElems = html;
+        $carousel.flickity( 'append', $cellElems );
 
-        })
-        console.log(html);
-        $(" #doctor-list").append(html);
 
 
         //saveToLocalStorage("myPrescriptions" , html)
@@ -90,3 +113,16 @@ function loadDoctor() {
 
     });
 }
+
+// external js: flickity.pkgd.js
+
+
+
+var cellCount = 3;
+
+function makeCellHtml(html) {
+    cellCount++;
+    return '<div>' + html + '</div>';
+}
+
+
