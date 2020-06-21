@@ -1,0 +1,1250 @@
+<!doctype html>
+<html lang="en" dir="rtl">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon.ico">
+
+	<title>ثبت نام</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png" />
+	<link rel="icon" type="image/png" href="assets/img/favicon.png" />
+
+	<link href="https://fonts.googleapis.com/css2?family=Almarai&display=swap" rel="stylesheet">
+<!-- map -->
+
+<link rel="stylesheet" href="dist/css/mapp.min.css">
+<link rel="stylesheet" href="dist/css/fa/style.css" data-locale="true">
+
+	<!--     Fonts and icons     -->
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+
+	<!-- CSS Files -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/css/material-bootstrap-wizard.css" rel="stylesheet" />
+
+	<!-- CSS Just for demo purpose, don't include it in your project -->
+	<link href="assets/css/demo.css" rel="stylesheet" />
+
+	<style>
+		*{
+			font-family: almarai;
+		}
+		
+	</style>
+</head>
+
+<body>
+	<div class="image-container set-full-height" style="background-color: rgb(21, 15, 54);">
+	    <!--   Creative Tim Branding   -->
+	    
+
+		<!--  Made With Material Kit  -->
+	
+
+	    <!--   Big container   -->
+	    <div class="container">
+	        <div class="row">
+		        <div class="col-sm-8 col-sm-offset-2">
+		            <!--      Wizard container        -->
+		            <div class="wizard-container">
+		                <div class="card wizard-card" data-color="green" id="wizardProfile">
+		                    <form action="" method="">
+		                <!--        You can switch " data-color="purple" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
+
+		                    	<div class="wizard-header">
+		                        	<h3 class="wizard-title">
+		                        	   ادامه ثبت نام
+									</h3>
+									<hr>
+									<h5>لطفا همه موارد را با دقت پر کنید</h5>
+		                    	</div>
+								<div class="wizard-navigation">
+									<ul>
+			                            <li><a href="#about" data-toggle="tab">مشخصات شما</a></li>
+			                            <li><a href="#account" data-toggle="tab">ساعت کاری</a></li>
+			                            <li><a href="#address" data-toggle="tab">مطب شما</a></li>
+			                        </ul>
+								</div>
+
+		                        <div class="tab-content">
+		                            <div class="tab-pane" id="about">
+		                              <div class="row">
+		                                	<br> <br>
+		                                	<div class="col-sm-4 col-sm-offset-1">
+		                                    	<div class="picture-container">
+		                                        	<div class="picture">
+                                        				<img src="assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title=""/>
+		                                            	<input type="file" id="wizard-picture">
+		                                        	</div>
+		                                        	<h5> عکس شما <span style="font-size:12px ;">(اختیاری)</span></h5>
+		                                    	</div>
+		                                	</div>
+		                                	<div class="col-sm-6">
+												<div class="input-group">
+													<span class="input-group-addon">
+														<i class="material-icons">face</i>
+													</span>
+													<div class="form-group label-floating1">
+			                                          <label class="control-label">نام </label>
+			                                          <input name="firstname" type="text" class="form-control" id="name">
+			                                        </div>
+												</div>
+
+												<div class="input-group">
+													<span class="input-group-addon">
+														<i class="material-icons">record_voice_over</i>
+													</span>
+													<div class="form-group label-floating1">
+													  <label class="control-label">نام خانوادگی</label>
+													  <input name="lastname" type="text" class="form-control" id="family">
+													</div>
+												</div>
+		                                	</div>
+										  <div class="col-sm-10 col-sm-offset-1">
+											  <div class="input-group">
+													<span class="input-group-addon">
+														<i class="material-icons">assignment_ind</i>
+													</span>
+												  <div class="form-group label-floating1">
+													  <label class="control-label">بیوگرافی </label>
+													  <input name="bio" type="text" class="form-control" id="bio">
+												  </div>
+											  </div>
+										  </div>
+		                                	<div class="col-sm-10 col-sm-offset-1">
+												<div class="input-group">
+													<span class="input-group-addon">
+														<i class="material-icons">email</i>
+													</span>
+													<div class="form-group label-floating1">
+			                                            <label class="control-label">ایمیل </label>
+			                                            <input name="email" type="email" class="form-control" id="email">
+			                                        </div>
+												</div>
+		                                	</div>
+		                            	</div>
+		                            </div>
+		                            <div class="tab-pane" id="account">
+		                                <h4 class="info-text" style="text-align: right;">روز های حضور خود در مطب را وارد کنید </h4>
+		                                <div class="row flex-nowrap" style="display: flex;justify-content: space-between">
+		                                        <div class="col-sm-4" style="text-align: center !important;">
+		                                            <div class="choice" data-toggle="wizard-checkbox">
+		                                                <input type="checkbox" name="jobb" value="saturday">
+		                                                <div class="icon">
+		                                                    <i >شنبه</i>
+		                                                </div>
+		                                                
+													</div>
+													<button type="button" class="btn btn-info btn-sm" disabled  data-toggle="modal" data-target="#myModal0" data-backdrop="static" data-keyboard="false">ساعت حضور</h6>
+		                                        </div>
+		                                        <div class="col-sm-4" style="text-align: center !important;">
+		                                            <div class="choice" data-toggle="wizard-checkbox">
+		                                                <input type="checkbox" name="jobb" value="sunday">
+		                                                <div class="icon">
+		                                                    <i >یک شنبه</i>
+		                                                </div>
+		                                               
+													</div>
+													<button type="button" class="btn btn-info btn-sm" disabled  data-toggle="modal" data-target="#myModal1" data-backdrop="static" data-keyboard="false">ساعت حضور</h6>
+		                                        </div>
+		                                        <div class="col-sm-4" style="text-align: center !important;">
+		                                            <div class="choice" data-toggle="wizard-checkbox">
+		                                                <input type="checkbox" name="jobb" value="monday">
+		                                                <div class="icon">
+															<i >دوشنبه</i>
+		                                                </div>
+		                                                
+													</div>
+													<button type="button" class="btn btn-info btn-sm" disabled  data-toggle="modal" data-target="#myModal2" data-backdrop="static" data-keyboard="false">ساعت حضور</h6>
+		                                        </div>
+		                                    
+										</div>
+										<div class="row flex-nowrap"  style="display: flex;justify-content: space-between">
+											<div class="col-sm-4" style="text-align: center !important;">
+												<div class="choice" data-toggle="wizard-checkbox">
+													<input type="checkbox" name="jobb" value="tuesday">
+													<div class="icon">
+														<i >سه شنبه</i>
+													</div>
+													
+												</div>
+												<button type="button" class="btn btn-info btn-sm" disabled  data-toggle="modal" data-target="#myModal3" data-backdrop="static" data-keyboard="false">ساعت حضور</h6>
+											</div>
+											<div class="col-sm-4" style="text-align: center !important;">
+												<div class="choice" data-toggle="wizard-checkbox">
+													<input type="checkbox" name="jobb" value="wednesday">
+													<div class="icon">
+														<i>چهارشنبه</i>
+													</div>
+													
+												</div>
+												<button type="button" class="btn btn-info btn-sm" disabled  data-toggle="modal" data-target="#myModal4" data-backdrop="static" data-keyboard="false">ساعت حضور</h6>
+											</div>
+											<div class="col-sm-4" style="text-align: center !important;">
+												<div class="choice" data-toggle="wizard-checkbox">
+													<input type="checkbox" name="jobb" value="thursday">
+													<div class="icon">
+														<i>پنج شنبه</i>
+													</div>
+													
+												</div>
+												<button type="button" class="btn btn-info btn-sm" disabled  data-toggle="modal" data-target="#myModal5" data-backdrop="static" data-keyboard="false">ساعت حضور</h6>
+											</div>
+											
+										
+									</div>
+										
+											<div class="col-sm-4 col-offset-4" style="display: block;float: none;text-align: center !important;">
+												<div class="choice" data-toggle="wizard-checkbox">
+													<input type="checkbox" name="jobb" value="friday">
+													<div class="icon">
+														<i> جمعه</i>
+													</div>
+													
+												</div>
+												<button type="button" class="btn btn-info btn-sm" disabled data-toggle="modal" data-target="#myModal6" data-backdrop="static" data-keyboard="false">ساعت حضور</h6>
+											</div>
+<hr>
+											<div class="col-md-10" id="setCountPerHour" style="float: none !important;">
+												<label class="my-right-align"  style="float: right; line-height: 1.65;" for="everyVisit">مدت زمان حدودی هر ویزیت: <small>(دقیقه)</small></label>
+
+												<select name="evening-end" id="everyVisit">
+													<option value="15">15 دقیقه</option>
+													<option value="20">20 دقیقه</option>
+													<option value="30">30 دقیقه</option>
+												</select>
+
+											  </div>
+									</div>
+									
+									<!-- saturday -->
+									<div class="modal " id="myModal0">
+										<div class="modal-dialog modal-dialog-centered">
+										  <div class="modal-content">
+										  
+											<!-- Modal Header -->
+											<div class="modal-header" id="saturday">
+											  <h4 class="modal-title">تنظیم ساعت شنبه</h4>
+											 
+											</div>
+											
+											<!-- Modal body -->
+											<div class="modal-body">
+											<div class="evening">
+												<label for="evening">شیفت صبح</label>
+												<input type="checkbox" name="" class="evening-checkbox">
+												<hr>
+
+												<div class="row" style="display: none;">
+													<div class="col-xs-5">
+														
+														<label for="evening-end">ساعت پایان </label>
+														
+													</div>
+													<div class="col-xs-5">
+															
+															<label for="evening-start">ساعت شروع </label>
+													</div>
+													<div class="col-xs-5">
+														<select name="evening-end" id="evening-end">
+															<option value="6">06:00</option>
+															<option value="7">07:00</option>
+															<option value="8">08:00</option>
+															<option value="9">09:00</option>
+															<option value="10">10:00</option>
+															<option value="11">11:00</option>
+															<option value="12">12:00</option>
+															<option value="13">13:00</option>
+															<option value="14">14:00</option>
+															<option value="15">15:00</option>
+														</select>
+													</div>
+													<div class="col-xs-5">
+														<select name="evening-start" class="evening-start">
+															<option value="6">06:00</option>
+															<option value="7">07:00</option>
+															<option value="8">08:00</option>
+															<option value="9">09:00</option>
+															<option value="10">10:00</option>
+															<option value="11">11:00</option>
+															<option value="12">12:00</option>
+															<option value="13">13:00</option>
+															<option value="14">14:00</option>
+															<option value="15">15:00</option>
+														</select>
+													</div>
+												</div>
+												  
+												  
+											</div>
+											<br> <br>
+											<div class="afternoon">
+												<label for="afternoon">شیفت بعدازظهر</label>
+												<input type="checkbox" name="" class="afternoon-checkbox">
+												<hr>
+												<div class="row" style="display: none;">
+													<div class="col-xs-5">
+														
+														<label for="afternoon-end">ساعت پایان </label>	
+														
+													</div>
+													<div class="col-xs-5">
+													<label for="afternoon-start">ساعت شروع </label>
+															
+													</div>
+													<div class="col-xs-5">
+														<select name="afternoon-end" id="afternoon-end">
+															<option value="14">14:00</option>
+															<option value="15">15:00</option>
+															<option value="16">16:00</option>
+															<option value="17">17:00</option>
+															<option value="18">18:00</option>
+															<option value="19">19:00</option>
+															<option value="20">20:00</option>
+															<option value="21">21:00</option>
+															<option value="22">22:00</option>
+															<option value="23">23:00</option>
+															<option value="24">24:00</option>
+														</select>
+												
+													</div>
+													<div class="col-xs-5">
+														<select name="afternoon-start" id="afternoon-start">
+															<option value="14">14:00</option>
+															<option value="15">15:00</option>
+															<option value="16">16:00</option>
+															<option value="17">17:00</option>
+															<option value="18">18:00</option>
+															<option value="19">19:00</option>
+															<option value="20">20:00</option>
+															<option value="21">21:00</option>
+															<option value="22">22:00</option>
+															<option value="23">23:00</option>
+															<option value="24">24:00</option>
+														</select>
+														
+													</div>
+												</div>
+												
+											</div>
+											  
+											  
+											  <br>
+											  
+											 
+											</div>
+											
+											<!-- Modal footer -->
+											<div class="modal-footer">
+												<button type="button" class="btn btn-success setday" >ثبت</button>
+												
+											</label>
+											  <button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-bottom: 10px;">بستن</button>
+											  
+											</div>
+											
+										  </div>
+										</div>
+									  </div>
+
+									  <!-- sunday -->
+									  <div class="modal " id="myModal1">
+										<div class="modal-dialog modal-dialog-centered">
+										  <div class="modal-content">
+										  
+											<!-- Modal Header -->
+											<div class="modal-header" id="sunday">
+											  <h4 class="modal-title">تنظیم ساعت یکشنبه</h4>
+											 
+											</div>
+											
+											<!-- Modal body -->
+											<div class="modal-body">
+											<div class="evening">
+												<label for="evening">شیفت صبح</label>
+												<input type="checkbox" name="" class="evening-checkbox">
+												<hr>
+
+												<div class="row" style="display: none;">
+													<div class="col-xs-5">
+														
+														<label for="evening-end">ساعت پایان </label>
+														
+													</div>
+													<div class="col-xs-5">
+															
+															<label for="evening-start">ساعت شروع </label>
+													</div>
+													<div class="col-xs-5">
+														<select name="evening-end" id="evening-end">
+															<option value="6">06:00</option>
+															<option value="7">07:00</option>
+															<option value="8">08:00</option>
+															<option value="9">09:00</option>
+															<option value="10">10:00</option>
+															<option value="11">11:00</option>
+															<option value="12">12:00</option>
+															<option value="13">13:00</option>
+															<option value="14">14:00</option>
+															<option value="15">15:00</option>
+														</select>
+													</div>
+													<div class="col-xs-5">
+														<select name="evening-start" id="evening-start">
+															<option value="6">06:00</option>
+															<option value="7">07:00</option>
+															<option value="8">08:00</option>
+															<option value="9">09:00</option>
+															<option value="10">10:00</option>
+															<option value="11">11:00</option>
+															<option value="12">12:00</option>
+															<option value="13">13:00</option>
+															<option value="14">14:00</option>
+															<option value="15">15:00</option>
+														</select>
+													</div>
+												</div>
+												  
+												  
+											</div>
+											<br> <br>
+											<div class="afternoon">
+												<label for="afternoon">شیفت بعدازظهر</label>
+												<input type="checkbox" name="" class="afternoon-checkbox">
+												<hr>
+												<div class="row" style="display: none;">
+													<div class="col-xs-5">
+														
+														<label for="afternoon-end">ساعت پایان </label>	
+														
+													</div>
+													<div class="col-xs-5">
+													<label for="afternoon-start">ساعت شروع </label>
+															
+													</div>
+													<div class="col-xs-5">
+														<select name="afternoon-end" id="afternoon-end">
+															<option value="14">14:00</option>
+															<option value="15">15:00</option>
+															<option value="16">16:00</option>
+															<option value="17">17:00</option>
+															<option value="18">18:00</option>
+															<option value="19">19:00</option>
+															<option value="20">20:00</option>
+															<option value="21">21:00</option>
+															<option value="22">22:00</option>
+															<option value="23">23:00</option>
+															<option value="24">24:00</option>
+														</select>
+												
+													</div>
+													<div class="col-xs-5">
+														<select name="afternoon-start" id="afternoon-start">
+															<option value="14">14:00</option>
+															<option value="15">15:00</option>
+															<option value="16">16:00</option>
+															<option value="17">17:00</option>
+															<option value="18">18:00</option>
+															<option value="19">19:00</option>
+															<option value="20">20:00</option>
+															<option value="21">21:00</option>
+															<option value="22">22:00</option>
+															<option value="23">23:00</option>
+															<option value="24">24:00</option>
+														</select>
+														
+													</div>
+												</div>
+												
+											</div>
+											  
+											  
+											  <br>
+											  
+											 
+											</div>
+											
+											<!-- Modal footer -->
+											<div class="modal-footer">
+												<button  type="button" class="btn btn-success setday" >ثبت</button>
+												
+											</label>
+											  <button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-bottom: 10px;">بستن</button>
+											  
+											</div>
+											
+										  </div>
+										</div>
+									  </div>
+									  <!-- monday -->
+									  <div class="modal " id="myModal2">
+										<div class="modal-dialog modal-dialog-centered">
+										  <div class="modal-content">
+										  
+											<!-- Modal Header -->
+											<div class="modal-header" id="monday">
+											  <h4 class="modal-title">تنظیم ساعت دوشنبه</h4>
+											 
+											</div>
+											
+											<!-- Modal body -->
+											<div class="modal-body">
+											<div class="evening">
+												<label for="evening">شیفت صبح</label>
+												<input type="checkbox" name="" class="evening-checkbox">
+												<hr>
+
+												<div class="row" style="display: none;">
+													<div class="col-xs-5">
+														
+														<label for="evening-end">ساعت پایان </label>
+														
+													</div>
+													<div class="col-xs-5">
+															
+															<label for="evening-start">ساعت شروع </label>
+													</div>
+													<div class="col-xs-5">
+														<select name="evening-end" id="evening-end">
+															<option value="6">06:00</option>
+															<option value="7">07:00</option>
+															<option value="8">08:00</option>
+															<option value="9">09:00</option>
+															<option value="10">10:00</option>
+															<option value="11">11:00</option>
+															<option value="12">12:00</option>
+															<option value="13">13:00</option>
+															<option value="14">14:00</option>
+															<option value="15">15:00</option>
+														</select>
+													</div>
+													<div class="col-xs-5">
+														<select name="evening-start" id="evening-start">
+															<option value="6">06:00</option>
+															<option value="7">07:00</option>
+															<option value="8">08:00</option>
+															<option value="9">09:00</option>
+															<option value="10">10:00</option>
+															<option value="11">11:00</option>
+															<option value="12">12:00</option>
+															<option value="13">13:00</option>
+															<option value="14">14:00</option>
+															<option value="15">15:00</option>
+														</select>
+													</div>
+												</div>
+												  
+												  
+											</div>
+											<br> <br>
+											<div class="afternoon">
+												<label for="afternoon">شیفت بعدازظهر</label>
+												<input type="checkbox" name="" class="afternoon-checkbox">
+												<hr>
+												<div class="row" style="display: none;">
+													<div class="col-xs-5">
+														
+														<label for="afternoon-end">ساعت پایان </label>	
+														
+													</div>
+													<div class="col-xs-5">
+													<label for="afternoon-start">ساعت شروع </label>
+															
+													</div>
+													<div class="col-xs-5">
+														<select name="afternoon-end" id="afternoon-end">
+															<option value="14">14:00</option>
+															<option value="15">15:00</option>
+															<option value="16">16:00</option>
+															<option value="17">17:00</option>
+															<option value="18">18:00</option>
+															<option value="19">19:00</option>
+															<option value="20">20:00</option>
+															<option value="21">21:00</option>
+															<option value="22">22:00</option>
+															<option value="23">23:00</option>
+															<option value="24">24:00</option>
+														</select>
+												
+													</div>
+													<div class="col-xs-5">
+														<select name="afternoon-start" id="afternoon-start">
+															<option value="14">14:00</option>
+															<option value="15">15:00</option>
+															<option value="16">16:00</option>
+															<option value="17">17:00</option>
+															<option value="18">18:00</option>
+															<option value="19">19:00</option>
+															<option value="20">20:00</option>
+															<option value="21">21:00</option>
+															<option value="22">22:00</option>
+															<option value="23">23:00</option>
+															<option value="24">24:00</option>
+														</select>
+														
+													</div>
+												</div>
+												
+											</div>
+											  
+											  
+											  <br>
+											  
+											 
+											</div>
+											
+											<!-- Modal footer -->
+											<div class="modal-footer">
+												<button type="button" class="btn btn-success setday" >ثبت</button>
+												
+											</label>
+											  <button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-bottom: 10px;">بستن</button>
+											  
+											</div>
+											
+										  </div>
+										</div>
+									  </div>
+
+									  <!-- tuesday -->
+									  <div class="modal " id="myModal3">
+										<div class="modal-dialog modal-dialog-centered">
+										  <div class="modal-content">
+										  
+											<!-- Modal Header -->
+											<div class="modal-header" id="tuesday">
+											  <h4 class="modal-title">تنظیم ساعت سه شنبه</h4>
+											 
+											</div>
+											
+											<!-- Modal body -->
+											<div class="modal-body">
+											<div class="evening">
+												<label for="evening">شیفت صبح</label>
+												<input type="checkbox" name="" class="evening-checkbox">
+												<hr>
+
+												<div class="row" style="display: none;">
+													<div class="col-xs-5">
+														
+														<label for="evening-end">ساعت پایان </label>
+														
+													</div>
+													<div class="col-xs-5">
+															
+															<label for="evening-start">ساعت شروع </label>
+													</div>
+													<div class="col-xs-5">
+														<select name="evening-end" id="evening-end">
+															<option value="6">06:00</option>
+															<option value="7">07:00</option>
+															<option value="8">08:00</option>
+															<option value="9">09:00</option>
+															<option value="10">10:00</option>
+															<option value="11">11:00</option>
+															<option value="12">12:00</option>
+															<option value="13">13:00</option>
+															<option value="14">14:00</option>
+															<option value="15">15:00</option>
+														</select>
+													</div>
+													<div class="col-xs-5">
+														<select name="evening-start" id="evening-start">
+															<option value="6">06:00</option>
+															<option value="7">07:00</option>
+															<option value="8">08:00</option>
+															<option value="9">09:00</option>
+															<option value="10">10:00</option>
+															<option value="11">11:00</option>
+															<option value="12">12:00</option>
+															<option value="13">13:00</option>
+															<option value="14">14:00</option>
+															<option value="15">15:00</option>
+														</select>
+													</div>
+												</div>
+												  
+												  
+											</div>
+											<br> <br>
+											<div class="afternoon">
+												<label for="afternoon">شیفت بعدازظهر</label>
+												<input type="checkbox" name="" class="afternoon-checkbox">
+												<hr>
+												<div class="row" style="display: none;">
+													<div class="col-xs-5">
+														
+														<label for="afternoon-end">ساعت پایان </label>	
+														
+													</div>
+													<div class="col-xs-5">
+													<label for="afternoon-start">ساعت شروع </label>
+															
+													</div>
+													<div class="col-xs-5">
+														<select name="afternoon-end" id="afternoon-end">
+															<option value="14">14:00</option>
+															<option value="15">15:00</option>
+															<option value="16">16:00</option>
+															<option value="17">17:00</option>
+															<option value="18">18:00</option>
+															<option value="19">19:00</option>
+															<option value="20">20:00</option>
+															<option value="21">21:00</option>
+															<option value="22">22:00</option>
+															<option value="23">23:00</option>
+															<option value="24">24:00</option>
+														</select>
+												
+													</div>
+													<div class="col-xs-5">
+														<select name="afternoon-start" id="afternoon-start">
+															<option value="14">14:00</option>
+															<option value="15">15:00</option>
+															<option value="16">16:00</option>
+															<option value="17">17:00</option>
+															<option value="18">18:00</option>
+															<option value="19">19:00</option>
+															<option value="20">20:00</option>
+															<option value="21">21:00</option>
+															<option value="22">22:00</option>
+															<option value="23">23:00</option>
+															<option value="24">24:00</option>
+														</select>
+														
+													</div>
+												</div>
+												
+											</div>
+											  
+											  
+											  <br>
+											  
+											 
+											</div>
+											
+											<!-- Modal footer -->
+											<div class="modal-footer">
+												<button type="button" class="btn btn-success setday" >ثبت</button>
+												
+											</label>
+											  <button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-bottom: 10px;">بستن</button>
+											  
+											</div>
+											
+										  </div>
+										</div>
+									  </div>
+									  <!-- wendsday -->
+									  <div class="modal " id="myModal4">
+										<div class="modal-dialog modal-dialog-centered">
+										  <div class="modal-content">
+										  
+											<!-- Modal Header -->
+											<div class="modal-header">
+											  <h4 class="modal-title ">تنظیم ساعت چهارشنبه</h4>
+											 
+											</div>
+											
+											<!-- Modal body -->
+											<div class="modal-body">
+											<div class="evening">
+												<label for="evening">شیفت صبح</label>
+												<input type="checkbox" name="" class="evening-checkbox">
+												<hr>
+
+												<div class="row" style="display: none;">
+													<div class="col-xs-5">
+														
+														<label for="evening-end">ساعت پایان </label>
+														
+													</div>
+													<div class="col-xs-5">
+															
+															<label for="evening-start">ساعت شروع </label>
+													</div>
+													<div class="col-xs-5">
+														<select name="evening-end" id="evening-end">
+															<option value="6">06:00</option>
+															<option value="7">07:00</option>
+															<option value="8">08:00</option>
+															<option value="9">09:00</option>
+															<option value="10">10:00</option>
+															<option value="11">11:00</option>
+															<option value="12">12:00</option>
+															<option value="13">13:00</option>
+															<option value="14">14:00</option>
+															<option value="15">15:00</option>
+														</select>
+													</div>
+													<div class="col-xs-5">
+														<select name="evening-start" id="evening-start">
+															<option value="6">06:00</option>
+															<option value="7">07:00</option>
+															<option value="8">08:00</option>
+															<option value="9">09:00</option>
+															<option value="10">10:00</option>
+															<option value="11">11:00</option>
+															<option value="12">12:00</option>
+															<option value="13">13:00</option>
+															<option value="14">14:00</option>
+															<option value="15">15:00</option>
+														</select>
+													</div>
+												</div>
+												  
+												  
+											</div>
+											<br> <br>
+											<div class="afternoon">
+												<label for="afternoon">شیفت بعدازظهر</label>
+												<input type="checkbox" name="" class="afternoon-checkbox">
+												<hr>
+												<div class="row" style="display: none;">
+													<div class="col-xs-5">
+														
+														<label for="afternoon-end">ساعت پایان </label>	
+														
+													</div>
+													<div class="col-xs-5">
+													<label for="afternoon-start">ساعت شروع </label>
+															
+													</div>
+													<div class="col-xs-5">
+														<select name="afternoon-end" id="afternoon-end">
+															<option value="14">14:00</option>
+															<option value="15">15:00</option>
+															<option value="16">16:00</option>
+															<option value="17">17:00</option>
+															<option value="18">18:00</option>
+															<option value="19">19:00</option>
+															<option value="20">20:00</option>
+															<option value="21">21:00</option>
+															<option value="22">22:00</option>
+															<option value="23">23:00</option>
+															<option value="24">24:00</option>
+														</select>
+												
+													</div>
+													<div class="col-xs-5">
+														<select name="afternoon-start" id="afternoon-start">
+															<option value="14">14:00</option>
+															<option value="15">15:00</option>
+															<option value="16">16:00</option>
+															<option value="17">17:00</option>
+															<option value="18">18:00</option>
+															<option value="19">19:00</option>
+															<option value="20">20:00</option>
+															<option value="21">21:00</option>
+															<option value="22">22:00</option>
+															<option value="23">23:00</option>
+															<option value="24">24:00</option>
+														</select>
+														
+													</div>
+												</div>
+												
+											</div>
+											  
+											  
+											  <br>
+											  
+											 
+											</div>
+											
+											<!-- Modal footer -->
+											<div class="modal-footer">
+												<button  type="button" class="btn btn-success setday" >ثبت</button>
+												
+											</label>
+											  <button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-bottom: 10px;">بستن</button>
+											  
+											</div>
+											
+										  </div>
+										</div>
+									  </div>
+										<!-- thursday -->
+										<div class="modal " id="myModal5">
+											<div class="modal-dialog modal-dialog-centered">
+											  <div class="modal-content">
+											  
+												<!-- Modal Header -->
+												<div class="modal-header" id="thursday">
+												  <h4 class="modal-title">تنظیم ساعت پنج شنبه</h4>
+												 
+												</div>
+												
+												<!-- Modal body -->
+												<div class="modal-body">
+												<div class="evening">
+													<label for="evening">شیفت صبح</label>
+													<input type="checkbox" name="" class="evening-checkbox">
+													<hr>
+	
+													<div class="row" style="display: none;">
+														<div class="col-xs-5">
+															
+															<label for="evening-end">ساعت پایان </label>
+															
+														</div>
+														<div class="col-xs-5">
+																
+																<label for="evening-start">ساعت شروع </label>
+														</div>
+														<div class="col-xs-5">
+															<select name="evening-end" id="evening-end">
+																<option value="6">06:00</option>
+																<option value="7">07:00</option>
+																<option value="8">08:00</option>
+																<option value="9">09:00</option>
+																<option value="10">10:00</option>
+																<option value="11">11:00</option>
+																<option value="12">12:00</option>
+																<option value="13">13:00</option>
+																<option value="14">14:00</option>
+																<option value="15">15:00</option>
+															</select>
+														</div>
+														<div class="col-xs-5">
+															<select name="evening-start" id="evening-start">
+																<option value="6">06:00</option>
+																<option value="7">07:00</option>
+																<option value="8">08:00</option>
+																<option value="9">09:00</option>
+																<option value="10">10:00</option>
+																<option value="11">11:00</option>
+																<option value="12">12:00</option>
+																<option value="13">13:00</option>
+																<option value="14">14:00</option>
+																<option value="15">15:00</option>
+															</select>
+														</div>
+													</div>
+													  
+													  
+												</div>
+												<br> <br>
+												<div class="afternoon">
+													<label for="afternoon">شیفت بعدازظهر</label>
+													<input type="checkbox" name="" class="afternoon-checkbox">
+													<hr>
+													<div class="row" style="display: none;">
+														<div class="col-xs-5">
+															
+															<label for="afternoon-end">ساعت پایان </label>	
+															
+														</div>
+														<div class="col-xs-5">
+														<label for="afternoon-start">ساعت شروع </label>
+																
+														</div>
+														<div class="col-xs-5">
+															<select name="afternoon-end" id="afternoon-end">
+																<option value="14">14:00</option>
+																<option value="15">15:00</option>
+																<option value="16">16:00</option>
+																<option value="17">17:00</option>
+																<option value="18">18:00</option>
+																<option value="19">19:00</option>
+																<option value="20">20:00</option>
+																<option value="21">21:00</option>
+																<option value="22">22:00</option>
+																<option value="23">23:00</option>
+																<option value="24">24:00</option>
+															</select>
+													
+														</div>
+														<div class="col-xs-5">
+															<select name="afternoon-start" id="afternoon-start">
+																<option value="14">14:00</option>
+																<option value="15">15:00</option>
+																<option value="16">16:00</option>
+																<option value="17">17:00</option>
+																<option value="18">18:00</option>
+																<option value="19">19:00</option>
+																<option value="20">20:00</option>
+																<option value="21">21:00</option>
+																<option value="22">22:00</option>
+																<option value="23">23:00</option>
+																<option value="24">24:00</option>
+															</select>
+															
+														</div>
+													</div>
+													
+												</div>
+												  
+												  
+												  <br>
+												  
+												 
+												</div>
+												
+												<!-- Modal footer -->
+												<div class="modal-footer">
+													<button type="button" class="btn btn-success setday" >ثبت</button>
+													
+												</label>
+												  <button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-bottom: 10px;">بستن</button>
+												  
+												</div>
+												
+											  </div>
+											</div>
+										  </div>
+									<!-- friday	 -->
+									<div class="modal " id="myModal6">
+										<div class="modal-dialog modal-dialog-centered">
+										  <div class="modal-content">
+										  
+											<!-- Modal Header -->
+											<div class="modal-header" id="friday">
+											  <h4 class="modal-title">تنظیم ساعت جمعه</h4>
+											 
+											</div>
+											
+											<!-- Modal body -->
+											<div class="modal-body">
+											<div class="evening">
+												<label for="evening">شیفت صبح</label>
+												<input type="checkbox" name="" class="evening-checkbox">
+												<hr>
+
+												<div class="row" style="display: none;">
+													<div class="col-xs-5">
+														
+														<label for="evening-end">ساعت پایان </label>
+														
+													</div>
+													<div class="col-xs-5">
+															
+															<label for="evening-start">ساعت شروع </label>
+													</div>
+													<div class="col-xs-5">
+														<select name="evening-end" id="evening-end">
+															<option value="6">06:00</option>
+															<option value="7">07:00</option>
+															<option value="8">08:00</option>
+															<option value="9">09:00</option>
+															<option value="10">10:00</option>
+															<option value="11">11:00</option>
+															<option value="12">12:00</option>
+															<option value="13">13:00</option>
+															<option value="14">14:00</option>
+															<option value="15">15:00</option>
+														</select>
+													</div>
+													<div class="col-xs-5">
+														<select name="evening-start" id="evening-start">
+															<option value="6">06:00</option>
+															<option value="7">07:00</option>
+															<option value="8">08:00</option>
+															<option value="9">09:00</option>
+															<option value="10">10:00</option>
+															<option value="11">11:00</option>
+															<option value="12">12:00</option>
+															<option value="13">13:00</option>
+															<option value="14">14:00</option>
+															<option value="15">15:00</option>
+														</select>
+													</div>
+												</div>
+												  
+												  
+											</div>
+											<br> <br>
+											<div class="afternoon">
+												<label for="afternoon">شیفت بعدازظهر</label>
+												<input type="checkbox" name="" class="afternoon-checkbox">
+												<hr>
+												<div class="row" style="display: none;">
+													<div class="col-xs-5">
+														
+														<label for="afternoon-end">ساعت پایان </label>	
+														
+													</div>
+													<div class="col-xs-5">
+													<label for="afternoon-start">ساعت شروع </label>
+															
+													</div>
+													<div class="col-xs-5">
+														<select name="afternoon-end" id="afternoon-end">
+															<option value="14">14:00</option>
+															<option value="15">15:00</option>
+															<option value="16">16:00</option>
+															<option value="17">17:00</option>
+															<option value="18">18:00</option>
+															<option value="19">19:00</option>
+															<option value="20">20:00</option>
+															<option value="21">21:00</option>
+															<option value="22">22:00</option>
+															<option value="23">23:00</option>
+															<option value="24">24:00</option>
+														</select>
+												
+													</div>
+													<div class="col-xs-5">
+														<select name="afternoon-start" id="afternoon-start">
+															<option value="14">14:00</option>
+															<option value="15">15:00</option>
+															<option value="16">16:00</option>
+															<option value="17">17:00</option>
+															<option value="18">18:00</option>
+															<option value="19">19:00</option>
+															<option value="20">20:00</option>
+															<option value="21">21:00</option>
+															<option value="22">22:00</option>
+															<option value="23">23:00</option>
+															<option value="24">24:00</option>
+														</select>
+														
+													</div>
+												</div>
+												
+											</div>
+											  
+											  
+											  <br>
+											  
+											 
+											</div>
+											
+											<!-- Modal footer -->
+											<div class="modal-footer">
+												<button  type="button" class="btn btn-success setday" >ثبت</button>
+												
+											</label>
+											  <button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-bottom: 10px;">بستن</button>
+											  
+											</div>
+											
+										  </div>
+										</div>
+									  </div>
+
+		                            <div class="tab-pane" id="address">
+										<div class="row">
+											
+										</div>
+		                                <div class="row">
+		                                    <div class="col-sm-12">
+		                                        <h4 class="info-text" style="text-align: right;"> لطفا آدرس مطب خود را وارد کنید </h4>
+											</div>
+											
+											<div class="row">
+											<div class="col-sm-6">
+												<label class="control-label">شهر</label>
+		                                        <select name="city" id="city" style="margin-right: 5px;">
+													<option value="0">انتخاب شهر</option>
+												</select>
+											</div> 
+
+											<div class="col-sm-5" style="">
+												<label class="control-label">استان</label>
+												<select name="state" onchange="iranwebsv(this.value); " id="province">
+													<option value="0"> انتخاب استان</option>
+													<option value="1">تهران</option>
+													<option value="2">گیلان</option>
+													<option value="3">آذربایجان شرقی</option>
+													<option value="4">خوزستان</option>
+													<option value="5">فارس</option>
+													<option value="6">اصفهان</option>
+													<option value="7">خراسان رضوی</option>
+													<option value="8">قزوین</option>
+													<option value="9">سمنان</option>
+													<option value="10">قم</option>
+													<option value="11">مرکزی</option>
+													<option value="12">زنجان</option>
+													<option value="13">مازندران</option>
+													<option value="14">گلستان</option>
+													<option value="15">اردبیل</option>
+													<option value="16">آذربایجان غربی</option>
+													<option value="17">همدان</option>
+													<option value="18">کردستان</option>
+													<option value="19">کرمانشاه</option>
+													<option value="20">لرستان</option>
+													<option value="21">بوشهر</option>
+													<option value="22">کرمان</option>
+													<option value="23">هرمزگان</option>
+													<option value="24">چهارمحال و بختیاری</option>
+													<option value="25">یزد</option>
+													<option value="26">سیستان و بلوچستان</option>
+													<option value="27">ایلام</option>
+													<option value="28">کهگلویه و بویراحمد</option>
+													<option value="29">خراسان شمالی</option>
+													<option value="30">خراسان جنوبی</option>
+													<option value="31">البرز</option>
+												</select>
+											</div>
+											</div>
+
+											
+
+
+		                                    <div class="col-sm-12 ">
+	                                        	<div class="form-group label-floating1">
+	                                        		<label class="control-label">آدرس</label>
+	                                    			<input type="text" class="form-control" id="loc">
+	                                        	</div>
+		                                    </div>
+		                                    <!-- <div class="col-sm-3">
+		                                        <div class="form-group label-floating1">
+		                                            <label class="control-label">شهر</label>
+		                                            <input type="text" class="form-control">
+		                                        </div>
+											</div> -->
+											<hr>
+											<h5 style="padding:20px;">
+												لطفا موقعیت مطب خود را از روی نقشه انتخاب کنید<small>(برای تایید موقعیت مطب، برای نشانگر کلیک کنید)</small>
+											</h5>
+		                                    <div id="app" ></div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <div class="wizard-footer">
+		                            <div class="pull-right">
+		                                <input type='button' class='btn btn-next btn-fill btn-success btn-wd' name='next' value='ادامه' />
+		                                <input type='button' class='btn btn-finish btn-fill btn-success btn-wd' name='finish' value='ثبت' id="submit"/>
+		                            </div>
+
+		                            <div class="pull-left">
+		                                <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='قبلی' />
+		                            </div>
+		                            <div class="clearfix"></div>
+		                        </div>
+		                    </form>
+		                </div>
+		            </div> <!-- wizard container -->
+		        </div>
+	        </div><!-- end row -->
+	    </div> <!--  big container -->
+
+	    <div class="footer">
+	       wabe labe dub dub
+	    </div>
+	</div>
+
+</body>
+	<!--   Core JS Files   -->
+    <script src="assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="assets/js/jquery.bootstrap.js" type="text/javascript"></script>
+
+	<!--  Plugin for the Wizard -->
+	<script src="assets/js/material-bootstrap-wizard.js"></script>
+
+    <!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
+	<script src="assets/js/jquery.validate.min.js"></script>
+<!-- Mapp scripts -->
+<script type="text/javascript" src="dist/js/mapp.env.js"></script>
+<script type="text/javascript" src="dist/js/mapp.min.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script src="https://github.com/KayvanMazaheri/ir-city-select/releases/download/v0.2.0/ir-city-select.min.js"></script>
+<script language="javascript" src="assets/js/city.js"></script>
+</html>

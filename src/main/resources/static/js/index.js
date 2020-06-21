@@ -125,7 +125,7 @@ function signUpRequest(e) {
         timeout: 100000,
         cache:false,
         data: userInformation,
-        status:{
+        statusCode:{
             200:function (response) {
                 alert(response);
             }

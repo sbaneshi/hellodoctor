@@ -90,7 +90,7 @@ public class DoctorService {
     }
 
     public Doctor editDoctor(String phoneNumber, String firstName, String lastName,
-                             String email, String province,
+                             String email, String bio ,String province,
                              String city, String address,
                              Double geoX, Double geoY,
                              String expertise) {
@@ -102,6 +102,8 @@ public class DoctorService {
             builder.lastName(lastName);
         if (email != null)
             builder.email(email);
+        if (bio != null)
+            builder.bio(bio);
         if (province != null)
             builder.province(province);
         if (city != null)

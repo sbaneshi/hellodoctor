@@ -16,7 +16,7 @@ import java.util.List;
 @CrossOrigin
 @RestController
 @RequiredArgsConstructor
-public class DoctorController extends BaseController {
+public class    DoctorController extends BaseController {
 
     private final DoctorService doctorService;
 
@@ -36,7 +36,7 @@ public class DoctorController extends BaseController {
         return doctorService.getFullDoctor(id);
     }
 
-    @GetMapping("/api/doctors")
+    @GetMapping("/doctors")
     public List<Doctor> getAllDoctors(String expertise, String city) {
         return doctorService.getDoctors(
                 StringUtils.hasText(expertise) ? expertise : "",
@@ -69,9 +69,9 @@ public class DoctorController extends BaseController {
     }
 
     @PostMapping("/api/doctor/edit")
-    public Doctor edit(String firstName, String lastName, String email, String province,
+    public Doctor edit(String firstName, String lastName, String email,String bio, String province,
                        String city, String address, Double geoX, Double geoY, String expertise) {
-        return doctorService.editDoctor(getPhoneNumber(), firstName, lastName, email, province, city, address, geoX, geoY, expertise);
+        return doctorService.editDoctor(getPhoneNumber(), firstName, lastName, email,bio, province, city, address, geoX, geoY, expertise);
     }
 
     @PostMapping("/api/doctor/absence/add")
