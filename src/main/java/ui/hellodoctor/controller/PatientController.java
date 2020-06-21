@@ -44,4 +44,10 @@ public class PatientController extends BaseController {
         patientService.cancelVisit(getPhoneNumber(), visitId);
         return ResponseEntity.ok().build();
     }
+
+    @PostMapping("/api/patient/visit/reserve")
+    public ResponseEntity<?> reserveVisit(int doctorId, long time) {
+        patientService.reserveVisit(getPhoneNumber(), doctorId, time);
+        return ResponseEntity.ok().build();
+    }
 }

@@ -10,7 +10,6 @@ import ui.hellodoctor.security.SecurityUtils;
 import ui.hellodoctor.service.DoctorService;
 
 import java.time.DayOfWeek;
-import java.util.Arrays;
 import java.util.List;
 
 @CrossOrigin
@@ -83,6 +82,6 @@ public class DoctorController extends BaseController {
 
     @GetMapping("/api/doctor/available_visit_times")
     public List<Long> getAvailableVisitTime(int id) {
-        return Arrays.asList(12L, 45L);
+        return doctorService.getAvailableVisitTimes(id, System.currentTimeMillis());
     }
 }
