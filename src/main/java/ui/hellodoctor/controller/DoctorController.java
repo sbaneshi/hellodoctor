@@ -31,12 +31,12 @@ public class DoctorController extends BaseController {
         return doctorService.getFullDoctor(getPhoneNumber());
     }
 
-    @GetMapping("/api/doctor/full_by_id")
+    @GetMapping("/doctor/full_by_id")
     public Doctor getFullDoctorById(int id) {
         return doctorService.getFullDoctor(id);
     }
 
-    @GetMapping("/api/doctors")
+    @GetMapping("/doctors")
     public List<Doctor> getAllDoctors(String expertise, String city) {
         return doctorService.getDoctors(
                 StringUtils.hasText(expertise) ? expertise : "",
@@ -82,7 +82,7 @@ public class DoctorController extends BaseController {
     }
 
     @GetMapping("/api/doctor/available_visit_times")
-    public List<Long> getAvailableVisitTime(int doctorId) {
+    public List<Long> getAvailableVisitTime(int id) {
         return Arrays.asList(12L, 45L);
     }
 }

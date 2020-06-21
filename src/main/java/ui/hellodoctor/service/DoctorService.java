@@ -3,10 +3,8 @@ package ui.hellodoctor.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
-import ui.hellodoctor.data.domain.AbsenceTime;
-import ui.hellodoctor.data.domain.Doctor;
-import ui.hellodoctor.data.domain.User;
-import ui.hellodoctor.data.domain.WorkTime;
+import ui.hellodoctor.VisitTimeCalculator;
+import ui.hellodoctor.data.domain.*;
 import ui.hellodoctor.data.repository.AbsenceTimeRepository;
 import ui.hellodoctor.data.repository.DoctorRepository;
 import ui.hellodoctor.data.repository.WorkTimeRepository;
@@ -128,6 +126,23 @@ public class DoctorService {
         List<AbsenceTime> absenceTimes = doctor.getAbsences();
         absenceTimes.add(absenceTime);
         doctor.setAbsences(absenceTimes);
+    }
+
+    public List<Long> getAvailableVisitTimes(int doctorId, long startOfTime) {
+        Doctor doctor = doctorRepository.findById(doctorId).orElseThrow(IllegalArgumentException::new);
+
+        List<AbsenceTime> absences = getUpdatedAbsences(doctor);
+        List<Long> pendingVisits = doctor.getVisits().stream().map(Visit::getTime).collect(Collectors.toList());
+        final long visitDuration = doctor.getVisitDurationMin() * 60000;
+
+        return VisitTimeCalculator.calculate(doctor.getWorkTimes(),absences, pendingVisits, visitDuration, startOfTime);
+    }
+
+    private List<AbsenceTime> getUpdatedAbsences(Doctor doctor) {
+        List<AbsenceTime> absences = doctor.getAbsences();
+        absences = absences.stream().filter(a -> a.getEnd() > System.currentTimeMillis()).collect(Collectors.toList());
+        doctor.setAbsences(absences);
+        return doctorRepository.save(doctor).getAbsences();
     }
 
     private Doctor fullDoctor(Doctor doctor) {
