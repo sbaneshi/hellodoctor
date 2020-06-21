@@ -7,6 +7,10 @@ body {
     min-height: 100vh;
     background-color: #def4f0;
 }
+* {
+    font-family: 'Almarai';
+    outline: 0px !important;
+}
 
 
 /* external css: flickity.css */

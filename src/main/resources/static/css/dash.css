@@ -4,6 +4,10 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
+* {
+    font-family: 'Almarai';
+    outline: 0px !important;
+}
 
 *::before, *::after {
     -webkit-box-sizing: border-box;
@@ -32,6 +36,7 @@ i {
 }
 
 .navbar-mainbg {
+    height: 64px;
     background-color: #212121;
     padding: 0px;
 }

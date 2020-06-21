@@ -1,3 +1,8 @@
+* {
+    font-family: 'Almarai';
+    outline: 0px !important;
+}
+
 .flickity-enabled {
     position: relative;
 }

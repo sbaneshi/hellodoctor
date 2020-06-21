@@ -3,6 +3,10 @@ body {
     padding-bottom: 3rem;
     color: #5a5a5a;
 }
+* {
+    font-family: 'Almarai';
+    outline: 0px !important;
+}
 
 .bd-placeholder-img {
     font-size: 1.125rem;

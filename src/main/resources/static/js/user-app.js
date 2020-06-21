@@ -105,7 +105,6 @@ function setPanel(){
 
     var decode = (atob(token));
     var userInformation = decode.split(':');
-    $('.card-body .author h5').html(`<i class="fa fa-user" style="margin-left:10px;"></i>${userInformation[2]}`);
 
     var settings = {
         url: "http://localhost:8080//api/pateint/full",
@@ -122,7 +121,7 @@ function setPanel(){
         }
     };
     $.ajax(settings).done(function(response) {
-
+        $('.card-body .author h5').html(`<i class="fa fa-user" style="margin-left:10px;"></i>${response.firstName}`+" "+`${response.lastName}`);
         $('#firstname').val(response.firstName);
         $('#lastname').val(response.lastName);
         $('#email').val(response.email);

@@ -9,6 +9,10 @@ body {
 
 
 /* external css: flickity.css */
+ * {
+     font-family: 'Almarai';
+     outline: 0px !important;
+ }
 
 * {
     -webkit-box-sizing: border-box;

@@ -19,12 +19,33 @@ $(document).ready(function() {
 });
 $('.exitaccount').click(exitaccount);
 
-function setPanel() {
-    var token = localStorage.getItem("token");
+function setPanel(){
+    var token=localStorage.getItem("token");
 
     var decode = (atob(token));
     var userInformation = decode.split(':');
-    $('.card-body .author h5').html(`<i class="fa fa-user" style="margin-left:10px;"></i>${userInformation[2]}`);
+    console.log(userInformation)
+    var settings = {
+        type: "GET",
+        headers: {
+            "Authorization": "Basic " + btoa(userInformation[0] + ":" + userInformation[1])
+        },
+        url: "http://localhost:8080/api/patient/full",
+        status: {
+            200: function(response) {
+                alert(response);
+            }
+        }
+    };
+    //  if (!error) {
+    $.ajax(settings).done(function(response) {
+
+        //  document.querySelector('#my-prof').firstChild.nextElementSibling.nextElementSibling.innerHTML=`<img src="${doctor.image}" class="my-circle" style="height:106px;width:106px" alt="Avatar">`
+        $('.card-body .author h5').html(`<i class="fa fa-user" style="margin-left:10px;"></i>${response.firstName}`+" "+`${response.lastName}`);
+        console.log(response)
+
+    });
+
 
 
 }
