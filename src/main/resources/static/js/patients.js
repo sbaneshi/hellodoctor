@@ -83,10 +83,10 @@ $(document).ready(function() {
 function signUpRequest(e) {
     e.preventDefault();
     let userInformation = {
-        fname: $("#fname").val(),
-        lname: $("#lname").val(),
         phoneNumber: $('#phone-number').val(),
         password: $('#password').val(),
+        firstName: $("#fname").val(),
+        lastName: $("#lname").val(),
         insuranceId: $('#insurance').val()
     };
 
