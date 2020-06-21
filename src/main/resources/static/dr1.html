@@ -1,0 +1,744 @@
+﻿<!doctype html >
+<html lang="en" dir="rtl">
+
+<head>
+    <!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Almarai&amp;display=swap" rel="stylesheet">
+    <title>دکترسلام</title>
+
+
+<link rel="stylesheet" href="./dist/css/mapp.min.css">
+<link rel="stylesheet" href="./dist/css/fa/style.css" data-locale="true">
+<link rel="stylesheet" href="assets/css/doctor1.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Almarai&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<!-- add clock style
+<link href="http://weareoutman.github.io/clockpicker/dist/jquery-clockpicker.min.css" rel="stylesheet" />-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="assets/css/jquery-clockpicker.min1.css">
+  
+<!--<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">-->
+<!--<link rel="icon" type="image/png" href="../assets/img/favicon.png">-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>
+  پنل کاربر
+</title>
+<script src=".js/core/jquery.min.js"></script>
+  <script src="js/core/jquery.min.js"></script>
+<script src="js/plugins/perfect-scrollbar.jquery.min.js"></script>
+
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+<!--     Fonts and icons     -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<!-- CSS Files -->
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
+<!-- CSS Just for demo purpose, don't include it in your project -->
+<link href="demo/demo.css" rel="stylesheet" />
+
+
+<link rel="stylesheet" href="assets/css/js-persian-cal1.css">
+<script type="text/javascript" src="assets/js/js-persian-cal.min1.js"></script>
+
+
+</head>
+
+<body >
+  
+  <div id="loader"></div>
+  <div class="wrapper ">
+  
+    <div class="sidebar" id="navigation2" data-color="blue" >
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+      
+     -->  
+        
+            
+      
+      <div class="sidebar-wrapper" id="sidebar-wrapper">
+      
+        <ul class="nav" style="text-align:right; font-size:25px; margin-right:-40px;">
+          <li class="active " >
+            <a href="./dr.html">
+              <i class="now-ui-icons design_app " style="float:right;"></i>
+              <p >پنل من</p>
+            </a>
+          </li>
+          
+          <li>
+            <a href="./change-info.html">
+              <i class="fa fa-circle-o-notch fa-fw" style="float:right;"></i>
+              <p>مشخصات من</p>
+            </a>
+          </li>
+          <li>
+            <a href="./appoinments.html">
+              <i class="fa fa-calendar-check-o fa-fw" style="float:right;"></i>
+              <p>برنامه من</p>
+            </a>
+          </li>
+          <li>
+            <a href="./financial.html">
+              <i class="fa fa-users fa-fw"style="float:right;"></i>
+              <p>بازخورد های من</p>
+            </a>
+          </li>
+         
+          <li style="bottom:20px;">
+            <a href="#">
+              <i class="fa fa-share-square arrows-1_cloud-download-93" style="float:right;"></i>
+              <p>خروج از حساب</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel" id="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute " >
+        <div class="container-fluid" >
+          <div class="navbar-wrapper" >
+            <div class="navbar-toggle">
+              <button type="button" class="navbar-toggler" >
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+            <!-- show the current day -->
+            <p >
+              <script type="text/javascript" src="http://www.tartools.ir/abzar/tarikheshamsi/?format=l  j  F Y&bg=def4f0&border=134E5E 2&fontsize=15&fontcolor=000000&padding=5&margin=5&float=right" ></script>
+            </p>
+          
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+          </button>
+
+        </div>
+      </nav>
+      <div class="panel-header panel-header-sm" >
+        <div class="col-md-4" style="text-align:center;">
+        </div>
+        </div>
+      <div class="content" style="z-index: 100">
+    
+        <div class="my-container my-content" style="max-width:1400px;margin-top:-80px;">    
+            <!-- The Grid -->
+            <div class="my-row " >
+              <!-- Left Column -->
+              
+              <div id="hidden-content"class="row" >
+                <div class="col-6">
+                    <div class="my-container my-card my-round my-white">
+                        
+                          
+                         <h4 class="my-center">نمایه من</h4>
+                         <img src="dr.png" class="my-circle" style="height:106px;width:106px;display:block;margin: 0 auto;" alt="Avatar">
+                         <hr>
+                         <p style="text-align:center;"> دکتر حسین جلالی</p>
+                         <p style="text-align:center;"> اصفهان،شهرضا</p>
+                         <p style="text-align:center;"> کد نظام پزشکی:247945</p>
+                         <hr class="my-hr">
+                         <button type="button" class="btn btn-danger " style="margin: 0 auto;">تغییر عکس</button>
+                        </div>
+                        
+                </div>
+                <div class="col-6 " >
+                    <div class="my-white my-container my-card my-round my-white" style="min-height: 324px;">
+                    <h4 class="my-center" style="text-align: right;">بیوگرافی من</h4>
+                   <hr class="my-hr">
+                    
+                 <p style="text-align:center;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهود ابزارهای کاربردی می باشد. کتابهای زیادی را می طلبد</p>
+                </div>
+                </div>
+            </div>
+
+
+              <div class="my-col col-md-3" style="float: right!important;">
+                <!-- Profile -->
+                
+                <div class="my-container my-card my-round my-white" style="margin-top: 15px;">
+                  <div class="my-container" id="my-prof">
+                    
+                   <h4 class="my-center">نمایه من</h4>
+                   <img src="dr.png" class="my-circle" style="height:106px;width:106px;display:block;margin: 0 auto;" alt="Avatar">
+                   
+                   <hr class="my-hr">
+                   <p style="text-align:center;"> دکتر حسین جلالی</p>
+                   <p style="text-align:center;"> اصفهان،شهرضا</p>
+                   <p style="text-align:center;"> کد نظام پزشکی:247945</p>
+                  
+                  </div>
+                </div>
+                <br>
+                <div id="mybio" class="my-container my-card my-white my-round " style="margin-bottom: 16px;">
+                
+                  <h4 class="my-center" style="text-align: right;">بیوگرافی من</h4>
+                 <hr class="my-hr">
+                  
+                  <p style="text-align:center;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد</p>
+                    
+                  
+                </div>
+                <!-- my buttons -->
+                <div class="my-card my-round">
+                  <div class="my-white">
+                    <a  href="setting.html" class="my-button my-block my-theme-l1 my-right-align"><i class="fa fa-circle-o-notch fa-fw "></i> مشخصات من</a>
+                   
+                    <a href="#set-day" class="my-button my-block my-theme-l1 my-right-align"><i class="fa fa-calendar-check-o fa-fw "></i> برنامه من</a>
+                    
+                    <a href="#"  class="my-button my-block my-theme-l1 my-right-align"><i class="fa fa-users fa-fw "></i> بازخورد های من</a>
+                    
+                  </div>      
+                </div>
+                <br>
+                
+                <!-- Interests --> 
+                
+                <br>
+                
+                <!-- Alert Box -->
+                <div class="my-container my-display-container my-round my-theme-l4 my-border my-theme-border my-margin-bottom my-hide-small">
+                  <span onclick="this.parentElement.style.display='none'" class="my-button my-theme-l3 my-display-topright">
+                    <i class="fa fa-remove"></i>
+                  </span>
+                  <p><strong>!دکترجان!</strong></p>
+                  <hr class="my-hr">
+                  <p>آیا میخوای بیشتر دیده شی؟!</p>
+                </div>
+            <!-- End Middle Column -->
+            </div>
+              
+              <!-- Middle Column -->
+              <div class="my-col col-md-9" >
+              
+                
+                
+                
+                
+                <form action="" id="set-day" style="margin:16px!important">
+                <div class="my-row-padding">
+                  <div class="my-col m12">
+                    <div class="my-container my-card my-round my-white">
+                      <div class="my-container my-padding">
+                        <h4 class="my-opacity my-right-align">تنظیم روز</h6>
+                          <hr >
+                      <div class="container">
+                        
+                          <div class="row">
+                            <div class="col-sm-4"  style="text-align: right;">
+                              <label for="pacl4">روز مورد نظر را انتخاب کنید</label>
+                            </div>
+  
+                            <div class="col-sm-8">
+                              <input type="text" id="pcal4" class="pdate" style="width: 80%;text-align: center;"><br>
+
+
+                            </div>
+                            
+                          </div>
+                        </div>
+                          <div class="input-group">
+                           
+                         
+                           
+  
+                          </div>
+                          <br>
+  
+                            <div class="row" style="margin-left: 3px;">
+                              
+                            
+  
+                              <div class="col-6">
+                                <span class="badge badge-secondary my-lable" >ساعت شروع:</span>
+                              </div>
+                              <div class="col-6">
+                                <span class="badge badge-secondary my-lable" >ساعت پایان:</span>
+                              </div>
+                                                  
+                        </div>
+                            <div class="row" style="margin-left: 3px;">
+                            
+                              
+                              <div class="col-6">
+
+                                
+                                <div class="form-group clockpicker2 ">
+                                  <input id="start-time" class="form-control" type="text" placeholder="ویزیت اولین بیمار" style="text-align: center;"  oninvalid="this.setCustomValidity('لطفا ساعت شروع را وارد کنید')" oninput="setCustomValidity('')">
+                                </div>
+                              </div>
+  
+                              <div class="col-6">
+                                <div class="form-group clockpicker2 ">
+                                  <input id="finish-time" class="form-control" type="text" placeholder="ویزیت آخرین بیمار" style="text-align: center;"  oninvalid="this.setCustomValidity('لطفا ساعت اتمام را وارد کنید')"> 
+                                </div>
+                              </div>
+                             <br>
+                             
+                           
+                        </div>
+                        <br>
+                        
+                          <div class="container">
+                            <div class="row">
+                              <div class="col-md-6" id="setCount" >
+                                <label class="my-right-align" style="float: right;line-height: 1.65;" > تعداد بیماران تلفنی:</label>
+                                <div class="quantity">
+                                  <input id="telephone-count" type="number" min="1" max="30" step="1" value="1">
+                                  </div>
+                              </div>
+                              
+                                
+                              <div class="col-md-6" id="setCountPerHour">
+                                <label class="my-right-align"  style="float: right; line-height: 1.65;" ></label>
+                                <div class="quantity">
+                                  <input id="minute" type="number" min="5" max="45" step="1" value="5">
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <br>
+                       
+                        <div class="custom-control custom-checkbox mb-3" style="text-align: right;">
+                          <input type="checkbox" class="custom-control-input" id="radiobtn" name="example1" >
+                           <label class="custom-control-label" for="radiobtn"> بنا به دلایلی در مطب حاضر نیستم </label>
+                        </div>
+  
+                        <br>
+                        <div>
+                          <div class="row">
+                   
+                            <div class="col">
+                              <button id="doctor-day" type="submit" class="btn btn-success btn-block">اعمال</button>
+                            </div>
+                            <div class="col">
+                              <button type="button" class="btn btn-danger btn-outline-danger btn-block" disabled="false" id="resignbtn" style="margin-left: 5px;">مرخصی</button>
+                            </div>
+                          </div>
+                        </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="my-container my-card my-white my-round my-margin"><br>
+                  <!-- <img src="dr.png" alt="Avatar" class="my-left my-circle my-margin-right" style="width:60px"> -->
+             
+                  <h4 style="text-align: center;"> بیماران</h4><br>
+                  <hr class="my-clear my-hr">
+                  <div class="mypatients">
+                  <p style=" font-size: 20px;text-align: center; text-shadow: 1px 1px 4px #134E5E;"></p>
+                    <!-- <table  id="recentPatients">
+                      <thead>
+                        <tr>
+                          <th>شماره تماس</th>
+                          <th>نام</th>
+                          <th>نام خانوادگی</th>
+                          <th>تاریخ</th>
+                          <th> نمایه</th> </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1,001</td>
+                          <td>Lorem</td>
+                          <td>ipsum</td>
+                          <td>dolor</td>
+                          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
+                            مشاهده
+                          </button>
+                        </td>
+                        </tr>
+                        <tr>
+                          <td>1,002</td>
+                          <td>amet</td>
+                          <td>consectetur</td>
+                          <td>adipiscing</td>
+                          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
+                            مشاهده
+                          </button></td>
+                        </tr>
+                        <tr>
+                          <td>1,003</td>
+                          <td>Integer</td>
+                          <td>nec</td>
+                          <td>odio</td>
+                          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
+                            مشاهده
+                          </button> </td>
+                        </tr>
+                        <tr>
+                          <td>1,003</td>
+                          <td>libero</td>
+                          <td>Sed</td>
+                          <td>cursus</td>
+                          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
+                            مشاهده
+                          </button></td>
+                        </tr>
+                        <tr>
+                          <td>1,004</td>
+                          <td>dapibus</td>
+                          <td>diam</td>
+                          <td>Sed</td>
+                          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
+                            مشاهده
+                          </button></td>
+                        </tr>
+                        <tr>
+                          <td>1,005</td>
+                          <td>Nulla</td>
+                          <td>quis</td>
+                          <td>sem</td>
+                          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
+                            مشاهده
+                          </button></td>
+                        </tr>
+                        <tr>
+                          <td>1,006</td>
+                          <td>nibh</td>
+                          <td>elementum</td>
+                          <td>imperdiet</td>
+                          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
+                            مشاهده
+                          </button></td>
+                        </tr>
+                        <tr>
+                          <td>1,007</td>
+                          <td>sagittis</td>
+                          <td>ipsum</td>
+                          <td>Praesent</td>
+                          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
+                            مشاهده
+                          </button></td>
+                        </tr>
+                        <tr>
+                          <td>1,008</td>
+                          <td>Fusce</td>
+                          <td>nec</td>
+                          <td>tellus</td>
+                          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
+                            مشاهده
+                          </button> </td>
+                        </tr>
+                        <tr>
+                          <td>1,009</td>
+                          <td>augue</td>
+                          <td>semper</td>
+                          <td>porta</td>
+                          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
+                            مشاهده
+                          </button> </td>
+                        </tr>
+                        <tr>
+                          <td>1,010</td>
+                          <td>massa</td>
+                          <td>Vestibulum</td>
+                          <td>lacinia</td>
+                          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
+                            مشاهده
+                          </button> </td>
+                        </tr>
+                        <tr>
+                          <td>1,011</td>
+                          <td>eget</td>
+                          <td>nulla</td>
+                          <td>Class</td>
+                          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
+                            مشاهده
+                          </button></td>
+                        </tr>
+                        <tr>
+                          <td>1,012</td>
+                          <td>taciti</td>
+                          <td>sociosqu</td>
+                          <td>ad</td>
+                          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
+                            مشاهده
+                          </button></td>
+                        </tr>
+                        <tr>
+                          <td>1,013</td>
+                          <td>torquent</td>
+                          <td>per</td>
+                          <td>conubia</td>
+                          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
+                            مشاهده
+                          </button> </td>
+                        </tr>
+                        <tr>
+                          <td>1,014</td>
+                          <td>per</td>
+                          <td>inceptos</td>
+                          <td>himenaeos</td>
+                          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
+                            مشاهده
+                          </button> </td>
+                        </tr>
+                        <tr>
+                          <td>1,015</td>
+                          <td>sodales</td>
+                          <td>ligula</td>
+                          <td>in</td>
+                          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
+                            مشاهده
+                          </button> </td>
+                        </tr>
+                      </tbody>
+                    </table> -->
+
+                    <div class="modal " id="myModal">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                        
+                          <!-- Modal Header -->
+                          <div class="modal-header">
+                            <h4 class="modal-title">پروفایل</h4>
+                           
+                          </div>
+                          
+                          <!-- Modal body -->
+                          <div class="modal-body">
+                            <p style="text-align: right; direction: rtl;">
+                              در صورت آپلود نسخه بیمار توانایی دیدن نسخه را از طریق پنل کاربری خود خواهد داشت
+                            </p>
+                            
+                            <br>
+                            
+                          </div>
+                          
+                          <!-- Modal footer -->
+                          <div class="modal-footer">
+                            <label class="btn-success" style="cursor: pointer; padding: 6px 11px; border-radius: 5px;">
+                              <input type="file" style="display:none"/>
+                              <i class="fa fa-cloud-upload"></i> آپلود نسخه
+                          </label>
+                            <button onclick="deleteChild()" type="button" class="btn btn-danger" data-dismiss="modal">بستن</button>
+                            
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>  
+          
+                <div class="my-container my-card my-white my-round my-margin"><br>
+                  
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-4 myoffice">
+                        <h4 style="text-align: right;">مطب من</h4><br>
+                        <p style="height: 200px;" id="doctor-address">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و ، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد
+      
+                          تنظیم روز
+                          </p>
+                      </div>
+                      <div class="col-8">
+                        <h3></h3>
+                        <div id="app" style="width: 100%; height: 100%;"></div>
+                      </div>
+                    </div>
+                    <hr class="my-hr">
+                  </div>
+                  
+                  <hr class="my-clear my-hr">
+                  
+               
+                  
+                  <a href="setting.html" class="my-button my-theme-d2 my-margin-bottom"> تغییر</a> 
+                </div> 
+                
+               
+                
+                <!-- End Left Column -->
+                </div>
+                
+              
+
+              </div>
+              
+            <!-- End Grid -->
+            </div>
+            
+          <!-- End Page Container -->
+          </div>
+
+
+
+          <footer class="page-footer font-small mdb-color pt-4" style="background-color:#134E5E ; border-top-left-radius:40px; border-top-right-radius:40px; color: #B3B8CD;">
+
+            <div class="container text-center text-md-left">
+    
+                <div class="row text-center text-md-left mt-3 pb-3">
+    
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3" style="text-align:right;">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">درباره دکتر سلام</h6>
+                        <p style="text-align:right;">-------------------------------------------------------------------------------------------------------------------</p>
+                    </div>
+    
+                    <hr class="w-100 clearfix d-md-none">
+    
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3" style="text-align:right;">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">صفحات سایت</h6>
+                        <p>
+                            <a href="#!">-------------</a>
+                        </p>
+                        <p>
+                            <a href="#!">-------------</a>
+                        </p>
+                        <p>
+                            <a href="#!">-------------</a>
+                        </p>
+                        <p>
+                            <a href="#!">-------------</a>
+                        </p>
+                    </div>
+    
+                    <hr class="w-100 clearfix d-md-none">
+    
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3" style="text-align:right;">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">خدمات دکتر سلام</h6>
+                        <p>
+                            <a href="#!">--------------</a>
+                        </p>
+                        <p>
+                            <a href="#!">--------------</a>
+                        </p>
+                        <p>
+                            <a href="#!">--------------</a>
+                        </p>
+                        <p>
+                            <a href="#!">--------------</a>
+                        </p>
+                    </div>
+    
+                    <hr class="w-100 clearfix d-md-none">
+    
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3" style="text-align:right;">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">ارتباط با ما</h6>
+                        <p>
+                            <i class="fa fa-home mr-3"></i>---------------</p>
+                        <p>
+                            <i class="fa fa-envelope mr-3"></i>---------------</p>
+                        <p>
+                            <i class="fa fa-phone mr-3"></i>---------------</p>
+                        <p>
+                            <i class="fa fa-print mr-3"></i>---------------</p>
+                    </div>
+    
+                </div>
+    
+                <hr>
+    
+                <div class="row d-flex align-items-center">
+    
+                    <div class="col-md-7 col-lg-8">
+    
+                        <p class="text-center text-md-left">
+                            <strong> تمامی حقوق این سایت متعلق به ماست</strong>
+                            </a>
+                        </p>
+    
+                    </div>
+    
+                    <div class="col-md-5 col-lg-4 ml-lg-0">
+    
+                        <div class="text-center text-md-right">
+                            <ul class="list-unstyled list-inline">
+    
+                                <li class="list-inline-item">
+                                    <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+    
+                            </ul>
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+        </footer>
+        <div class="overlay"></div>
+        </div>
+    
+      </div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./dist/js/jquery-3.2.1.min.js"></script>
+<!-- <script src="http://weareoutman.github.io/clockpicker/dist/jquery-clockpicker.min.js"></script> -->
+<script src="assets/js/jquery-clockpicker.min1.js"></script>
+<script src="js/plugins/chartjs.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script><!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
+  <script src="js/dashboard-app.js"></script>
+<script>
+$(function() {
+ 
+$('.clockpicker2').clockpicker({
+  'default': 'now',
+  vibrate: true,
+  placement: "top",
+  align: "bottom",
+  autoclose: true,
+  twelvehour: false
+});
+
+
+});
+</script>
+
+<!-- Mapp scripts -->
+<script type="text/javascript" src="./dist/js/mapp.env.js"></script>
+<script type="text/javascript" src="./dist/js/mapp.min.js"></script>
+
+
+<script src="assets/js/dr1.js"></script>
+
+<script type="text/javascript">
+	
+		
+  var objCal4 = new AMIB.persianCalendar( 'pcal4', {
+      onchange: function( pdate ){
+        if( pdate ) {
+          alert( pdate.join( '/' ) );
+        } else {
+          alert( 'تاریخ واردشده نادرست است' );
+        }
+      }
+    }
+  );
+//change the top day shower
+  // document.querySelector('.tartools-tarikheshamsi a').setAttribute('href', "#");
+  // document.querySelector('.tartools-tarikheshamsi').style.borderRadius="20px";
+  // window.setTimeout(function() {
+  //   document.querySelector('.tartools-tarikheshamsi').style.display="block";
+  //       }, 1500);
+  
+</script>
+        </body>
