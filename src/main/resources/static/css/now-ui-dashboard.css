@@ -3587,11 +3587,12 @@ Created using IcoMoon - icomoon.io
 }
 
 .now-ui-icons.ui-1_simple-add:before {
-    content: "\ea4f";
+    content: "\f057";
 }
 
 .now-ui-icons.ui-1_simple-delete:before {
-    content: "\ea54";
+    content: "\f057";
+    font-family: FontAwesome;
 }
 
 .now-ui-icons.ui-1_simple-remove:before {
@@ -4650,6 +4651,7 @@ Created using IcoMoon - icomoon.io
     left: unset !important;
     right: unset !important;
 }
+
 
 .card .card-body {
     min-height: 325px;

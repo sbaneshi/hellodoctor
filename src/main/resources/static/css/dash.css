@@ -1,4 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url("https://fonts.googleapis.com/css?family=Mukta:700");
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*::before, *::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     padding: 0;
@@ -17,12 +28,11 @@ i {
 /*----------multi-level-accordian-menu------------*/
 
 .navbar-logo {
-    padding-bottom: 15px;
-    padding-left: 20px;
+    margin-left: 20px;
 }
 
 .navbar-mainbg {
-    background-color: #134E5E;
+    background-color: #212121;
     padding: 0px;
 }
 
@@ -33,6 +43,8 @@ i {
 
 #navbarSupportedContent ul {
     text-align: right;
+    font-weight: 700;
+
     padding: 0px;
     margin: 0px;
 }
@@ -49,7 +61,7 @@ i {
 #navbarSupportedContent ul li a {
     color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
-    font-size: 15px;
+    color:white;
     display: block;
     padding: 20px 20px;
     transition-duration: 0.6s;
@@ -58,7 +70,7 @@ i {
 }
 
 #navbarSupportedContent>ul>li.active>a {
-    color: #134E5E;
+    color: black;
     background-color: transparent;
     transition: all 0.7s;
 }
@@ -120,7 +132,7 @@ i {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #134E5E;
+    background-color: #212121;
 }
 
 .hori-selector .right:before {
@@ -166,16 +178,128 @@ i {
 }
 
 
-.login-profile-container {
-    text-align: center;
-    max-width: 52px;
-    max-height: 52px;
-    margin-left: 20px;
-    border-radius: 50%;
-    border:2px solid #def4f0;
-    background-color: #134E5E;
+
+.my-button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
 }
 
+.my-button.learn-more {
+    width: 12rem;
+    height: auto;
+}
+
+.my-button.learn-more .circle {
+    -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #008080;
+    border-radius: 1.625rem;
+}
+
+.my-button.learn-more .circle .icon {
+    -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+}
+
+.my-button.learn-more .circle .icon.arrow {
+    -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+}
+
+.my-button.learn-more .circle .icon.arrow::after {
+    position: absolute;
+    content: '';
+    top: -0.25rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+#nav-login:hover{
+    background-color: #212121;
+}
+#nav-login:focus{
+    box-shadow: none;
+}
+#drop::after{
+    font-size: 17px;
+}
+#drop:hover{
+    background-color: #212121;
+}
+
+.my-button.learn-more .button-text {
+    -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.65rem 0;
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.my-button:hover .circle {
+    width: 100%;
+}
+
+.my-button:hover .circle .icon.arrow {
+    background: #fff;
+    -webkit-transform: translate(1rem, 0);
+    transform: translate(1rem, 0);
+}
+
+.my-button:hover .button-text {
+    color: #fff;
+}
+
+.login-profile-container {
+    text-align: center;
+    background-color: #134E5E;
+
+    border-radius: 10px;
+}
+.logo-btn{
+    color:  #def4f0;
+    border:2px solid #def4f0;
+border-radius: 10px;
+    /*box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);*/
+}
+.login-profile-container:hover{
+    color: #134E5E;
+    background-color: #def4f0;
+}
 .login-profile-container-img {
     position: relative;
     height: 50px;
@@ -222,7 +346,7 @@ i {
 
 .dropdown-menu .dropdown-item.active,
 .dropdown-menu .dropdown-item:active {
-    color: inherit
+    color:#fff;
 }
 
 .dropup .dropdown-menu:before {
@@ -274,12 +398,8 @@ i {
 
 .bootstrap-select .dropdown-menu.inner li a,
 .dropdown-menu .dropdown-item {
-    padding-top: .6rem;
-    padding-bottom: .6rem;
-    margin-top: 5px;
-    background-color: #03BFCB;
-    border: 1px solid #134E5E;
-    border-radius: 10px;
+
+    background-color: white;
     color: #231E39;
     font-family: Montserrat, sans-serif;
     font-weight: 500;
@@ -290,7 +410,7 @@ i {
 .bootstrap-select .dropdown-menu.inner li a:hover,
 .dropdown-menu .dropdown-item:focus,
 .dropdown-menu .dropdown-item:hover {
-    background-color: hsla(0, 0%, 87%, .3);
+    background-color: #fff;
     outline: 0
 }
 

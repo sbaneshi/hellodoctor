@@ -10,7 +10,6 @@ import ui.hellodoctor.security.SecurityUtils;
 import ui.hellodoctor.service.DoctorService;
 
 import java.time.DayOfWeek;
-import java.util.Arrays;
 import java.util.List;
 
 @CrossOrigin
@@ -31,7 +30,7 @@ public class    DoctorController extends BaseController {
         return doctorService.getFullDoctor(getPhoneNumber());
     }
 
-    @GetMapping("/api/doctor/full_by_id")
+    @GetMapping("/doctor/full_by_id")
     public Doctor getFullDoctorById(int id) {
         return doctorService.getFullDoctor(id);
     }
@@ -82,7 +81,7 @@ public class    DoctorController extends BaseController {
     }
 
     @GetMapping("/api/doctor/available_visit_times")
-    public List<Long> getAvailableVisitTime(int doctorId) {
-        return Arrays.asList(12L, 45L);
+    public List<Long> getAvailableVisitTime(int id) {
+        return doctorService.getAvailableVisitTimes(id, System.currentTimeMillis());
     }
 }

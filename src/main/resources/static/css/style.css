@@ -11,15 +11,35 @@ body {
     font-weight: normal;
     font-style: normal;
 }
+.alert.alert-with-icon {
+    padding-left: 65px;
+}
+
+.alert {
+    border: 0;
+    border-radius: 1rem;
+    margin-right: 10px;
+    margin-left: 10px;
+    color: #FFFFFF;
+    padding-top: .9rem;
+    padding-bottom: .9rem;
+    position: relative;
+}
+.now-ui-icons.ui-1_simple-delete:before {
+    content: "\f057";
+    font-family: FontAwesome;
+}
+
+.alert.alert-danger {
+    background-color: red;
+}
 
 .md-outline.select-wrapper+label {
     top: .5em !important;
     z-index: 2 !important;
 }
 
-input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px white inset;
-}
+
 
 @font-face {
     font-family: 'b-nazanin';
@@ -301,8 +321,13 @@ input:-webkit-autofill {
 
 .card .input-container input:valid~label {
     color: #9d9d9d;
-    -webkit-transform: translate(-12%, -50%) scale(0.75);
-    transform: translate(-12%, -50%) scale(0.75);
+    -webkit-transform: translate(-12%, -100%) scale(0.75);
+    transform: translate(-12%, -100%) scale(0.75);
+}
+
+#signup input:-webkit-autofill {
+    color: white !important;
+    background-color: #008080 !important;
 }
 
 .card .input-container label {
@@ -328,6 +353,16 @@ input:-webkit-autofill {
     height: 1px;
     color: white;
     text-align: right;
+    z-index: 1;
+}
+
+#form-signup input:-webkit-autofill {
+    -webkit-box-shadow:0 0 0 50px #008080 inset; /* Change the color to your own background color */
+    -webkit-text-fill-color: white;
+}
+ #form-login input:-webkit-autofill {
+    -webkit-box-shadow:0 0 0 50px white inset; /* Change the color to your own background color */
+    -webkit-text-fill-color: black;
 }
 
 .card .input-container .bar:before,
@@ -448,6 +483,7 @@ input:-webkit-autofill {
     height: 140px;
     background: none;
     border-radius: 100%;
+    border: none;
     box-shadow: none;
     padding: 0;
     -webkit-transition: .3s ease;
@@ -475,7 +511,6 @@ input:-webkit-autofill {
 .card.alt .toggle:before {
     content: 'ثبت نام';
     display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
     font-size: 35px;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;

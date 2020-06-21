@@ -28,8 +28,14 @@
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.css" rel="stylesheet" type="text/css">
+    <script src="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.js" type="text/javascript"></script>
    <link rel="stylesheet" href="https://cdn.map.ir/web-sdk/1.4.2/css/mapp.min.css">
 <link rel="stylesheet" href="https://cdn.map.ir/web-sdk/1.4.2/css/fa/style.css">
+    <link rel="stylesheet" href="https://cdn.map.ir/web-sdk/1.4.2/css/mapp.min.css">
+    <link rel="stylesheet" href="https://cdn.map.ir/web-sdk/1.4.2/css/fa/style.css">
+    <link rel="stylesheet" href="./dist/css/mapp.min.css">
+    <link rel="stylesheet" href="./dist/css/fa/style.css">
     <!-- Your styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -440,6 +446,83 @@
     </footer>
     </div>
   </div>
+  <div id="" style="width: 100%; height: 450px; background: #eee; border: 2px solid #aaa;"></div>
+  <script type="text/javascript" src="./dist/js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="./dist/js/mapp.env.js"></script>
+  <script type="text/javascript" src="./dist/js/mapp.min.js"></script>
+<script>
+
+  $(document).ready(function() {
+      var app = new Mapp({
+          element: '#app',
+          presets: {
+              latlng: {
+                  lat: 32,
+                  lng: 52,
+              },
+              zoom: 6
+          },
+          i18n: {
+              fa: {
+                  'marker-title': 'عنوان',
+                  'marker-description': 'توضیح',
+              },
+              en: {
+                  'marker-title': 'Title',
+                  'marker-description': 'Description',
+              },
+          },
+          locale: 'en',
+          apiKey: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM4N2NlMDg4MGE3Y2U4MTdiODM5NzQwMmUyYzY0NGIwOWFmYWQxOGZjNmJiMTQ3YmRlODQwNGMxMjg0OWY3MWUzMzk2NGVmMGNhZjBlNTdhIn0.eyJhdWQiOiI5NzYxIiwianRpIjoiYzg3Y2UwODgwYTdjZTgxN2I4Mzk3NDAyZTJjNjQ0YjA5YWZhZDE4ZmM2YmIxNDdiZGU4NDA0YzEyODQ5ZjcxZTMzOTY0ZWYwY2FmMGU1N2EiLCJpYXQiOjE1OTI2ODIyNDEsIm5iZiI6MTU5MjY4MjI0MSwiZXhwIjoxNTk1Mjc0MjQxLCJzdWIiOiIiLCJzY29wZXMiOlsiYmFzaWMiXX0.TdcO8Fxi44rYws9rveii8t-AkQfttkJ8_ha6QPuCn65w6sEKQBKrCxSr2INVDIT-0DkmIUk_MfXu0fUemfE7isgrsoWclZ_4oh-mfMNqXaXr5AWA8Vj6Ad8xqcFAKX8mzGLIBNtmp2C4wgT5hq6zGsuv-USpclsbZ6rh9RrtZcwFbXiNwW8RKXjzP_oLkZsz8Y_PulTCTy3B3C24iZBQuN3zaGsHXMw9kowIW3Wa2KwzJJaaT2kabUe_mC7PCeFu31L2tFH9xbjXIzZ7Z6sXpOm0vE5VdmDKwzpIz5O1_FObIDepTFCWuv5IBVhkWf8QXLUkuy6axrMG1BTbNlPIGg'
+      });
+      app.addLayers();
+      var marker = app.addMarker({
+          name: 'advanced-marker',
+          latlng: {
+              lat: 37.375,
+              lng: 49.759,
+          },
+          icon: app.icons.red,
+          popup: {
+              title: {
+                  i18n: 'marker-title',
+              },
+              description: {
+                  i18n: 'marker-description',
+              },
+              // custom: 'Custom popup',
+              class: 'marker-class',
+              open: true,
+          },
+          pan: false,
+          draggable: true,
+          history: false,
+          on: {
+              click: function() {
+                  console.log('Click callback');
+              },
+              contextmenu: function() {
+                  console.log('Contextmenu callback');
+              },
+          },
+      });
+      app.addGeolocation({
+          history: true,
+          onLoad: true,
+          onLoadCallback: function(){
+              console.log(app.states.current.latlng);
+          },
+      });
+
+      app.markReverseGeocode({
+          state: {
+              latlng: app.states.user.latlng,
+              zoom: 16,
+          },
+      });
+
+  });
+</script>
 <script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/mapp.env.js"></script>
 <script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/mapp.min.js"></script>
@@ -459,6 +542,10 @@
   <script src="js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script><!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
   <script src="demo/demo.js"></script>
   <script src="js/my-doctors-app.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+  <script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/mapp.env.js"></script>
+  <script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/mapp.min.js"></script>
 
   <script>
     $(document).ready(function() {

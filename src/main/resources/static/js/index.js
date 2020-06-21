@@ -21,11 +21,7 @@ $(document).ready(function() {
         // });
     );
     $('#submit').click(signUpRequest);
-        $('.mdb-select').materialSelect();
-        $('.select-wrapper.md-form.md-outline input.select-dropdown').bind('focus blur', function () {
-            $(this).closest('.select-outline').find('label').toggleClass('active');
-            $(this).closest('.select-outline').find('.caret').toggleClass('active');
-        });
+    
     $('#password').blur(function() {
         let password = $('#password').val();
         if (password.length < 8) {
@@ -114,9 +110,7 @@ function signUpRequest(e) {
         phoneNumber: $('#phone-number').val(),
         password: $('#password').val(),
         expertise: $('#expertise').val(),
-        city: "LA",
         maCode: parseInt($('#mid').val())
-
     };
 
     var settings = {
@@ -134,10 +128,39 @@ function signUpRequest(e) {
     if (!error) {
         $.ajax(settings).done(function (response) {
             console.log(response);
-        });
+        })
+            .error(function () {
+
+            })
+    }else{
+        nowuiDashboard.showNotification('top', 'left')
     }
 
 }
+nowuiDashboard = {
+    misc: {
+        navbar_menu_visible: 0
+    },
+
+    showNotification: function(from, align) {
+        color = 'danger';
+
+        $.notify({
+            icon: "fa fa-bell ",
+            message: "اطلاعات وارد شده صحیح نمی باشد."
+
+        }, {
+            type: color,
+
+            placement: {
+                from: from,
+                align: align
+            }
+        });
+    }
+
+
+};
 
 function clearform() {
 
@@ -165,21 +188,34 @@ function loginRequest(e) {
     e.preventDefault();
     let password = $("#password-login").val();
     let pho = $("#phone-numberlogin").val();
-
     var settings = {
+
+
+        // prevent jQuery from automatically transforming the data into a query string
+
         url: "http://localhost:8080/login/doctor",
         method: "POST",
         timeout: 100000,
         cache:false,
-        data: { phoneNumber:pho,
-            password:password}
+        data: {
+            phoneNumber:pho,
+            password: password
+        },
+        statusCode:{
+            200:function (response) {
+                console.log(response);
+                alert(response.phoneNumber);
+            }
+        }
     };
-    // if (!error) {
+    if (!error) {
         $.ajax(settings).done(function (response) {
-            localStorage.setItem("token", btoa(response.phoneNumber + ":" + pho + ":" + response.name ));
+            localStorage.setItem("token", btoa(response.phoneNumber + ":" + pho + ":" + response.name));
             console.log(response);
-            window.location.href = "http://localhost:8080/home.html";
         });
+    }else{
+        nowuiDashboard.showNotification('top','left');
+    }
 
     }
 
