@@ -35,7 +35,12 @@ public class Doctor extends User {
     private List<WorkTime> workTimes;
 
     @OneToMany
+    private List<AbsenceTime> absences;
+
+    @OneToMany
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private List<Visit> visits;
+
+    private int visitDurationMin;
 
 }

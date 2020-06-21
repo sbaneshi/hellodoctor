@@ -3,9 +3,11 @@ package ui.hellodoctor.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
+import ui.hellodoctor.data.domain.AbsenceTime;
 import ui.hellodoctor.data.domain.Doctor;
 import ui.hellodoctor.data.domain.User;
 import ui.hellodoctor.data.domain.WorkTime;
+import ui.hellodoctor.data.repository.AbsenceTimeRepository;
 import ui.hellodoctor.data.repository.DoctorRepository;
 import ui.hellodoctor.data.repository.WorkTimeRepository;
 
@@ -19,6 +21,7 @@ public class DoctorService {
 
     private final DoctorRepository doctorRepository;
     private final WorkTimeRepository workTimeRepository;
+    private final AbsenceTimeRepository absenceTimeRepository;
 
     public Doctor getFullDoctor(String phoneNumber) {
         Doctor doctor = doctorRepository.findByPhoneNumber(phoneNumber).orElseThrow(IllegalArgumentException::new);
@@ -113,6 +116,18 @@ public class DoctorService {
             builder.expertise(expertise);
 
         return fullDoctor(doctorRepository.save(builder.build()));
+    }
+
+    public void addAbsence(String phoneNumber, long start, long end) {
+        AbsenceTime absenceTime = absenceTimeRepository.save(AbsenceTime.builder()
+                .start(start)
+                .end(end)
+                .build());
+
+        Doctor doctor = doctorRepository.findByPhoneNumber(phoneNumber).orElseThrow(IllegalArgumentException::new);
+        List<AbsenceTime> absenceTimes = doctor.getAbsences();
+        absenceTimes.add(absenceTime);
+        doctor.setAbsences(absenceTimes);
     }
 
     private Doctor fullDoctor(Doctor doctor) {

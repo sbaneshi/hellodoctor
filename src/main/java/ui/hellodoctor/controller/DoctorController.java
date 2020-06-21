@@ -10,6 +10,7 @@ import ui.hellodoctor.security.SecurityUtils;
 import ui.hellodoctor.service.DoctorService;
 
 import java.time.DayOfWeek;
+import java.util.Arrays;
 import java.util.List;
 
 @CrossOrigin
@@ -71,5 +72,17 @@ public class DoctorController extends BaseController {
     public Doctor edit(String firstName, String lastName, String email, String province,
                        String city, String address, Double geoX, Double geoY, String expertise) {
         return doctorService.editDoctor(getPhoneNumber(), firstName, lastName, email, province, city, address, geoX, geoY, expertise);
+    }
+
+    @PostMapping("/api/doctor/absence/add")
+    public ResponseEntity<?> addAbsence(long start, long end) {
+        assertRole(SecurityUtils.ROLE_DOCTOR);
+        doctorService.addAbsence(getPhoneNumber(), start, end);
+        return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/api/doctor/available_visit_times")
+    public List<Long> getAvailableVisitTime(int doctorId) {
+        return Arrays.asList(12L, 45L);
     }
 }
