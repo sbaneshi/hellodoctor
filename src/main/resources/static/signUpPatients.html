@@ -35,16 +35,16 @@
         <div class="card"></div>
         <div class="card">
             <h1 class="title">ورود به حساب کاربری</h1>
-            <form method="post" >
+            <form method="post" id="form-login">
                 <div class="input-container">
                     <input type="tel" id="phone-numberlogin" required />
                     <label for="phone-numberlogin">شماره موبایل</label>
-                    <div id="ph-login-bar" class="bar"></div>
+                    <div id="ph-login-bar" class="bar" style="color: red;"></div>
                 </div>
                 <div class="input-container">
                     <input type="password" id="password-login" required="required" />
                     <label for="password-login">گذرواژه</label>
-                    <div class="bar"></div>
+                    <div class="bar" style="color: red"></div>
                 </div>
                 <div class="button-container">
                     <button id="login"><span>وارد شوید</span></button>
@@ -57,32 +57,47 @@
             <h1 class="title" style="text-align: right;">ثبت نام
                 <div class="close"></div>
             </h1>
-            <form id="signup" method="post" action="home.html">
+            <form id="form-signup" method="post" action="home.html">
+
+                <div class="input-container">
+                    <div class="row no-gutters justify-content-between">
+                        <div class="col-5">
+                            <input type="tel" id="fname" required="required" />
+                            <label for="fname">نام</label>
+                            <div id="" class="bar"></div>
+                        </div>
+                        <div class="col-6">
+                            <input type="tel" id="lname" required="required" />
+                            <label for="lname">نام خانوادگی</label>
+                            <div class="bar"></div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="input-container">
                     <input type="tel" id="phone-number" required="required" />
-                    <label for="phone-number">شماره موبایل خود را وارد کنید</label>
+                    <label for="phone-number">شماره موبایل</label>
                     <div id="phone-bar" class="bar"></div>
                 </div>
-                <div class="input-container">
-                    <input type="tel" id="phone-number" required="required" />
-                    <label for="phone-number">شماره موبایل خود را وارد کنید</label>
-                    <div id="phone-bar" class="bar"></div>
-                </div>
+
                 <div class="input-container">
                     <input type="password" id="password" required="required" />
-                    <label for="password">گذرواژه خود را وارد کنید</label>
+                    <label for="password">گذرواژه</label>
                     <div id="pass-bar" class="bar"></div>
                 </div>
                 <div class="input-container">
                     <input type="password" id="repeat-password" required="required" />
-                    <label for="repeat-password">بار دیگر گذرواژه خود را وارد کنید</label>
+                    <label for="repeat-password">تکرار گذرواژه</label>
                     <div id="rpass-bar" class="bar"></div>
                 </div>
                 <div class="input-container">
                     <label for="insurance">بیمه</label>
                     <select id="insurance" class="form-control">
                         <option value = 0 selected>هیچکدام</option>
-                        <option>...</option>
+                        <option value="1">تأمین اجتماعی</option>
+                        <option value="2">نیروهای مسلح</option>
+                        <option value="3">خدمات درمانی</option>
+                        <option value="4">سلامت</option>
                     </select>
                 </div>
 

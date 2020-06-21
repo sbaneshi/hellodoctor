@@ -1,9 +1,9 @@
 .profile-btn {
 
     font-family: Hack, monospace;
-    background: #def4f0;
+    background: white;
     color: #1d1d1d;
-    border: 2px solid #134E5E;
+    border: 2px solid #008080;
     cursor: pointer;
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
@@ -27,7 +27,7 @@
 }
 
 .profile-btn:hover {
-    background: #134E5E;
+    background: #008080;
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
     border-radius: 5px;
@@ -45,9 +45,9 @@
 
 .logout-btn {
     font-family: Hack, monospace;
-    background: #def4f0;
+    background:white;
     color: #1d1d1d;
-    border: 2px solid #134E5E;
+    border: 2px solid #008080;
     cursor: pointer;
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
@@ -72,7 +72,7 @@
 }
 
 .logout-btn:hover {
-    background: #134E5E;
+    background: #008080;
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
     border-radius: 5px;
@@ -89,7 +89,7 @@
 }
 .login-btn {
     font-family: Hack, monospace;
-    background: #def4f0;
+    background: white;
     color: #1d1d1d;
     border: 2px solid #134E5E;
     cursor: pointer;
@@ -101,24 +101,25 @@
     min-width: 120px;
 }
 
-.login-btn::after {
-    padding-left: 3px;
-    content: "\f053";
-    font-family: "FontAwesome";
-    position: absolute;
-    left: 80%;
-    top: 50%;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
+/*.login-btn::after {*/
+/*    padding-left: 3px;*/
+/*    content: "\f053";*/
+/*    font-family: "FontAwesome";*/
+/*    position: absolute;*/
+/*    left: 80%;*/
+/*    top: 50%;*/
+/*    right: 0;*/
+/*    bottom: 0;*/
+/*    opacity: 0;*/
+/*    -webkit-transform: translate(-50%, -50%);*/
+/*    transform: translate(-50%, -50%);*/
+/*}*/
 
 .login-btn:hover {
     background: #134E5E;
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
+    border: 2px solid #d1ecf1;
     border-radius: 5px;
     -webkit-box-shadow: 0px 6px 15px #0000ff61;
     box-shadow: 0px 6px 15px #0000ff61;

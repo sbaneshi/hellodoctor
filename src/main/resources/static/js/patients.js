@@ -83,6 +83,8 @@ $(document).ready(function() {
 function signUpRequest(e) {
     e.preventDefault();
     let userInformation = {
+        fname: $("#fname").val(),
+        lname: $("#lname").val(),
         phoneNumber: $('#phone-number').val(),
         password: $('#password').val(),
         insuranceId: $('#insurance').val()
@@ -108,6 +110,8 @@ function signUpRequest(e) {
 
         });
 
+    }else{
+        nowuiDashboard.showNotification('top', 'left');
     }
 
 }
@@ -138,6 +142,33 @@ async function loginRequest(e) {
             window.location = "home.html";
         });
 
+    }else {
+        nowuiDashboard.showNotification('top', "left");
     }
 
 }
+
+nowuiDashboard = {
+    misc: {
+        navbar_menu_visible: 0
+    },
+
+    showNotification: function(from, align) {
+        color = 'danger';
+
+        $.notify({
+            icon: "fa fa-bell ",
+            message: "اطلاعات وارد شده صحیح نمی باشد."
+
+        }, {
+            type: color,
+
+            placement: {
+                from: from,
+                align: align
+            }
+        });
+    }
+
+
+};

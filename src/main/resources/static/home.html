@@ -13,7 +13,6 @@
     <script>
         window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')
     </script>
-    <script src="../assets/dist/js/bootstrap.bundle.js"></script>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/navbar-fixed/">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,6 +22,15 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     
@@ -53,39 +61,42 @@
                     <div class="right"></div>
                 </div>
                 <li class="nav-item active">
-                    <a class="nav-link" href="javascript:void(0);">خانه</a>
+                    <a class="nav-link" href="javascript:void(0)">خانه</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0);">رزرو نوبت</a>
+                    <a class="nav-link" href="book-appointment.html">رزرو نوبت</a>
                 </li>
 
                 <li>
-                    <a class="nav-link" href="javascript:void(0);">ارتباط با ما</a>
+                    <a class="nav-link" href="contact-us.html">ارتباط با ما</a>
                 </li>
             </ul>
+            <button class="btn" id="nav-login" >
+                <div class="learn-more my-button">
+                    <span class="circle" aria-hidden="true">
+                      <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">ورود/ثبت نام</span>
+                </div>
+            </button>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa fa-bars text-white"></i>
           </button>
+<div>
 
-        <div>
-            <div class="navbar-brand navbar-logo " id="nav-login" >
-                <button class="login-btn">ورود/ثبت نام</button>
-             
-            </div>
-                <div class="btn-group rounded-circle login-profile-container" id="nav-profile">
-                        <label for="dropmenu" type="button" id="drop"class="btn fa fa-user  px-3" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false" style="font-size: 30px!important; color:#def4f0;">
-                            <span class="sr-only">Toggle Dropdown</span>
+                <div class="btn-group " id="nav-profile">
+                        <label for="dropmenu" type="button" id="drop"class="dropdown-toggle btn fa fa-user  px-3" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false" style="font-size: 25px!important; color:#fff;">
                         </label>
                         <div  id="dropmenu" class="dropdown-menu" style="text-align:right;">
                             <p  id="UserName" style="text-align: center; font-size: 1rem; font-weight: 700;">نام کاربر</p>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item " href="dashboard.htmls"><button class="btn primary  profile-btn">پنل من</button></a>
-                            <a class="dropdown-item " href=""><button class="btn primary  logout-btn">خروج</button></a>
+                            <a class="dropdown-item " href="dashboard.html"><button class="btn profile-btn">پنل من</button></a>
+                            <a id="logout" class="dropdown-item " href="home.html"><button class="btn logout-btn">خروج</button></a>
                         </div>
                 </div>
-             <a class="navbar-brand navbar-logo mr-auto" href="#">لوگوی دکتر سلام</a>
+             <a class="navbar-brand navbar-logo mr-auto" href="home.html">لوگوی دکتر سلام</a>
 
         </div>
 
@@ -182,7 +193,7 @@
             <hr class="featurette-divider">
             <div class="container">
                 <h3>پزشکان آماده همراهی</h3>
-                <div class="gallery js-flickity data-flickity-options='{  wraparound : true }'">
+                <div id="doctor-list" class="gallery js-flickity data-flickity-options='{  wraparound : true }'">
                     <div class="card-container">
                         <span class="pro"><i class="fa fa-heartbeat" style="font-size:36px; color:white;"></i></span>
                         <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
@@ -433,7 +444,9 @@
 
 
         </div>
+        </div>
         <hr class="featurette-divider" style="border: 1px #7ecec6;">
+
 
     </main>
     <footer class="my-footer page-footer font-small mdb-color pt-4" >
@@ -538,10 +551,13 @@
         </div>
 
     </footer>
-
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="js/flickity.pkgd.min.js"></script>
     <script src="js/dash.js"></script>
     <script src="js/home-page.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 
