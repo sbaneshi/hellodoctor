@@ -302,17 +302,17 @@ $(document).ready(function() {
                  geoY: mylng
              };
 
-
+let head=localStorage.getItem('token');
              var settings = {
                  url: "http://localhost:8080/api/doctor/edit",
                  method: "POST",
                  timeout: 100000,
-                 headers: {"Authorization": "Basic " + btoa('5678:1234')},
+                 headers: {"Authorization": "Basic " + head},
                  cache: false,
                  data: doctorInf,
                  statusCode: {
                      200: function (response) {
-                         alert(response);
+
                      }
                  }
              };
@@ -325,7 +325,7 @@ $(document).ready(function() {
                      url: "http://localhost:8080/api/doctor/worktime",
                      method: "POST",
                      timeout: 100000,
-                     headers: {"Authorization": "Basic " + btoa('5678:1234')},
+                     headers: {"Authorization": "Basic " + head},
                      cache: false,
                      data: element,
                      statusCode: {
@@ -341,7 +341,7 @@ $(document).ready(function() {
 
              })
 
-
+             console.log(response);
          }
      }
     

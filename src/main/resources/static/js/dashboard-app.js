@@ -5,19 +5,18 @@
 
 //eventlisteners
 $(document).ready(function() {
-    //setPanel();
+    setPanel();
     // loadPrescriptions();
     // loadFinancials();
     loadAppointments();
-    // $('#upload').on('change', function() {
-    //     readURL(input);
-    // });
+
 
 
 
 
 });
  $(" #notifications").click( removeNotif);
+ $('.exitaccount').click(exitaccount);
 //classes
 
 
@@ -33,97 +32,118 @@ function setPanel(){
 
         var decode = (atob(token));
         var userInformation = decode.split(':');
-        $('.card-body .author h5').html(`<i class="fa fa-user" style="margin-left:10px;"></i>${userInformation[2]}`);
+        console.log(userInformation)
+    var settings = {
+        type: "GET",
+        headers: {
+            "Authorization": "Basic " + btoa(userInformation[0] + ":" + userInformation[1])
+        },
+        url: "http://localhost:8080/api/patient/full",
+        status: {
+            200: function(response) {
+                alert(response);
+            }
+        }
+    };
+    //  if (!error) {
+    $.ajax(settings).done(function(response) {
+
+        //  document.querySelector('#my-prof').firstChild.nextElementSibling.nextElementSibling.innerHTML=`<img src="${doctor.image}" class="my-circle" style="height:106px;width:106px" alt="Avatar">`
+        $('.card-body .author h5').html(`<i class="fa fa-user" style="margin-left:10px;"></i>${response.firstName}`+" "+`${response.lastName}`);
+        console.log(response)
+
+    });
+
 
 
 }
 
-function loadPrescriptions() {
-    var Prescription = '';
-    var html = '';
-
-    var token=localStorage.getItem("token");
-
-    var decode = (atob(token));
-    var userInformation = decode.split(':');
-
-        var settings = {
-            url: "http://localhost:8080//api/pateint/full",
-            method: "GET",
-            timeout: 100000,
-            cache:false,
-            header:{
-                "Authorization" : "Basic " + btoa(userInformation[0]+ ":"+ userInformation[1])
-            },
-            status:{
-                200:function (response) {
-                    alert(response);
-                }
-            }
-        };
-        if (!error) {
-            $.ajax(settings).done(function (response) {
-
-
-                // localStorage.setItem()
-                Prescription = JSON.parse(data);
-                html += `
-                            <div class="table-responsive" >
-                                <table class="table" style="text-align:right; ">
-                                <thead class="text-info">
-                                    <th>
-                                    نام پزشک
-                                    </th>
-                                    <th>
-                                    شهر
-                                    </th>
-                                    <th>
-                                    تخصص
-                                    </th>
-                                    <th>
-                                    تاریخ آپلود نسخه
-                                    </th>
-                                    
-                                </thead>
-                                < tbody >
-                        `;
-                Prescription.forEach(prescriptions => {
-                    html += `
-                        <tr>
-                          <td>
-                            ${response.visits.doctor.name}
-                          </td>
-                          <td>
-                            ${response.visits.doctor.city}
-                          </td>
-                          <td>
-                            ${response.visits.doctor.expertise}
-                          </td>
-                          <td class="text-right">
-                            ${response.visits.doctor.name}
-                          </td>
-                            <td>
-                              <button type="button" class="btn btn-info btn-group-xs" style="border-radius:20px;">مشاهده نسخه</button>
-                          </td>
-                        </tr>
-                        
-                        `;
-                    html += `
-                                </tbody>
-                            </table>
-                         </div>
-                         
-                         `;
-
-                })
-                //saveToLocalStorage("myPrescriptions" , html)
-                myPrescriptions.appendChild(html);
-            });
-        }
-             else {
-                myPrescriptions.appendChild(document.createTextNode("هنوز نسخه ای برای شما آپلود نشده است"));
-            }
-};
+// function loadPrescriptions() {
+//     var Prescription = '';
+//     var html = '';
+//
+//     var token=localStorage.getItem("token");
+//
+//     var decode = (atob(token));
+//     var userInformation = decode.split(':');
+//
+//         var settings = {
+//             url: "http://localhost:8080//api/pateint/full",
+//             method: "GET",
+//             timeout: 100000,
+//             cache:false,
+//             header:{
+//                 "Authorization" : "Basic " + btoa(userInformation[0]+ ":"+ userInformation[1])
+//             },
+//             status:{
+//                 200:function (response) {
+//                     alert(response);
+//                 }
+//             }
+//         };
+//         if (!error) {
+//             $.ajax(settings).done(function (response) {
+//
+//
+//                 // localStorage.setItem()
+//                 Prescription = JSON.parse(data);
+//                 html += `
+//                             <div class="table-responsive" >
+//                                 <table class="table" style="text-align:right; ">
+//                                 <thead class="text-info">
+//                                     <th>
+//                                     نام پزشک
+//                                     </th>
+//                                     <th>
+//                                     شهر
+//                                     </th>
+//                                     <th>
+//                                     تخصص
+//                                     </th>
+//                                     <th>
+//                                     تاریخ آپلود نسخه
+//                                     </th>
+//
+//                                 </thead>
+//                                 < tbody >
+//                         `;
+//                 Prescription.forEach(prescriptions => {
+//                     html += `
+//                         <tr>
+//                           <td>
+//                             ${response.visits.doctor.name}
+//                           </td>
+//                           <td>
+//                             ${response.visits.doctor.city}
+//                           </td>
+//                           <td>
+//                             ${response.visits.doctor.expertise}
+//                           </td>
+//                           <td class="text-right">
+//                             ${response.visits.doctor.name}
+//                           </td>
+//                             <td>
+//                               <button type="button" class="btn btn-info btn-group-xs" style="border-radius:20px;">مشاهده نسخه</button>
+//                           </td>
+//                         </tr>
+//
+//                         `;
+//                     html += `
+//                                 </tbody>
+//                             </table>
+//                          </div>
+//
+//                          `;
+//
+//                 })
+//                 //saveToLocalStorage("myPrescriptions" , html)
+//                 myPrescriptions.appendChild(html);
+//             });
+//         }
+//              else {
+//                 myPrescriptions.appendChild(document.createTextNode("هنوز نسخه ای برای شما آپلود نشده است"));
+//             }
+// };
 
 // function loadFinancials() {
 //     var Financial = '';
@@ -295,6 +315,10 @@ function removeNotif(event) {
     };
 
 }
+function  exitaccount() {
+    localStorage.clear();
+    window.location="home.html";
+}
 
 
 
@@ -316,39 +340,6 @@ function getFromLocalStorage(key) {
 }
 
 //---------------------------------------------
-function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function(e) {
-            $('#imageResult')
-                .attr('src', e.target.result);
-        };
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-
-
-
-/*  ==========================================
-    SHOW UPLOADED IMAGE NAME
-* ========================================== */
-var input = document.getElementById('upload');
-var infoArea = document.getElementById('upload-label');
-
-input.addEventListener('change', showFileName);
-
-function showFileName(event) {
-    var input = event.srcElement;
-    var fileName = input.files[0].name;
-    infoArea.textContent = 'File name: ' + fileName;
-}
-
-
-
-
-
-
 
 
 //requests

@@ -1,22 +1,23 @@
 $(document).ready(function() {
     setPanel();
-    var app = new Mapp({
-        element: '#app',
-        presets: {
-            latlng: {
-                lat: 32,
-                lng: 52,
-            },
-            zoom: 6,
-        },
-        apiKey: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM2Yzc4ZjlhNjJhOTY4ZTA0ZGNjMzM1ZjRhZDUyNWI2N2UyZDRlMGVhMDBmZThkYWQyNjQ2YjVkNTZlYzU4YTZmYmI3NDM1MDQzZjAxNzBkIn0.eyJhdWQiOiI5NzQ3IiwianRpIjoiMzZjNzhmOWE2MmE5NjhlMDRkY2MzMzVmNGFkNTI1YjY3ZTJkNGUwZWEwMGZlOGRhZDI2NDZiNWQ1NmVjNThhNmZiYjc0MzUwNDNmMDE3MGQiLCJpYXQiOjE1OTI2NDMyNjQsIm5iZiI6MTU5MjY0MzI2NCwiZXhwIjoxNTk1MjM1MjY0LCJzdWIiOiIiLCJzY29wZXMiOlsiYmFzaWMiXX0.F0av3yZI6AilPjdukWNTbgH5ffiCBF6nws7xsCq1G4hHfb_mZ7Cl3kQdB5kSM9NnqDOyUx3O5-g1JlIlqkyRcUuaRU9RQg560OLfatlBmDhedrc-XuGhMuSx2ixXXbYClFS0g-oPcYWb6kD1cUjrJRTJYh_VCo5q4Z8FNUtEo-Fxj6waLoY3uI1RsxvplTvWSwiehiEBEWbx41qCnXgG8NR6Or3FXAjcYiZWJsrzcuMTOl43aFjONgPqJZDYu0-kDTqgyoBvEAWnn_cROfVcGwSw3UJuAxQm_LYjtqHhOdYUgrzijoeyS5j4vYU2RtRfgnDHYmddp7Ahx_j8SfP1hQ'
-    });
-    app.addLayers();
+    // var app = new Mapp({
+    //     element: '#app',
+    //     presets: {
+    //         latlng: {
+    //             lat: 32,
+    //             lng: 52,
+    //         },
+    //         zoom: 6,
+    //     },
+    //     apiKey: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM2Yzc4ZjlhNjJhOTY4ZTA0ZGNjMzM1ZjRhZDUyNWI2N2UyZDRlMGVhMDBmZThkYWQyNjQ2YjVkNTZlYzU4YTZmYmI3NDM1MDQzZjAxNzBkIn0.eyJhdWQiOiI5NzQ3IiwianRpIjoiMzZjNzhmOWE2MmE5NjhlMDRkY2MzMzVmNGFkNTI1YjY3ZTJkNGUwZWEwMGZlOGRhZDI2NDZiNWQ1NmVjNThhNmZiYjc0MzUwNDNmMDE3MGQiLCJpYXQiOjE1OTI2NDMyNjQsIm5iZiI6MTU5MjY0MzI2NCwiZXhwIjoxNTk1MjM1MjY0LCJzdWIiOiIiLCJzY29wZXMiOlsiYmFzaWMiXX0.F0av3yZI6AilPjdukWNTbgH5ffiCBF6nws7xsCq1G4hHfb_mZ7Cl3kQdB5kSM9NnqDOyUx3O5-g1JlIlqkyRcUuaRU9RQg560OLfatlBmDhedrc-XuGhMuSx2ixXXbYClFS0g-oPcYWb6kD1cUjrJRTJYh_VCo5q4Z8FNUtEo-Fxj6waLoY3uI1RsxvplTvWSwiehiEBEWbx41qCnXgG8NR6Or3FXAjcYiZWJsrzcuMTOl43aFjONgPqJZDYu0-kDTqgyoBvEAWnn_cROfVcGwSw3UJuAxQm_LYjtqHhOdYUgrzijoeyS5j4vYU2RtRfgnDHYmddp7Ahx_j8SfP1hQ'
+    // });
+    // app.addLayers();
 
 
 
 
 });
+$('.exitaccount').click(exitaccount);
 
 function setPanel() {
     var token = localStorage.getItem("token");
@@ -107,4 +108,8 @@ function loadAppointments() {
             $(" #appointments p").append(document.createTextNode("شما هنوز پزشکی را ملاقات نکرده اید"));
         }
     });
+}
+function  exitaccount() {
+    localStorage.clear();
+    window.location="home.html";
 }

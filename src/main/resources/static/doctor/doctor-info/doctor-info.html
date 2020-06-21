@@ -1,0 +1,592 @@
+<!--
+
+=========================================================
+* Now UI Dashboard - v1.5.0
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/now-ui-dashboard
+* Copyright 2019 Creative Tim (http://www.creative-tim.com)
+
+* Designed by www.invisionapp.com Coded by www.creative-tim.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+-->
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon.png">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Now UI Dashboard by Creative Tim
+  </title>
+    <script src="js/jquery.min.js"></script>
+
+  <script src="js/perfect-scrollbar.jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- CSS Files -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/now-ui-dashboard.css" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="css/demo.css" rel="stylesheet" />
+</head>
+
+<body class="user-profile">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="blue" >
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    
+     -->
+
+      <div class="sidebar-wrapper" id="sidebar-wrapper" >
+        <hr style="background-color:#134E5E ; margin-right:20px; margin-left:20px">
+
+          <ul class="nav" style="text-align:right; font-size:25px; margin-right:-40px; ">
+              <li  >
+                  <a href="./dashboard.html">
+                      <i class="fa fa-cube" style="float:right;"></i>
+
+                      <p class="mypanel">پنل من</p>
+                  </a>
+              </li>
+
+              <li>
+                  <a href="./my-doctors.html">
+                      <i class="fa  fa-leanpub" style="float:right;"></i>
+                      <p>پزشکان من</p>
+                  </a>
+              </li>
+
+              <li class="active">
+                  <a href="./user.html">
+                      <i class="fa fa-user" style="float:right;"></i>
+                      <p>پروفایل من</p>
+                  </a>
+              </li>
+
+
+              <li >
+                  <a href="#">
+                      <i class="fa fa-sign-out" style="float:right;"></i>
+                      <p>خروج از حساب</p>
+                  </a>
+              </li>
+          </ul>
+      </div>
+    </div>
+    <div class="main-panel" id="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <div class="navbar-toggle">
+              <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+            <a class="navbar-brand" href="home.html">بازگشت به سایت</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+          </button>
+
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="panel-header panel-header-sm" >
+      </div>
+      <div class="content">
+        <div class="row justify-content-center">
+          
+          <div class="col-md-6" style="text-align:right; ">
+            <div class="card" >
+              <div class="card-header">
+                <h5 class="card-title" style="margin:20px 0 30px 0; text-align:center;"><span  ><b>مشخصات من</b></h5>
+              </div>
+              <hr style="margin:10px;">
+
+              
+
+              <div class="card-body">
+                <form>
+                  <div class="row">
+                    
+                    <div class="col-md-4 px-1">
+                      <div class="form-group">
+                        <label>نام</label>
+                        <input type="text" class="form-control" id="firstname" placeholder="سجاد" value="">
+                      </div>
+                    </div>
+                    <div class="col-md-4 px-1">
+                      <div class="form-group">
+                        <label >نام خانوادگی</label>
+                        <input type="text" class="form-control" id="lastname" placeholder="رحیمی" value="">
+                      </div>
+                    </div>
+                      <div class="col-md-4 px-1">
+                          <div class="form-group">
+                              <label>شماره تلفن</label>
+                              <input type="text" class="form-control" id="phonenumber" placeholder="09123456789" value="">
+                              <span class="phonevalidate"></span>
+                          </div>
+                      </div>
+
+                  </div>
+                  <hr class="my-hr">
+                  <div class="row">
+                    <div class="col-md-4 pr-1">
+                      <div class="form-group">
+                        <label>گذرواژه</label>
+                        <input type="text" class="form-control" id="pass" placeholder="َُSajjad1377" value="">
+                          <span class="passvalidate"></span>
+
+                      </div>
+                    </div>
+                      <div class="col-md-4 px-1">
+                          <div class="form-group">
+                              <label >پست الکرترونیکی</label>
+                              <input type="email" class="form-control" id="email" placeholder="sajjadrahimi77@yahoo.com">
+                              <span class="emailvalidate"></span>
+
+                          </div>
+                      </div>
+
+                    <div class="col-md-4 pl-1">
+                      <div class="form-group">
+                          <label>تخصص شما</label>
+                          <select class="form-control" id="expertise" name="expertise" style="width: 100%; height: 40px; border-color: lightgrey;" tabindex="-1" title="">
+                      <option value="پزشک عمومی">پزشک عمومی</option>
+                      <option value="دندانپزشک عمومی">دندانپزشک عمومی</option>
+                      <option value="پزشک دیابت و متابولیسم">پزشک دیابت و متابولیسم</option>
+                      <option value="متخصص آسیب شناسی (پاتولوژی)">متخصص آسیب شناسی (پاتولوژی)</option>
+                      <option value="فلوشیپ پاتولوژی چشم مشترک با متخصصین چشم">فلوشیپ پاتولوژی چشم مشترک با متخصصین چشم</option>
+                      <option value="فلوشیپ پاتولوژی مولکولارسیتوژنتیک">فلوشیپ پاتولوژی مولکولارسیتوژنتیک</option>
+                      <option value="فلوشیپ سیتوپاتولوژی">فلوشیپ سیتوپاتولوژی</option>
+                      <option value="متخصص آسیب شناسی فک و دهان">متخصص آسیب شناسی فک و دهان</option>
+                      <option value="متخصص آسیب شناسی بالینی">متخصص آسیب شناسی بالینی</option>
+                      <option value="متخصص آسیب شناسی تشریحی">متخصص آسیب شناسی تشریحی</option>
+                      <option value="متخصص آسیب شناسی تشریحی و بالینی">متخصص آسیب شناسی تشریحی و بالینی</option>
+                      <option value="متخصص آلرژی">متخصص آلرژی</option>
+                      <option value="متخصص آناتومی">متخصص آناتومی</option>
+                      <option value="متخصص اپیدمیولوژی">متخصص اپیدمیولوژی</option>
+                      <option value="متخصص ارتوپدی،تروماتولوژی">متخصص ارتوپدی،تروماتولوژی</option>
+                      <option value="فوق تخصص جراحی دست">فوق تخصص جراحی دست</option>
+                      <option value="فوق تخصص جراحی زانو">فوق تخصص جراحی زانو</option>
+                      <option value="فلوشیپ طب تسکینی">فلوشیپ طب تسکینی</option>
+                      <option value="فلوشیپ جراحی دست">فلوشیپ جراحی دست</option>
+                      <option value="فلوشیپ آرتروسکوپی زانو آندوسکوپی داخل مفصل زانو">فلوشیپ آرتروسکوپی زانو آندوسکوپی داخل مفصل زانو</option>
+                      <option value="فلوشیپ جراحی زانو">فلوشیپ جراحی زانو</option>
+                      <option value="فلوشیپ ستون فقرات">فلوشیپ ستون فقرات</option>
+                      <option value="فلوشیپ آرتروپلاستی و تروما تعویض مفاصل">فلوشیپ آرتروپلاستی و تروما تعویض مفاصل</option>
+                      <option value="فلوشیپ جراحی استخوان و مفاصل اطفال">فلوشیپ جراحی استخوان و مفاصل اطفال</option>
+                      <option value="فلوشیپ پا و مچ پا">فلوشیپ پا و مچ پا</option>
+                      <option value="متخصص اعصاب و روان(روانپزشکی)">متخصص اعصاب و روان(روانپزشکی)</option>
+                      <option value="فوق تخصص روانپزشکی کودک و نوجوان">فوق تخصص روانپزشکی کودک و نوجوان</option>
+                      <option value="فوق تخصص مشاوره روانپزشکی">فوق تخصص مشاوره روانپزشکی</option>
+                      <option value="فوق تخصص روانپزشکی روابط جنسی">فوق تخصص روانپزشکی روابط جنسی</option>
+                      <option value="فوق تخصص روانپزشکی سالمندان">فوق تخصص روانپزشکی سالمندان</option>
+                      <option value="فوق تخصص روانپزشکی سابکوز در ایران">فوق تخصص روانپزشکی سابکوز در ایران</option>
+                      <option value="فلوشیپ روانپزشکی نظامی">فلوشیپ روانپزشکی نظامی</option>
+                      <option value="فلو شیپ تخصصی اعتیاد">فلو شیپ تخصصی اعتیاد</option>
+                      <option value="متخصص الکتروفیزیولوژی">متخصص الکتروفیزیولوژی</option>
+                      <option value="متخصص انگل شناسی">متخصص انگل شناسی</option>
+                      <option value="متخصص ایمونولوژی">متخصص ایمونولوژی</option>
+                      <option value="متخصص باکتری شناسی">متخصص باکتری شناسی</option>
+                      <option value="متخصص بهداشت تنظیم خانواده">متخصص بهداشت تنظیم خانواده</option>
+                      <option value="متخصص بهداشت خانواده">متخصص بهداشت خانواده</option>
+                      <option value="متخصص بهداشت عمومی">متخصص بهداشت عمومی</option>
+                      <option value="متخصص بهداشت مادر و کودک">متخصص بهداشت مادر و کودک</option>
+                      <option value="متخصص بیماریهای پوست">متخصص بیماریهای پوست</option>
+                      <option value="فلوشیپ درماتوپاتولوژی ارزیابی و تفسیر میکروسکپی ضایعات پوستی">فلوشیپ درماتوپاتولوژی ارزیابی و تفسیر میکروسکپی ضایعات پوستی</option>
+                      <option value="فلوشیپ زیبایی پوست و لیزر">فلوشیپ زیبایی پوست و لیزر</option>
+                      <option value="متخصص بیماریهای چشم">متخصص بیماریهای چشم</option>
+                      <option value="فلوشیپ استرابیسم">فلوشیپ استرابیسم</option>
+                      <option value="فلوشیپ قرنیه سگمان قدامی">فلوشیپ قرنیه سگمان قدامی</option>
+                      <option value="فلوشیپ گلوکوم">فلوشیپ گلوکوم</option>
+                      <option value="فلوشیپ ویتره ورتین سگمان خلفی">فلوشیپ ویتره ورتین سگمان خلفی</option>
+                      <option value="فلوشیپ بیماریهای سطح چشم">فلوشیپ بیماریهای سطح چشم</option>
+                      <option value="فلوشیپ پاتولوژی چشم مشترک با متخصصین پاتولوژی">فلوشیپ پاتولوژی چشم مشترک با متخصصین پاتولوژی</option>
+                      <option value="فلوشیپ اربیت و اکولوپلاستی">فلوشیپ اربیت و اکولوپلاستی</option>
+                      <option value="فلوشیپ ترومای چشم">فلوشیپ ترومای چشم</option>
+                      <option value="فلوشیپ جراحی پلاستیک چشم">فلوشیپ جراحی پلاستیک چشم</option>
+                      <option value="متخصص بیماریهای داخلی">متخصص بیماریهای داخلی</option>
+                      <option value="فوق تخصص قلب و عروق بصورت تخصص مستقیم قلب و عروق">فوق تخصص قلب و عروق بصورت تخصص مستقیم قلب و عروق</option>
+                      <option value="فوق تخصص غدد داخلی و متابولیسم">فوق تخصص غدد داخلی و متابولیسم</option>
+                      <option value="فوق تخصص گوارش و کبد">فوق تخصص گوارش و کبد</option>
+                      <option value="فوق تخصص نفرولوژی">فوق تخصص نفرولوژی</option>
+                      <option value="فوق تخصص ریه">فوق تخصص ریه</option>
+                      <option value="فوق تخصص روماتولوژی">فوق تخصص روماتولوژی</option>
+                      <option value="فوق تخصص بیماریهای عفونی وگرمسیری ">فوق تخصص بیماریهای عفونی وگرمسیری </option>
+                      <option value="کلیه فلوشیپهای متخصص قلب و عروق مربوط به این فوق تخصص نیز می باشد">کلیه فلوشیپهای متخصص قلب و عروق مربوط به این فوق تخصص نیز می باشد</option>
+                      <option value="فلو شیپ تخصصی اعتیاد">فلو شیپ تخصصی اعتیاد</option>
+                      <option value="فلوشیپ رادیولوژی مداخله ای (اینترونشن)">فلوشیپ رادیولوژی مداخله ای (اینترونشن)</option>
+                      <option value="متخصص بیماریهای عفونی وگرمسیری">متخصص بیماریهای عفونی وگرمسیری</option>
+                      <option value="متخصص بیماریهای قلب و عروق">متخصص بیماریهای قلب و عروق</option>
+                      <option value=" تمامی فلوشیپ های این رشته , فلوشیپ فوق تخصص قلب وعروق"> تمامی فلوشیپ های این رشته , فلوشیپ فوق تخصص قلب وعروق</option>
+                      <option value="فلوشیپ اینترونشنال کاردیولوژی (ترمیم قلب و عروق از طریق کاتتر)">فلوشیپ اینترونشنال کاردیولوژی (ترمیم قلب و عروق از طریق کاتتر)</option>
+                      <option value="فلوشیپ بیماریهای مادرزادی قلب در بالغین">فلوشیپ بیماریهای مادرزادی قلب در بالغین</option>
+                      <option value="فلوشیپ نارسایی قلب">فلوشیپ نارسایی قلب</option>
+                      <option value="فلوشیپ پیس‌میکر والکتروفیزیولوژی">فلوشیپ پیس‌میکر والکتروفیزیولوژی</option>
+                      <option value="فلوشیپ اکوکاردیوگرافی">فلوشیپ اکوکاردیوگرافی</option>
+                      <option value="فلوشیپ اینترونشنال کاردیولوژی کودکان و نوزادان">فلوشیپ اینترونشنال کاردیولوژی کودکان و نوزادان</option>
+                      <option value="فلوشیپ رادیولوژی مداخله ای (اینترونشن)">فلوشیپ رادیولوژی مداخله ای (اینترونشن)</option>
+                      <option value="متخصص بیماریهای خون و سرطان بالغین (هماتولوژی و آنکولوژی)">متخصص بیماریهای خون و سرطان بالغین (هماتولوژی و آنکولوژی)</option>
+                      <option value="متخصص بیماریهای روماتیسمی (فیزیکال مدیسین و روماتولوژی)">متخصص بیماریهای روماتیسمی (فیزیکال مدیسین و روماتولوژی)</option>
+                      <option value="متخصص بیماریهای هماتولوژی بالینی">متخصص بیماریهای هماتولوژی بالینی</option>
+                      <option value="متخصص بیماریهای ریه">متخصص بیماریهای ریه</option>
+                      <option value="متخصص بیماریهای عفونی و گرمسیری">متخصص بیماریهای عفونی و گرمسیری</option>
+                      <option value="متخصص بیماریهای غدد درون ریز و متابولیسم">متخصص بیماریهای غدد درون ریز و متابولیسم</option>
+                      <option value="متخصص بیماریهای کلیه بالغین">متخصص بیماریهای کلیه بالغین</option>
+                      <option value="متخصص بیماریهای کودکان">متخصص بیماریهای کودکان</option>
+                      <option value="فوق تخصص گوارش کودکان">فوق تخصص گوارش کودکان</option>
+                      <option value="فوق تخصص عفونی کودکان">فوق تخصص عفونی کودکان</option>
+                      <option value="فوق تخصص ایمونولوژی و آلرژی کودکان">فوق تخصص ایمونولوژی و آلرژی کودکان</option>
+                      <option value="فوق تخصص نفرولوژی کودکان">فوق تخصص نفرولوژی کودکان</option>
+                      <option value="فوق تخصص غدد و متابولیسم کودکان">فوق تخصص غدد و متابولیسم کودکان</option>
+                      <option value="فوق تخصص قلب کودکان">فوق تخصص قلب کودکان</option>
+                      <option value="فوق تخصص نوزادان">فوق تخصص نوزادان</option>
+                      <option value="فوق تخصص ریه کودکان (جدید)">فوق تخصص ریه کودکان (جدید)</option>
+                      <option value="فوق تخصص روماتولوژی کودکان (جدید)">فوق تخصص روماتولوژی کودکان (جدید)</option>
+                      <option value="فوق تخصص بیماریهای متابولیک ارثی">فوق تخصص بیماریهای متابولیک ارثی</option>
+                      <option value="فلوشیپ اورژانس اطفال">فلوشیپ اورژانس اطفال</option>
+                      <option value="متخصص بیماریهای روماتولوژی کودکان">متخصص بیماریهای روماتولوژی کودکان</option>
+                      <option value="متخصص بیماریهای نوزادان">متخصص بیماریهای نوزادان</option>
+                      <option value="متخصص بیماریهای کلیه کودکان ">متخصص بیماریهای کلیه کودکان </option>
+                      <option value="متخصص بیماریهای مغز و اعصاب (نورولوژی)">متخصص بیماریهای مغز و اعصاب (نورولوژی)</option>
+                      <option value="فوق تخصص الکترومیوگرافی و هدایت عصبی محیطی">فوق تخصص الکترومیوگرافی و هدایت عصبی محیطی</option>
+                      <option value="فلوشیپ الکترومیوگرافی و هدایت عصبی محیطی">فلوشیپ الکترومیوگرافی و هدایت عصبی محیطی</option>
+                      <option value="فلوشیپ درد">فلوشیپ درد</option>
+                      <option value="فلوشیپ ام اس">فلوشیپ ام اس</option>
+                      <option value="فلو شیپ سکته مغزی (Stroke)">فلو شیپ سکته مغزی (Stroke)</option>
+                      <option value="فلو شیپ نوروفیزیولوژی">فلو شیپ نوروفیزیولوژی</option>
+                      <option value="فلوشیپ رادیولوژی مداخله ای (اینترونشن)">فلوشیپ رادیولوژی مداخله ای (اینترونشن)</option>
+                      <option value="متخصص بیهوشی">متخصص بیهوشی</option>
+                      <option value="فوق تخصص بیهوشی(بیهوشی قلب و مراقبتهای ویژه)">فوق تخصص بیهوشی(بیهوشی قلب و مراقبتهای ویژه)</option>
+                      <option value="فلوشیپ بیهوشی قلب">فلوشیپ بیهوشی قلب</option>
+                      <option value="فلوشیپ بیهوشی پیوند اعضاء داخلی شکم">فلوشیپ بیهوشی پیوند اعضاء داخلی شکم</option>
+                      <option value="فلوشیپ بیهوشی کودکان">فلوشیپ بیهوشی کودکان</option>
+                      <option value="فلوشیپ بیهوشی جراحی مغز و اعصاب">فلوشیپ بیهوشی جراحی مغز و اعصاب</option>
+                      <option value="فلوشیپ مراقبت‌های ویژه ICU">فلوشیپ مراقبت‌های ویژه ICU</option>
+                      <option value="فلوشیپ طب تسکینی تسکین درد">فلوشیپ طب تسکینی تسکین درد</option>
+                      <option value="فلو شیپ تخصصی اعتیاد ">فلو شیپ تخصصی اعتیاد </option>
+                      <option value="متخصص جراحی مغز و اعصاب">متخصص جراحی مغز و اعصاب</option>
+                      <option value="فلوشیپ جراحی قاعده جمجمه">فلوشیپ جراحی قاعده جمجمه</option>
+                      <option value="فلوشیپ استریوتاکسی">فلوشیپ استریوتاکسی</option>
+                      <option value="فلوشیپ رادیولوژی مداخله ای (اینترونشن)">فلوشیپ رادیولوژی مداخله ای (اینترونشن)</option>
+                      <option value="فلوشیپ پیوند کلیه مشترک با جراحی عمومی">فلوشیپ پیوند کلیه مشترک با جراحی عمومی</option>
+                      <option value="فلوشیپ اندواورولوژی">فلوشیپ اندواورولوژی</option>
+                      <option value="متخصص رادیولوژی">متخصص رادیولوژی</option>
+                      <option value="فلوشیپ رادیولوژی مداخله ای (اینترونشن)">فلوشیپ رادیولوژی مداخله ای (اینترونشن)</option>
+                      <option value="فلوشیپ سونوگرافی">فلوشیپ سونوگرافی</option>
+                      <option value="فلوشیپ سی تی اسکن و ام آر آی">فلوشیپ سی تی اسکن و ام آر آی</option>
+                      <option value="فلوشیپ اروانکولوژی">فلوشیپ اروانکولوژی</option>
+                      <option value="فلوشیپ ارولوژی زنان">فلوشیپ ارولوژی زنان</option>
+                      <option value="فلوشیپ ارولوژی کودکان مشترک با متخصصین کودکان">فلوشیپ ارولوژی کودکان مشترک با متخصصین کودکان</option>
+                      <option value="فوق تخصص مغز و اعصاب کودکان">فوق تخصص مغز و اعصاب کودکان</option>
+                      <option value="فوق تخصص هماتولوژی و آنکولوژی کودکان">فوق تخصص هماتولوژی و آنکولوژی کودکان</option>
+                      <option value="فلوشیپ پزشکی هسته ای">فلوشیپ پزشکی هسته ای</option>
+                      <option value="متخصص پزشکی هسته ای ">متخصص پزشکی هسته ای </option>
+                      <option value="فوق تخصص بیماریهای زنان و زایمان(جراحی کانسر)">فوق تخصص بیماریهای زنان و زایمان(جراحی کانسر)</option>
+                      <option value="فوق تخصص بیماریهای زنان وزایمان (آی.وی.اف و لاپاراسکوپی)">فوق تخصص بیماریهای زنان وزایمان (آی.وی.اف و لاپاراسکوپی)</option>
+                      <option value="فوق تخصص بیماریهای زنان وزایمان (نازایی و آی.وی.اف)">فوق تخصص بیماریهای زنان وزایمان (نازایی و آی.وی.اف)</option>
+                      <option value="فلوشیپ جراحی کانسر">فلوشیپ جراحی کانسر</option>
+                      <option value="فلوشیپ آی.وی.اف و لاپاراسکوپی">فلوشیپ آی.وی.اف و لاپاراسکوپی</option>
+                      <option value="فلوشیپ نازایی و آی.وی.اف">فلوشیپ نازایی و آی.وی.اف</option>
+                      <option value="فلوشیپ سونوگرافی زنان">فلوشیپ سونوگرافی زنان</option>
+                      <option value="فلوشیپ پریناتالوژی">فلوشیپ پریناتالوژی</option>
+                      <option value="متخصص بیماریهای گوش حلق و بینی">متخصص بیماریهای گوش حلق و بینی</option>
+                      <option value="فوق تخصص اتولوژی و نورواتولوژی(گوش)">فوق تخصص اتولوژی و نورواتولوژی(گوش)</option>
+                      <option value="فلوشیپ اتولوژی و نورواتولوژی(گوش)">فلوشیپ اتولوژی و نورواتولوژی(گوش)</option>
+                      <option value="فلوشیپ لارنگولوژی">فلوشیپ لارنگولوژی</option>
+                      <option value="متخصص جراحی عمومی">متخصص جراحی عمومی</option>
+                      <option value="فوق تخصص جراحی پلاستیک، ترمیمی و سوختگی">فوق تخصص جراحی پلاستیک، ترمیمی و سوختگی</option>
+                      <option value="فوق تخصص جراحی قلب و عروق">فوق تخصص جراحی قلب و عروق</option>
+                      <option value="فوق تخصص جراحی قلب و عروق و پیوند اعضا">فوق تخصص جراحی قلب و عروق و پیوند اعضا</option>
+                      <option value="فوق تخصص جراحی کودکان">فوق تخصص جراحی کودکان</option>
+                      <option value="فوق تخصص جراحی توراکس (قفسه سینه)">فوق تخصص جراحی توراکس (قفسه سینه)</option>
+                      <option value="فوق تخصص جراحی عروق و تروما">فوق تخصص جراحی عروق و تروما</option>
+                      <option value="فلوشیپ جراحی سروگردن">فلوشیپ جراحی سروگردن</option>
+                      <option value="فلوشیپ پیوند کلیه مشترک با جراحی عمومی">فلوشیپ پیوند کلیه مشترک با جراحی عمومی</option>
+                      <option value="فلوشیپ پیوند کلیه">فلوشیپ پیوند کلیه</option>
+                      <option value="فلوشیپ پیوند کبد">فلوشیپ پیوند کبد</option>
+                      <option value="فلوشیپ تروما در جراحی عمومی">فلوشیپ تروما در جراحی عمومی</option>
+                      <option value="فلوشیپ جراحی سرطان">فلوشیپ جراحی سرطان</option>
+                      <option value="فلوشیپ طب تسکینی تسکین درد">فلوشیپ طب تسکینی تسکین درد</option>
+                      <option value="فلوشیپ جراحی درون بین (اندوسکوپیک)">فلوشیپ جراحی درون بین (اندوسکوپیک)</option>
+                      <option value="فلوشیپ رانیماسیون جراحی">فلوشیپ رانیماسیون جراحی</option>
+                      <option value="متخصص جراحی قفسه صدری سینه (توراکس)">متخصص جراحی قفسه صدری سینه (توراکس)</option>
+                      <option value="متخصص جراحی قلب و عروق">متخصص جراحی قلب و عروق</option>
+                      <option value="متخصص بیوشیمی بالینی">متخصص بیوشیمی بالینی</option>
+                      <option value="متخصص بیوشیمی پزشکی">متخصص بیوشیمی پزشکی</option>
+                      <option value="متخصص پاتوبیولوژی">متخصص پاتوبیولوژی</option>
+                      <option value="متخصص پرتودرمانی (رادیوتراپی)">متخصص پرتودرمانی (رادیوتراپی)</option>
+                      <option value="متخصص پزشکی اجتماعی">متخصص پزشکی اجتماعی</option>
+                      <option value="متخصص پزشکی خانواده">متخصص پزشکی خانواده</option>
+                      <option value="متخصص پزشکی فضائی">متخصص پزشکی فضائی</option>
+                      <option value="متخصص پزشکی فیزیکی و توانبخشی">متخصص پزشکی فیزیکی و توانبخشی</option>
+                      <option value="متخصص پزشکی قانونی">متخصص پزشکی قانونی</option>
+                      <option value="متخصص پزشکی ورزشی">متخصص پزشکی ورزشی</option>
+                      <option value="متخصص تغذیه">متخصص تغذیه</option>
+                      <option value="متخصص ژنتیک انسانی">متخصص ژنتیک انسانی</option>
+                      <option value="متخصص ژنتیک پزشکی">متخصص ژنتیک پزشکی</option>
+                      <option value="متخصص ژنتیک مولکولی انسانی">متخصص ژنتیک مولکولی انسانی</option>
+                      <option value="متخصص ژنتیک مولکولی بالینی">متخصص ژنتیک مولکولی بالینی</option>
+                      <option value="متخصص سم شناسی عمومی">متخصص سم شناسی عمومی</option>
+                      <option value="متخصص طب اورژانس">متخصص طب اورژانس</option>
+                      <option value="متخصص طب پیشگیری">متخصص طب پیشگیری</option>
+                      <option value="متخصص طب سالمندان">متخصص طب سالمندان</option>
+                      <option value="متخصص طب کار">متخصص طب کار</option>
+                      <option value="متخصص طب هوا و فضا">متخصص طب هوا و فضا</option>
+                      <option value="متخصص فیزیولوژی">متخصص فیزیولوژی</option>
+                      <option value="متخصص قارچ شناسی">متخصص قارچ شناسی</option>
+                      <option value="متخصص مدیریت امور بهداشتی">متخصص مدیریت امور بهداشتی</option>
+                      <option value="متخصص میکروبیولوژی">متخصص میکروبیولوژی</option>
+                      <option value="متخصص ویروس شناسی">متخصص ویروس شناسی</option>
+                      <option value="متخصص علوم آزمایشگاهی">متخصص علوم آزمایشگاهی</option>
+                      <option value="متخصص جراحی فک و صورت">متخصص جراحی فک و صورت</option>
+                      <option value="متخصص جراحی کلیه،مجاری ادراری و تناسلی(ارولوژی)">متخصص جراحی کلیه،مجاری ادراری و تناسلی(ارولوژی)</option>
+                      <option value="فوق تخصص جراحی کلیه،مجاری ادراری و تناسلی(اروانکولوژی)">فوق تخصص جراحی کلیه،مجاری ادراری و تناسلی(اروانکولوژی)</option>
+                      <option value="دکترای تخصصی روانشناسی بالینی">دکترای تخصصی روانشناسی بالینی</option>
+                      <option value="دکترای تخصصی مشاور خانواده">دکترای تخصصی مشاور خانواده</option>
+                      <option value="دکترای تخصصی روانشناسی بالینی، مشاور خانواده">دکترای تخصصی روانشناسی بالینی، مشاور خانواده</option>
+                      <option value="فلوشیپ جراحی کولورکتال(گوارش)">فلوشیپ جراحی کولورکتال(گوارش)</option>
+                      <option value="جراح و متخصص زنان،  زایمان و نازایی">جراح و متخصص زنان،  زایمان و نازایی</option>
+                      <option value="دکترای تخصصی روانشناسی بالینی، مشاور خانواده و درمان مشکلات زناشویی">دکترای تخصصی روانشناسی بالینی، مشاور خانواده و درمان مشکلات زناشویی</option>
+                      <option value="دکترای تخصصی طب تولید مثل و آندرولوژی (طب جنسی)">دکترای تخصصی طب تولید مثل و آندرولوژی (طب جنسی)</option>
+                      <option value="-------">-------</option>
+                      <option value="فوق تخصص مغز و اعصاب کودکان و نوجوانان">فوق تخصص مغز و اعصاب کودکان و نوجوانان</option>
+                      <option value="فوق تخصص هماتولوژی و آنکولوژی">فوق تخصص هماتولوژی و آنکولوژی</option>
+                      <option value="متخصص زنان و زایمان">متخصص زنان و زایمان</option>
+                      <option value="فوق تخصص هماتولوژی و آنکولوژی (سرطان خون)">فوق تخصص هماتولوژی و آنکولوژی (سرطان خون)</option>
+                      <option value="فوق تخصص هماتولوژی و آنکولوژی (سرطان خون)">فوق تخصص هماتولوژی و آنکولوژی (سرطان خون)</option>
+                      <option value="دکتری تخصصی روانپزشکی (متخصص اعصاب و روان)">دکتری تخصصی روانپزشکی (متخصص اعصاب و روان)</option>
+                      <option value="دکتری تخصصی روانپزشکی (دانشیار)">دکتری تخصصی روانپزشکی (دانشیار)</option>
+                      <option value="متخصص بیماریهای قلب و واریس">متخصص بیماریهای قلب و واریس</option>
+                   
+                    </select>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  <hr class="my-hr">
+                  <hr class="my-hr">
+                    <div class="row">
+
+                        <div class="col-md-6 px-1">
+                            <div class="form-group">
+                                <label>استان</label>
+                                <select name="state" class="form-control" id="ostan" onChange="iranwebsv(this.value);">
+                                    <option value="0">لطفا استان خود را انتخاب نمایید</option>
+                                    <option value="1">تهران</option>
+                                    <option value="2">گیلان</option>
+                                    <option value="3">آذربایجان شرقی</option>
+                                    <option value="4">خوزستان</option>
+                                    <option value="5">فارس</option>
+                                    <option value="6">اصفهان</option>
+                                    <option value="7">خراسان رضوی</option>
+                                    <option value="8">قزوین</option>
+                                    <option value="9">سمنان</option>
+                                    <option value="10">قم</option>
+                                    <option value="11">مرکزی</option>
+                                    <option value="12">زنجان</option>
+                                    <option value="13">مازندران</option>
+                                    <option value="14">گلستان</option>
+                                    <option value="15">اردبیل</option>
+                                    <option value="16">آذربایجان غربی</option>
+                                    <option value="17">همدان</option>
+                                    <option value="18">کردستان</option>
+                                    <option value="19">کرمانشاه</option>
+                                    <option value="20">لرستان</option>
+                                    <option value="21">بوشهر</option>
+                                    <option value="22">کرمان</option>
+                                    <option value="23">هرمزگان</option>
+                                    <option value="24">چهارمحال و بختیاری</option>
+                                    <option value="25">یزد</option>
+                                    <option value="26">سیستان و بلوچستان</option>
+                                    <option value="27">ایلام</option>
+                                    <option value="28">کهگلویه و بویراحمد</option>
+                                    <option value="29">خراسان شمالی</option>
+                                    <option value="30">خراسان جنوبی</option>
+                                    <option value="31">البرز</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6 px-1">
+                            <div class="form-group">
+                                <label>شهر</label>
+                                <select name="city" class="form-control" id="city">
+                                    <option value="0">لطفا استان خود را انتخاب نمایید</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                   
+                  <div class="row">
+                    <div class="col-md-12 px-1">
+                      <div class="form-group">
+                        <label>آدرس</label>
+                        <input type="text" class="form-control" id="address"placeholder="اصفهان-خیابان هزارجریب-کوی امام-کوچه 46-پلاک 5" value="">
+
+                      </div>
+                    </div>
+                  </div>
+                  <hr class="my-hr">
+                  <div class="row justify-content-center" >
+                    <div class="col-sm-2">
+                            <button  class="btn btn-info save-btn" >
+                        ذخیره
+                        
+                        </button>
+                    </div>
+                  </div>
+                      
+
+                     
+                  
+                </form>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              
+                
+      <footer class="page-footer font-small mdb-color pt-4" style="background-color:#134E5E ; border-top-left-radius:40px; border-top-right-radius:40px; color: #B3B8CD;">
+
+        <div class="container text-center text-md-left">
+
+            <div class="row text-center text-md-left mt-3 pb-3">
+
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3" style="text-align:right;">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">درباره دکتر سلام</h6>
+                    <p style="text-align:right;">-------------------------------------------------------------------------------------------------------------------</p>
+                </div>
+
+                <hr class="w-100 clearfix d-md-none">
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3" style="text-align:right;">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">صفحات سایت</h6>
+                    <p>
+                        <a href="#!">-------------</a>
+                    </p>
+                    <p>
+                        <a href="#!">-------------</a>
+                    </p>
+                    <p>
+                        <a href="#!">-------------</a>
+                    </p>
+                    <p>
+                        <a href="#!">-------------</a>
+                    </p>
+                </div>
+
+                <hr class="w-100 clearfix d-md-none">
+
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3" style="text-align:right;">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">خدمات دکتر سلام</h6>
+                    <p>
+                        <a href="#!">--------------</a>
+                    </p>
+                    <p>
+                        <a href="#!">--------------</a>
+                    </p>
+                    <p>
+                        <a href="#!">--------------</a>
+                    </p>
+                    <p>
+                        <a href="#!">--------------</a>
+                    </p>
+                </div>
+
+                <hr class="w-100 clearfix d-md-none">
+
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3" style="text-align:right;">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">ارتباط با ما</h6>
+                    <p>
+                        <i class="fa fa-home mr-3"></i>---------------</p>
+                    <p>
+                        <i class="fa fa-envelope mr-3"></i>---------------</p>
+                    <p>
+                        <i class="fa fa-phone mr-3"></i>---------------</p>
+                    <p>
+                        <i class="fa fa-print mr-3"></i>---------------</p>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="row d-flex align-items-center">
+
+                <div class="col-md-7 col-lg-8">
+
+                    <p class="text-center text-md-left">
+                        <strong> تمامی حقوق این سایت متعلق به ماست</strong>
+                        </a>
+                    </p>
+
+                </div>
+
+                <div class="col-md-5 col-lg-4 ml-lg-0">
+
+                    <div class="text-center text-md-right">
+                        <ul class="list-unstyled list-inline">
+
+                            <li class="list-inline-item">
+                                <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+  </div>
+  <!--   Core JS Files   -->
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Chart JS -->
+  <script src="js/chartjs.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="js/bootstrap-notify.js"></script>
+      <script src="js/doctor-info-app.js"></script>
+
+
+
+      <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script><!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
+  <script src="js/demo.js"></script>
+</body>
+
+</html>

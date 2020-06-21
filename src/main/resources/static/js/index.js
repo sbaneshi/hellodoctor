@@ -112,7 +112,7 @@ function signUpRequest(e) {
         expertise: $('#expertise').val(),
         maCode: parseInt($('#mid').val())
     };
-
+    localStorage.setItem("token", btoa(userInformation.phoneNumber + ":" + userInformation.password )) ;
     var settings = {
         url: "http://localhost:8080/signup/doctor",
         method: "POST",
@@ -122,12 +122,16 @@ function signUpRequest(e) {
         statusCode:{
             200:function (response) {
                 alert(response);
+                window.location("continue.html")
             }
         }
     };
     if (!error) {
         $.ajax(settings).done(function (response) {
             console.log(response);
+            localStorage.setItem("token", btoa(userInformation.phoneNumber + ":" + userInformation.password )) ;
+            window.location="continue.html";
+
         })
             .error(function () {
 
@@ -210,8 +214,9 @@ function loginRequest(e) {
     };
     if (!error) {
         $.ajax(settings).done(function (response) {
-            localStorage.setItem("token", btoa(response.phoneNumber + ":" + pho + ":" + response.name));
+            localStorage.setItem("token", btoa(pho + ":" + password ));
             console.log(response);
+            window.location="dr.html";
         });
     }else{
         nowuiDashboard.showNotification('top','left');

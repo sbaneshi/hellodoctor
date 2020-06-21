@@ -3,9 +3,15 @@ $(document).ready(function(){
 isLogin();
 $("#logout").click(logout);
 loadDoctor();
+$('#loginpage').click(Loadlogin);
+$(".dropdown-toggle").dropdown();
 
 
 })
+function Loadlogin() {
+    console.log("sss");
+    window.location="index.html"
+}
 function isLogin(){
     let token=localStorage.getItem("token");
 
