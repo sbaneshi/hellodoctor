@@ -122,7 +122,7 @@ function clearForm(e) {
 }
 
 
-async function loginRequest(e) {
+function loginRequest(e) {
     e.preventDefault();
     let userInformation = {
         phoneNumber: $('#phone-numberlogin').val(),
@@ -138,7 +138,7 @@ async function loginRequest(e) {
     };
     if (!error) {
           $.ajax(settings).done(function (response) {
-            localStorage.setItem("token", btoa(response.phoneNumber + ":" + userInformation.password + ":" + response.name ));
+            localStorage.setItem("token", Base64.encode(response.phoneNumber + ":" + userInformation.password + ":" + response.firstName + ":" +response.lastName));
             window.location = "home.html";
         });
 
@@ -171,4 +171,13 @@ nowuiDashboard = {
     }
 
 
+};
+
+var Base64 = {
+    encode: function(s) {
+        return btoa(unescape(encodeURIComponent(s)));
+    },
+    decode: function(s) {
+        return decodeURIComponent(escape(atob(s)));
+    }
 };
