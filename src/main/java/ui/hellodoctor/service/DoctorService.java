@@ -22,14 +22,12 @@ public class DoctorService {
 
     public Doctor getFullDoctor(String phoneNumber) {
         Doctor doctor = doctorRepository.findByPhoneNumber(phoneNumber).orElseThrow(IllegalArgumentException::new);
-        doctor.setVisits(doctor.getVisits().stream().peek(v -> {
-            v.setDoctor(null);
-            v.setPatient(v.getPatient().toBuilder()
-                    .visits(null)
-                    .phoneNumber(null)
-                    .build());
-        }).collect(Collectors.toList()));
-        return doctor;
+        return fullDoctor(doctor);
+    }
+
+    public Doctor getFullDoctor(int id) {
+        Doctor doctor = doctorRepository.findById(id).orElseThrow(IllegalArgumentException::new);
+        return fullDoctor(doctor);
     }
 
     public Doctor login(String phoneNumber, String password) {
@@ -105,7 +103,17 @@ public class DoctorService {
         if (expertise != null)
             builder.expertise(expertise);
 
-        doctorRepository.save(builder.build());
-        return getFullDoctor(phoneNumber);
+        return fullDoctor(doctorRepository.save(builder.build()));
+    }
+
+    private Doctor fullDoctor(Doctor doctor) {
+        doctor.setVisits(doctor.getVisits().stream().peek(v -> {
+            v.setDoctor(null);
+            v.setPatient(v.getPatient().toBuilder()
+                    .visits(null)
+                    .phoneNumber(null)
+                    .build());
+        }).collect(Collectors.toList()));
+        return doctor;
     }
 }

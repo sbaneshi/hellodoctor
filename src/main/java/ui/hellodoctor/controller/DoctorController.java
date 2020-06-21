@@ -28,6 +28,11 @@ public class DoctorController extends BaseController {
         return doctorService.getFullDoctor(getPhoneNumber());
     }
 
+    @GetMapping("/api/doctor/full")
+    public Doctor getFullDoctor(int id) {
+        return doctorService.getFullDoctor(id);
+    }
+
     @CrossOrigin(origins = "http://127.0.0.1:5500")
     @PostMapping("/login/doctor")
     public Doctor login(String phoneNumber, String password) {

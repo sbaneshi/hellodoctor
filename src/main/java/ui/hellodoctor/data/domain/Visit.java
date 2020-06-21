@@ -36,8 +36,7 @@ public class Visit {
 
     public enum State {
         PENDING,
-        DOCTOR_ABSENCE,
-        PATIENT_ABSENCE,
+        CANCELED,
         DONE,
         ;
     }

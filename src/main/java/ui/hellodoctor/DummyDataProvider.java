@@ -94,18 +94,20 @@ public class DummyDataProvider implements ApplicationContextAware {
         Visit v1 = Visit.builder()
                 .doctor(d1)
                 .patient(p1)
-                .state(Visit.State.PATIENT_ABSENCE)
+                .state(Visit.State.PENDING)
                 .time(System.currentTimeMillis())
                 .build();
 
         Visit v2 = Visit.builder()
                 .doctor(d1)
                 .patient(p2)
+                .state(Visit.State.PENDING)
                 .build();
 
         Visit v3 = Visit.builder()
                 .doctor(d2)
                 .patient(p2)
+                .state(Visit.State.PENDING)
                 .build();
 
         v1 = visitRepository.save(v1);

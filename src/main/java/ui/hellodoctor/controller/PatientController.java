@@ -1,6 +1,7 @@
 package ui.hellodoctor.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,5 +37,11 @@ public class PatientController extends BaseController {
     public Patient edit(String firstName, String lastName, String email, String province, String city, String address) {
         assertRole(SecurityUtils.ROLE_PATIENT);
         return patientService.editPatient(getPhoneNumber(), firstName, lastName, email, province, city, address);
+    }
+
+    @PostMapping("/api/patient/visit/cancel")
+    public ResponseEntity<?> cancelVisit(int visitId) {
+        patientService.cancelVisit(getPhoneNumber(), visitId);
+        return ResponseEntity.ok().build();
     }
 }

@@ -6,7 +6,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 import ui.hellodoctor.data.domain.Patient;
 import ui.hellodoctor.data.domain.User;
+import ui.hellodoctor.data.domain.Visit;
 import ui.hellodoctor.data.repository.PatientRepository;
+import ui.hellodoctor.data.repository.VisitRepository;
 
 import java.util.stream.Collectors;
 
@@ -15,6 +17,7 @@ import java.util.stream.Collectors;
 public class PatientService {
 
     private final PatientRepository patientRepository;
+    private final VisitRepository visitRepository;
 
     public Patient getFullPatient(String phoneNumber) {
         Patient patient = patientRepository.findByPhoneNumber(phoneNumber).orElseThrow(IllegalArgumentException::new);
@@ -70,5 +73,10 @@ public class PatientService {
 
         patientRepository.save(builder.build());
         return getFullPatient(phoneNumber);
+    }
+
+    public void cancelVisit(String phoneNumber, int visitId) {
+        Visit visit = visitRepository.findById(visitId).orElseThrow(IllegalArgumentException::new);
+        visit.setState(Visit.State.CANCELED);
     }
 }
