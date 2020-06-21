@@ -1,16 +1,17 @@
 package ui.hellodoctor;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import org.springframework.data.util.Pair;
 import ui.hellodoctor.data.domain.AbsenceTime;
 import ui.hellodoctor.data.domain.WorkTime;
 
 import java.time.DayOfWeek;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.time.ZoneId;
+import java.util.*;
 import java.util.stream.Collectors;
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class VisitTimeCalculator {
 
     public static List<Long> calculate(List<WorkTime> workTimes, List<AbsenceTime> absenceTimes,
@@ -18,6 +19,7 @@ public class VisitTimeCalculator {
 
         Calendar startOfTimeCalender = Calendar.getInstance();
         startOfTimeCalender.setTime(new Date(startOfTime));
+        startOfTimeCalender.setTimeZone(TimeZone.getTimeZone(ZoneId.of("UTC")));
         startOfTimeCalender.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
         startOfTimeCalender.set(Calendar.HOUR, 0);
         startOfTimeCalender.set(Calendar.MINUTE, 0);
@@ -74,6 +76,17 @@ public class VisitTimeCalculator {
                     currentTime += visitDuration;
                 }
             });
+
+            workTimeCalendars = workTimeCalendars.stream()
+                    .map(pair -> {
+                        Calendar start = pair.getFirst();
+                        Calendar end = pair.getSecond();
+
+                        start.roll(Calendar.WEEK_OF_YEAR, true);
+                        end.roll(Calendar.WEEK_OF_YEAR, true);
+
+                        return Pair.of(start, end);
+                    }).collect(Collectors.toList());
         }
 
         return result;
