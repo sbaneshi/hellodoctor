@@ -249,10 +249,93 @@ function loadAppointments() {
     };
     //  if (!error) {
     $.ajax(settings).done(function (response) {
-        var Appointment = response.visits;
+        var Appointment = response.visits.doctor;
         console.log(Appointment);
-        if (Appointment) {
-            html += `
+        if (Appointment.length!==0) {
+            // makeList(Appointment);
+            // loadList(1);
+
+        } else {
+            $(" #appointments p").append(document.createTextNode("شما هنو نوبتی رزرو نکرده اید"));
+        }
+    });
+}
+
+
+    //-----------------pagination-----------------//
+    var list = new Array();
+    var pageList = new Array();
+    var currentPage = 1;
+    var numberPerPage = 5;
+    var numberOfPages = 0;
+
+
+
+    function makeList(item) {
+        for (var x = 0; x < items.length; x++) {
+            list.push(item[x]);
+        }
+
+        numberOfPages = getNumberOfPages();
+
+
+        var numbers=`<ul>
+                        <a href="#" class="previous" onclick="nextPage()"><li><</li></a>`;
+
+
+        for(var i=0; i<numberOfPages.length;i++){
+                if (i==0) {
+                    numbers += `<a href="#" onclick="loadList(i+1)" class="is-active" id="${i+1}"><li>${i + 1}</li></a>`
+                }
+                else{
+                    numbers += `<a href="#" onclick="loadList(i+1)" id="${i+1}><li>${i + 1}</li></a>`
+                }
+            }
+            html+=` <a href="#" class="next" onclick="previousPage()"><li>></li></a>
+                        </ul>`;
+            $('.pagination').append(html);
+        }
+
+    function getNumberOfPages() {
+        return Math.ceil(list.length / numberPerPage);
+    }
+
+    function nextPage() {
+        currentPage += 1;
+        loadList();
+    }
+
+    function previousPage() {
+        currentPage -= 1;
+        loadList();
+    }
+
+    // function firstPage() {
+    //     currentPage = 1;
+    //     loadList();
+    // }
+    //
+    // function lastPage() {
+    //     currentPage = numberOfPages;
+    //     loadList();
+    // }
+    $('#')
+
+    function loadList(number) {
+        var begin = ((currentPage - 1) * numberPerPage);
+        var end = begin + numberPerPage;
+
+        pageList = list.slice(begin, end);
+        drawList();
+        check();
+    }
+
+    function drawList() {
+        // document.getElementById("list").innerHTML = "";
+        // for (r = 0; r < pageList.length; r++) {
+        //     document.getElementById("list").innerHTML += pageList[r] + "<br/>";
+        // }
+        var html=`
                             <div class="table-responsive" >
                                 <table class="table" style="text-align:right; direction:rtl;">
                                     <thead class=" text-info">
@@ -271,20 +354,20 @@ function loadAppointments() {
                                     </thead>
                                     <tbody>
                         `;
-            Appointment.forEach(function (appointment) {
-                html += `
+        for (r = 0; r < pageList.length; r++){
+            html+=`
                         <tr>
                           <td>
-                            ${appointment.doctor.name}
+                            ${pageList[r].name}
                           </td>
                           <td>
-                            ${appointment.doctor.city}
+                            ${pageList[r].city}
                           </td>
                           <td>
-                            ${appointment.doctor.expertise}
+                            ${pageList[r].expertise}
                           </td>
                           <td class="text-right">
-                            ${appointment.doctor.name}
+                            ${pageList[r].name}
                           </td>
                             <td>
                               <button type="button" class="btn btn-info btn-group-xs" style="border-radius:20px;">لغو نوبت</button>
@@ -292,22 +375,32 @@ function loadAppointments() {
                         </tr>
                         
                         `;
-
-            })
-            html += `
-                                </tbody>
-                            </table>
-                         </div>
-
-                         `;
-
-            //saveToLocalStorage("myPrescriptions" , html)
             $(" #appointments").append(html);
-        } else {
-            $(" #appointments p").append(document.createTextNode("شما هنو نوبتی رزرو نکرده اید"));
+
+
         }
-    });
-}
+
+
+    }
+
+    function check() {
+        document.querySelector('.next').disabled = currentPage == numberOfPages ? true : false;
+        document.querySelector('.previous').disabled = currentPage == 1 ? true : false;
+        // document.getElementById("first").disabled = currentPage == 1 ? true : false;
+        // document.getElementById("last").disabled = currentPage == numberOfPages ? true : false;
+    }
+
+    function load() {
+        makeList();
+        loadList();
+    }
+
+    // window.onload = load;
+
+
+
+
+
 function removeNotif(event) {
     if (event.target.classList.contains('fa-times')) {
         event.target.parentElement.parentElement.remove();

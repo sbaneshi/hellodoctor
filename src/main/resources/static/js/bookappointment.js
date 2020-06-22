@@ -6,8 +6,12 @@ let stateItem = [];
 let expertiseItem = [];
 const st = $('#st');
 
+const doctorList = $('#doctor-list');
+
 
 $(document).ready(() => {
+
+    doctorList.click(bookAppointment);
     isLogin();
     if(!hasExpertise() && !hasState()){
         loadDoctor();
@@ -37,6 +41,19 @@ $(document).ready(() => {
         $('#expertiseSelect').val(expertise);
         loadDoctorbyExpertise(expertise);
     }
+    $(window).resize(function() {
+
+        if ($(this).width() < 760) {
+
+            $('.search').show();
+
+        } else {
+
+            $('.search').hide();
+
+        }
+
+    });
 
     $("#logout").click(logout);
 })
@@ -55,6 +72,16 @@ function isLogin(){
     }
 
 
+}
+
+function bookAppointment(e) {
+    e.preventDefault();
+    if(e.target.classList.contains('btn')){
+        let id = e.target.id;
+        console.log(id);
+        localStorage.setItem('id', id);
+        window.location = '';
+    }
 }
 
 function logout(e) {
@@ -310,7 +337,7 @@ collapseBtn.addEventListener('click', function(e) {
 
 </div>
 
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<div class="collapse navbar-collapse" id="navbarSupportedContent" style="z-index: 11111; background-color: #212121">
 <ul class="navbar-nav ml-auto">
     <div class="hori-selector">
         <div class="left"></div>

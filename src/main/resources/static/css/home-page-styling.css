@@ -24,21 +24,7 @@ body {
 
 body { font-family: sans-serif; }
 
-.carousel {
-    background: #FAFAFA;
-}
 
-.carousel-cell {
-    width: 28%;
-    height: 200px;
-    margin-right: 10px;
-    background: #8C8;
-    line-height: 200px;
-    font-size: 80px;
-    color: white;
-    border-radius: 5px;
-    text-align: center;
-}
 
 .button {
     font-size: 22px;
@@ -179,4 +165,11 @@ h3 {
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
     color: #B3B8CD;
+}
+.footer-link a{
+    color:#def4f0;
+}
+.footer-link a:hover{
+    text-decoration: none;
+    color:#fff;
 }

@@ -13,6 +13,7 @@ $('.close').on('click', function() {
 
 });
 $(document).ready(function() {
+    getTime();
     $('#login').on('click', loginRequest);
     //$('#clear').click(clearForm);
     $("#clear").click(clearform
@@ -102,6 +103,27 @@ $(document).ready(function() {
     });
 
 });
+
+function  getTime() {
+    var settings = {
+
+        type: "GET",
+        url: "http://localhost:8080/api/doctor/available_visit_times?id=1",
+        headers:{
+            "Authorization": "Basic " + btoa( "8765:1234")
+        },
+
+        status:{
+            200:function (response) {
+                alert(response);
+            }
+        }
+    };
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+
+    })
+}
 
 
 function signUpRequest(e) {

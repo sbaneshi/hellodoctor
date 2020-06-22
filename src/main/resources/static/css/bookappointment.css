@@ -13,8 +13,17 @@ body {
     margin-top: 5px;
 }
 
+@media screen and (min-width: 960px) {
+     .search{
+        display: block;
+    }
+}
+
+
+
 .filter {
-    border: 2px solid #ced4da;
+    border: 2px solid #134E5E;
+    background-color: #def4f0;
     padding: 5px;
     border-radius: .2rem;
 }

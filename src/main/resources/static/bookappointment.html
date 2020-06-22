@@ -30,6 +30,13 @@
             -ms-user-select: none;
             user-select: none;
         }
+        .footer-link a{
+            color:#def4f0;
+        }
+        .footer-link a:hover{
+            text-decoration: none;
+            color:#fff;
+        }
         
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
@@ -103,15 +110,23 @@
 
             <aside id="sidebarMenu" class="pad-aside col-3 col-md-3 col-lg-3 d-md-block sidebar-right collapse navbar-expand-lg">
 
-                <div class="search-div col-12">
-                    <i class="fa fa-search search-icon"></i> جستجوی پزشک
+                <div class="search-div col-12" style=" font-weight: 700;
+    background-color: #bce3dd;
+    color: #134E5E;
+border-radius: 7px;
+border:2px solid #134E5E;
+padding:5px;
+margin-bottom: 10px;
+text-align: center;
+">
+                    <i class="fa fa-search search-icon" style="background-color:#bce3dd; margin-right:0px;"></i> جستجوی پزشک
                 </div>
                 <div class="filter col-12">
                     <form class="form-group-inline pt-2">
                         <div class="form-group row">
 
                             <div class="col-sm-12">
-                                <input type="text" class="form-control form-control-sm" id="searchName" placeholder="نام پزشک...">
+
                             </div>
                         </div>
                     </form>
@@ -122,7 +137,7 @@
                             <form class="form-group-inline pt-2">
                                 <div class="form-group row">
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control form-control-sm" id="searchState" placeholder="نام استان...">
+
                                     </div>
                                 </div>
                             </form>
@@ -171,7 +186,7 @@
                             <form class="form-group-inline pt-2">
                                 <div class="form-group row">
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control form-control-sm" id="searchExpertise" placeholder="جستجو تخصص...">
+
                                         <br>
                                         <select id="expertiseSelect" class="form-control" onchange="changeExpertise()">
                                         <option value="0">انتخاب تخصص</option>
@@ -388,76 +403,76 @@
 
 
             <main role="main" class="col-9 col-md-9 ml-sm-auto col-lg-9 px-md-4 pt-2">
-                <div>
+                <div class="search" style="display: none;">
                     <button id="navBtn1" class="navbar-toggler navbar-expand-lg" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
                         <i class="fa fa-search search-icon"></i>
                         </button>
                 </div>
                 <div id="doctor-list">
-                    <div id="" class="card mb-3 " style="transition: top ease 0.5s;">
-                        <div class="row no-gutters align-items-center">
+<!--                    <div id="" class="card mb-3 " style="transition: top ease 0.5s;">-->
+<!--                        <div class="row no-gutters align-items-center">-->
 
-                            <a class="col-3 col-md-3 text-center">
-                                <img src="https://randomuser.me/api/portraits/men/41.jpg" class="card-img rounded-circle img-fluid img-card img-responsive" data-holder-rendered="true" alt="100x100" ;>
-                            </a>
-                            <div class=" col-9 col-md-9 ">
-                                <div class="card-body ">
-                                    <h5 class="card-title ">دکتر محمود احمدی نژاد</h5>
-                                    <p class="card-text ">تخصص: ------</p>
-                                    <p class="card-text ">آدرس: تهران---------</p>
-                                </div>
+<!--                            <a class="col-3 col-md-3 text-center">-->
+<!--                                <img src="https://randomuser.me/api/portraits/men/41.jpg" class="card-img rounded-circle img-fluid img-card img-responsive" data-holder-rendered="true" alt="100x100" ;>-->
+<!--                            </a>-->
+<!--                            <div class=" col-9 col-md-9 ">-->
+<!--                                <div class="card-body ">-->
+<!--                                    <h5 class="card-title ">دکتر محمود احمدی نژاد</h5>-->
+<!--                                    <p class="card-text ">تخصص: &#45;&#45;&#45;&#45;&#45;&#45;</p>-->
+<!--                                    <p class="card-text ">آدرس: تهران-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</p>-->
+<!--                                </div>-->
 
-                            </div>
+<!--                            </div>-->
 
-                        </div>
-                        <hr>
-                        <div id="" class="row">
+<!--                        </div>-->
+<!--                        <hr>-->
+<!--                        <div id="" class="row">-->
 
-                            <div class="col-12">
-                                <button type="button" class="btn btn-outline-primary float-left mb-3 ml-3 top">نوبت دهی</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="" class="card mb-3" style="transition: top ease 0.5s;">
-                        <div class="row no-gutters align-items-center" style="border-left: 1px solid #ced4da;">
-                            <a class="col-3 col-md-3  text-center">
-                                <img src="https://randomuser.me/api/portraits/men/41.jpg" class="card-img card-doctor rounded-circle img-fluid img-responsive img-card" data-holder-rendered="true" alt="100x100" ;>
-                            </a>
-                            <div class=" col-9 col-md-9 ">
-                                <div class="card-body ">
-                                    <h5 class="card-title ">دکتر محمود احمدی نژاد</h5>
-                                    <p class="card-text ">تخصص:-----</p>
-                                    <p class="card-text ">آدرس: تهران---------</p>
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div id="" class="row">
-                            <div class="col-12">
-                                <button type="button" class="btn btn-outline-primary float-left mb-3 ml-3 top">نوبت دهی</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="" class="card mb-3" style="transition: top ease 0.5s;">
-                        <div class="row no-gutters align-items-center" style="border-left: 1px solid #ced4da;">
-                            <a class="col-3 col-md-3  text-center">
-                                <img src="https://randomuser.me/api/portraits/men/41.jpg" class="card-img card-doctor rounded-circle img-fluid img-responsive img-card" data-holder-rendered="true" alt="100x100" ;>
-                            </a>
-                            <div class=" col-9 col-md-9 ">
-                                <div class="card-body ">
-                                    <h5 class="card-title ">دکتر محمود احمدی نژاد</h5>
-                                    <p class="card-text ">تخصص:-----</p>
-                                    <p class="card-text ">آدرس: تهران---------</p>
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div id="" class="row">
-                            <div class="col-12">
-                                <button type="button" class="btn btn-outline-primary float-left mb-3 ml-3 top">نوبت دهی</button>
-                            </div>
-                        </div>
-                    </div>
+<!--                            <div class="col-12">-->
+<!--                                <button type="button" class="btn btn-outline-primary float-left mb-3 ml-3 top">نوبت دهی</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div id="" class="card mb-3" style="transition: top ease 0.5s;">-->
+<!--                        <div class="row no-gutters align-items-center" style="border-left: 1px solid #ced4da;">-->
+<!--                            <a class="col-3 col-md-3  text-center">-->
+<!--                                <img src="https://randomuser.me/api/portraits/men/41.jpg" class="card-img card-doctor rounded-circle img-fluid img-responsive img-card" data-holder-rendered="true" alt="100x100" ;>-->
+<!--                            </a>-->
+<!--                            <div class=" col-9 col-md-9 ">-->
+<!--                                <div class="card-body ">-->
+<!--                                    <h5 class="card-title ">دکتر محمود احمدی نژاد</h5>-->
+<!--                                    <p class="card-text ">تخصص:-&#45;&#45;&#45;&#45;</p>-->
+<!--                                    <p class="card-text ">آدرس: تهران-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <hr>-->
+<!--                        <div id="" class="row">-->
+<!--                            <div class="col-12">-->
+<!--                                <button type="button" class="btn btn-outline-primary float-left mb-3 ml-3 top">نوبت دهی</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div id="" class="card mb-3" style="transition: top ease 0.5s;">-->
+<!--                        <div class="row no-gutters align-items-center" style="border-left: 1px solid #ced4da;">-->
+<!--                            <a class="col-3 col-md-3  text-center">-->
+<!--                                <img src="https://randomuser.me/api/portraits/men/41.jpg" class="card-img card-doctor rounded-circle img-fluid img-responsive img-card" data-holder-rendered="true" alt="100x100" ;>-->
+<!--                            </a>-->
+<!--                            <div class=" col-9 col-md-9 ">-->
+<!--                                <div class="card-body ">-->
+<!--                                    <h5 class="card-title ">دکتر محمود احمدی نژاد</h5>-->
+<!--                                    <p class="card-text ">تخصص:-&#45;&#45;&#45;&#45;</p>-->
+<!--                                    <p class="card-text ">آدرس: تهران-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <hr>-->
+<!--                        <div id="" class="row">-->
+<!--                            <div class="col-12">-->
+<!--                                <button type="button" class="btn btn-outline-primary float-left mb-3 ml-3 top">نوبت دهی</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
 
             </main>
@@ -465,32 +480,30 @@
         </div>
 
     </div>
-    <footer class="page-footer font-small mdb-color pt-4" style="background-color:#2D2747 ; border-bottom-left-radius:40px; border-bottom-right-radius:40px; color: #B3B8CD;">
+    <footer class="page-footer font-small mdb-color pt-4" style="background-color:#2D2747 ; border-top-left-radius:40px; border-top-right-radius:40px; color: #B3B8CD;">
 
-        <div class="container text-center text-md-left">
+        <div class="container text-center  mb-0">
 
-            <div class="row text-center text-md-left mt-3 pb-3">
+            <div class="row text-center mt-3 pb-3">
 
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3" style="text-align:right;">
                     <h6 class="text-uppercase mb-4 font-weight-bold">درباره دکتر سلام</h6>
-                    <p style="text-align:right;">-------------------------------------------------------------------------------------------------------------------</p>
+                    <p style="text-align:right;">هدف دمتر سلام کمک به مردم در جهت تسهیل دستیابی به خدمات پزشکی است. موضوع نوبت دهی آنلاین (online booking) در بسیاری از کشورهای دنیا اجرا و تجربه شده است و نتایج مطالعات نشان میدهد میزان کارآیی ، اثربخشی و رضایت حاصل از آن بسیار چشمگیر بوده است.</p>
                 </div>
 
                 <hr class="w-100 clearfix d-md-none">
 
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3" style="text-align:right;">
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 footer-link" style="text-align:right;">
                     <h6 class="text-uppercase mb-4 font-weight-bold">صفحات سایت</h6>
                     <p>
-                        <a href="#!">-------------</a>
+                        <a href="#!">خانه</a>
+                    </p>
+
+                    <p>
+                        <a href="#!">رزرو نوبت</a>
                     </p>
                     <p>
-                        <a href="#!">-------------</a>
-                    </p>
-                    <p>
-                        <a href="#!">-------------</a>
-                    </p>
-                    <p>
-                        <a href="#!">-------------</a>
+                        <a href="#!">ارتباط با ما</a>
                     </p>
                 </div>
 
@@ -499,16 +512,14 @@
                 <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3" style="text-align:right;">
                     <h6 class="text-uppercase mb-4 font-weight-bold">خدمات دکتر سلام</h6>
                     <p>
-                        <a href="#!">--------------</a>
+                    <p>نوبت دهی آنلاین</p>
+                    </p>
+
+                    <p>
+                    <p >مدیریت آسان بیماران</p>
                     </p>
                     <p>
-                        <a href="#!">--------------</a>
-                    </p>
-                    <p>
-                        <a href="#!">--------------</a>
-                    </p>
-                    <p>
-                        <a href="#!">--------------</a>
+                    <p>دسترسی به پزشکان سراسر کشور</p>
                     </p>
                 </div>
 
@@ -516,14 +527,12 @@
 
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3" style="text-align:right;">
                     <h6 class="text-uppercase mb-4 font-weight-bold">ارتباط با ما</h6>
+
                     <p>
-                        <i class="fa fa-home mr-3"></i>---------------</p>
+                        <i class="fa fa-envelope mr-3" style="padding-left: 10px;"></i>sajjadrahimi77@yahoo.com</p>
                     <p>
-                        <i class="fa fa-envelope mr-3"></i>---------------</p>
-                    <p>
-                        <i class="fa fa-phone mr-3"></i>---------------</p>
-                    <p>
-                        <i class="fa fa-print mr-3"></i>---------------</p>
+                        <i class="fa fa-phone mr-3" style="padding-left: 10px;"></i>0989109705118</p>
+
                 </div>
 
             </div>
@@ -535,7 +544,7 @@
                 <div class="col-md-7 col-lg-8">
 
                     <p class="text-center text-md-left">
-                        <strong> تمامی حقوق این سایت متعلق به ماست</strong>
+                        <strong> تمامی حقوق این سایت متعلق به اعضای تیم دکترسلام است</strong>
                         </a>
                     </p>
 
@@ -548,12 +557,7 @@
 
                             <li class="list-inline-item">
                                 <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                                    <i class="fa fa-instagram"></i>
+                                    <i class="fa fa-ambulance"></i>
                                 </a>
                             </li>
 

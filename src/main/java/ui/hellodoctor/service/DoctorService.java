@@ -135,7 +135,7 @@ public class DoctorService {
 
         List<AbsenceTime> absences = getUpdatedAbsences(doctor);
         List<Long> pendingVisits = doctor.getVisits().stream().map(Visit::getTime).collect(Collectors.toList());
-        final long visitDuration = doctor.getVisitDurationMin() * 60000;
+        final long visitDuration =( doctor.getVisitDurationMin() !=0?doctor.getVisitDurationMin() : 15) * 60000;
 
         return VisitTimeCalculator.calculate(doctor.getWorkTimes(),absences, pendingVisits, visitDuration, startOfTime);
     }

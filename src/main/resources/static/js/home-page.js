@@ -1,8 +1,7 @@
 
 // external js: flickity.pkgd.js
 
-let $carousel = $('.carousel').flickity({
-    initialIndex: 0,
+let $carousel = $('#doctor-list').flickity({
     wrapAround:false,
     pageDots:true
 });
@@ -16,7 +15,6 @@ $(document).ready( function(){
 
 
     collapseBtn.addEventListener('click', function(e) {
-        e.preventDefault();
         nav.innerHTML = `
   <button id="navBtn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
 <i class="fa fa-bars text-white"></i>
@@ -91,12 +89,6 @@ function loadDoctor() {
         }
     };
     $.ajax(settings).done(function (response) {
-
-
-
-
-
-
         let html = '';
         let doctor=response;
         console.log(doctor)
@@ -105,7 +97,7 @@ function loadDoctor() {
                         <div class="card-container">
                         <span class="pro"><i class="fa fa-heartbeat" style="font-size:36px; color:white;"></i></span>
                         <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
-                        <h4><i class="fa fa-user-md" style="font-size:36px; margin-left:5px;"></i> ${dr.firstName}</h4>
+                        <h4><i class="fa fa-user-md" style="font-size:36px; margin-left:5px;"></i> دکتر ${dr.firstName} ${dr.lastName}</h4>
 
                         <h6>
                             <span class="fa fa-map-marker" style="padding:7px;  color:black">
@@ -133,8 +125,6 @@ function loadDoctor() {
         //     wrapAround: true,
         //     pageDots: false
         // });
-        var $cellElems = html;
-        $carousel.flickity( 'append', $cellElems );
 
 
 
@@ -148,10 +138,8 @@ function loadDoctor() {
 
 
 
-var cellCount = 3;
 
 function makeCellHtml(html) {
-    cellCount++;
     return '<div>' + html + '</div>';
 }
 

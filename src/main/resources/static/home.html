@@ -83,7 +83,7 @@
         <button id="navBtn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa fa-bars text-white"></i>
           </button>
-<div>
+            <div>
 
                 <div class="btn-group " id="nav-profile">
                         <label for="dropmenu" type="button" id="drop"class="dropdown-toggle btn fa fa-user  px-3" data-toggle="dropdown" aria-haspopup="true"
@@ -96,9 +96,11 @@
                             <a id="logout" class="dropdown-item " href="home.html"><button class="btn logout-btn">خروج</button></a>
                         </div>
                 </div>
-             <a class="navbar-brand navbar-logo mr-auto" href="home.html">لوگوی دکتر سلام</a>
+             <a class="navbar-brand navbar-logo mr-auto" href="home.html">
+                 <img src="2.png" style="width: 50px; height: 50px;">
+             </a>
 
-        </div>
+            </div>
 
 
 
@@ -117,36 +119,32 @@
 
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+                <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/><img src="1.jpg"></svg>
+                <div class="carousel-item">
+                    <img src="1.jpg">
                     <div class="container">
                         <div class="carousel-caption text-left">
-                            <h1>اسلاید 1</h1>
-                            <p>-------------------------------------------------</p>
+
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/><img src="2.jpg"></svg>
+                    <img src="2.jpg">
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>اسلاید 2</h1>
-                            <p>-------------------------------------------------</p>
+
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
-
+                <div class="carousel-item active">
+                    <img src="13976.jpg">
                     <div class="container">
                         <div class="carousel-caption text-right">
-                            <h1>اسلاید 3</h1>
-                            <p>-------------------------------------------------</p>
+
                         </div>
                     </div>
                 </div>
@@ -163,7 +161,6 @@
 
 
 
-
         <div class="container marketing">
             <h3>خدماتی که به شما ارائه می دهیم</h3>
 
@@ -171,21 +168,18 @@
 
                 <div class="col-lg-4">
                     <i class="fa fa-ambulance" style="font-size:100px; color: black"></i>
-                    <h2 style="margin-top:20px;">نوبت دهی آنلاین</h2>
-                    <p>-----------------------------------------------------------------------------------------------------------------------</p>
-                    <p><a class="btn btn-info hvr-float-shadow" href="#" role="button">جزئیات بیشتر</a></p>
+                    <h2 style="margin-top:20px;">سریع و آسان</h2>
+                    <p>زحمت حضور در صف های طولانی نوبت و هزینه رفت و آمد را به حداقل برسانید</p>
                 </div>
                 <div class="col-lg-4">
                     <i class="fa fa-hospital-o" style="font-size:100px; color: black"></i>
-                    <h2 style="margin-top:20px;">نوبت دهی آنلاین</h2>
-                    <p>-----------------------------------------------------------------------------------------------------------------------</p>
-                    <p><a class="btn btn-info hvr-float-shadow" href="#" role="button">جزئیات بیشتر</a></p>
+                    <h2 style="margin-top:20px;">دسترسی در هر زمان</h2>
+                    <p>در هر زمان از شبانه روز، می توانید به پزشکان سراسر کشور دسترسی داشته و نوبت اخذ کنید</p>
                 </div>
                 <div class="col-lg-4">
                     <i class="fa fa-stethoscope" style="font-size:100px; color: black"></i>
-                    <h2 style="margin-top:20px;">نوبت دهی آنلاین</h2>
-                    <p>-----------------------------------------------------------------------------------------------------------------------</p>
-                    <p><a class="btn btn-info hvr-float-shadow" href="#" role="button">جزئیات بیشتر</a></p>
+                    <h2 style="margin-top:20px;">مدیریت آسان</h2>
+                    <p>بیماران خود را راحت تر مدیریت کنید</p>
                 </div>
             </div>
             <hr class="featurette-divider">
@@ -193,7 +187,7 @@
 
 
                 <h3>پزشکان آماده همراهی</h3>
-                <div id="doctor-list" class="carousel gallery"  >
+                <div id="doctor-list" class=" gallery"  >
                     <!--<h1>Flickity - append</h1>-->
 
                     <!--<p><button class="button button&#45;&#45;append">Append</button></p>-->
@@ -420,11 +414,12 @@
             <hr class="featurette-divider">
             <div class="row featurette">
                 <div class="col-md-7">
-                    <h2 class="featurette-heading">پزشک خودتو پیدا کن </br><span class="text-muted">----------------</span></h2>
-                    <p class="lead">--------------------------------------------------------------------------------------</p>
+                    <h2 class="featurette-heading">پزشک خودتو پیدا کن </br></h2>
+                    <button class="btn primary ghost hvr-float-shadow" style="margin-top: 20px; border-radius: 20px;">مشاهده و جستجوی پزشکان سراسر کشور</button>
+
                 </div>
                 <div class="col-md-5">
-                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+                    <img src="dr.png">
                 </div>
             </div>
 
@@ -432,8 +427,10 @@
 
             <div class="row featurette">
                 <div class="col-md-7 order-md-2">
-                    <h2 class="featurette-heading">پزشک خودتو پیدا کن </br><span class="text-muted">----------------</span></h2>
-                    <p class="lead">--------------------------------------------------------------------------------------</p>
+                    <h2 class="featurette-heading">عضو پزشکان دکترسلام شوید </br><span class="text-muted">----------------</span></h2>
+                    <p class="lead">مدیریت آسان تر بیماران و نوبت ها
+
+                    </p>
                 </div>
                 <div class="col-md-5 order-md-1">
                     <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
@@ -462,30 +459,28 @@
     </main>
     <footer class="my-footer page-footer font-small mdb-color pt-4" >
 
-        <div class="container text-center text-md-left">
+        <div class="container text-center text-md-left mb-0">
 
-            <div class="row text-center text-md-left mt-3 pb-3">
+            <div class="row text-center mt-3 pb-3">
 
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3" style="text-align:right;">
                     <h6 class="text-uppercase mb-4 font-weight-bold">درباره دکتر سلام</h6>
-                    <p style="text-align:right;">-------------------------------------------------------------------------------------------------------------------</p>
+                    <p style="text-align:right;">هدف دمتر سلام کمک به مردم در جهت تسهیل دستیابی به خدمات پزشکی است. موضوع نوبت دهی آنلاین (online booking) در بسیاری از کشورهای دنیا اجرا و تجربه شده است و نتایج مطالعات نشان میدهد میزان کارآیی ، اثربخشی و رضایت حاصل از آن بسیار چشمگیر بوده است.</p>
                 </div>
 
                 <hr class="w-100 clearfix d-md-none">
 
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3" style="text-align:right;">
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 footer-link" style="text-align:right;">
                     <h6 class="text-uppercase mb-4 font-weight-bold">صفحات سایت</h6>
                     <p>
-                        <a href="#!">-------------</a>
+                        <a href="#!">خانه</a>
+                    </p>
+
+                    <p>
+                        <a href="#!">رزرو نوبت</a>
                     </p>
                     <p>
-                        <a href="#!">-------------</a>
-                    </p>
-                    <p>
-                        <a href="#!">-------------</a>
-                    </p>
-                    <p>
-                        <a href="#!">-------------</a>
+                        <a href="#!">ارتباط با ما</a>
                     </p>
                 </div>
 
@@ -494,16 +489,14 @@
                 <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3" style="text-align:right;">
                     <h6 class="text-uppercase mb-4 font-weight-bold">خدمات دکتر سلام</h6>
                     <p>
-                        <a href="#!">--------------</a>
+                        <p>نوبت دهی آنلاین</p>
+                    </p>
+
+                    <p>
+                        <p >مدیریت آسان بیماران</p>
                     </p>
                     <p>
-                        <a href="#!">--------------</a>
-                    </p>
-                    <p>
-                        <a href="#!">--------------</a>
-                    </p>
-                    <p>
-                        <a href="#!">--------------</a>
+                        <p>دسترسی به پزشکان سراسر کشور</p>
                     </p>
                 </div>
 
@@ -511,14 +504,12 @@
 
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3" style="text-align:right;">
                     <h6 class="text-uppercase mb-4 font-weight-bold">ارتباط با ما</h6>
+
                     <p>
-                        <i class="fa fa-home mr-3"></i>---------------</p>
+                        <i class="fa fa-envelope mr-3" style="padding-left: 10px;"></i>sajjadrahimi77@yahoo.com</p>
                     <p>
-                        <i class="fa fa-envelope mr-3"></i>---------------</p>
-                    <p>
-                        <i class="fa fa-phone mr-3"></i>---------------</p>
-                    <p>
-                        <i class="fa fa-print mr-3"></i>---------------</p>
+                        <i class="fa fa-phone mr-3" style="padding-left: 10px;"></i>+989109705118</p>
+
                 </div>
 
             </div>
@@ -530,7 +521,7 @@
                 <div class="col-md-7 col-lg-8">
 
                     <p class="text-center text-md-left">
-                        <strong> تمامی حقوق این سایت متعلق به ماست</strong>
+                        <strong> تمامی حقوق این سایت متعلق به اعضای تیم دکترسلام است</strong>
                         </a>
                     </p>
 
@@ -543,12 +534,7 @@
 
                             <li class="list-inline-item">
                                 <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                                    <i class="fa fa-instagram"></i>
+                                    <i class="fa fa-ambulance"></i>
                                 </a>
                             </li>
 

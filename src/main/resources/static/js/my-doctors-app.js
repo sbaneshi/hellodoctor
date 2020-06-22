@@ -63,7 +63,7 @@ function loadAppointments() {
         method: "GET",
         timeout: 100000,
         cache: false,
-        header: {
+        headers: {
             "Authorization": "Basic " + btoa(userInformation[0] + ":" + userInformation[1])
         },
         status: {

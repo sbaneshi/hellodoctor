@@ -88,7 +88,7 @@ $(document).ready(function() {
             };
 
             var settings = {
-                url: "http://localhost:8080/api/patient/edit",
+                url: "http://localhost:8080/api/doctor/edit",
                 method: "POST",
                 timeout: 100000,
                 cache: false,
@@ -105,7 +105,7 @@ $(document).ready(function() {
 
             $.ajax(settings).done(function(response) {
                 console.log(response);
-                localStorage.setItem("token", btoa(response.phoneNumber + ":" + userInformation.password + ":" + userInformation.name + ":" + response.insuranceId));
+                localStorage.setItem("token", btoa(response.phoneNumber + ":" + userInformation.password ));
                 window.location = "home.html";
 
             });
@@ -126,7 +126,7 @@ function setPanel() {
     var decode = (atob(token));
     var userInformation = decode.split(':');
     var settings = {
-        url: "http://localhost:8080//api/doctor/full",
+        url: "http://localhost:8080/api/doctor/full",
         method: "GET",
         timeout: 100000,
         cache: false,
