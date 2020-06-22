@@ -15,7 +15,7 @@ function loadpatients() {
 
         type: "GET",
         headers: {
-            "Authorization": "Basic " + btoa('1234:1234')
+            "Authorization": "Basic " + token
         },
         url: "http://localhost:8080/api/doctor/full",
         statusCode: {
