@@ -21,7 +21,7 @@ $(document).ready(() => {
                 return;
             } });
         $('#expertiseSelect').val(expertise);
-        loadDoctor(expertise, state);
+        loadDoctorByBoth(expertise, state);
     }
     if(hasState() && !hasExpertise()){
         let state = localStorage.getItem("province");
@@ -30,12 +30,12 @@ $(document).ready(() => {
                 this.selected = true;
                 return;
             } });
-        loadDoctor(state);
+        loadDoctorByProvince(state);
     }
     if(!hasState() && hasExpertise()){
         let expertise = localStorage.getItem("expertise");
         $('#expertiseSelect').val(expertise);
-        loadDoctor(expertise);
+        loadDoctorbyExpertise(expertise);
     }
 
     $("#logout").click(logout);
@@ -82,7 +82,7 @@ function loadDoctor() {
 
         type: "GET",
         url: "http://localhost:8080/doctors",
-        status:{
+        statusCode:{
             200:function (response) {
                 alert(response);
             }
@@ -91,9 +91,11 @@ function loadDoctor() {
     $.ajax(settings).done(function (response) {
         let html = '';
         let doctor = response;
+        console.log(doctor);
+        console.log(doctor.length )
         if(doctor.length === 0){
-            html = `<div class="text-center">دکتری یافت نشد</div>`;
-            $("doctor-list").append(html)
+            html = `<h2 class="text-center">دکتری یافت نشد</h2>`;
+            $("#doctor-list").append(html)
         }else {
             doctor.forEach(dr => {
                 html = `<div  class="arrow card mb-3 " style="transition: top ease 0.5s;">
@@ -128,7 +130,7 @@ function loadDoctor() {
 
 }
 
-function loadDoctor(expertise, province) {
+function loadDoctorByBoth(expertise, province) {
     var settings = {
 
         type: "GET",
@@ -183,7 +185,7 @@ function loadDoctor(expertise, province) {
 
 }
 
-function loadDoctor(province) {
+function loadDoctorByProvince(province) {
     var settings = {
 
         type: "GET",
@@ -238,7 +240,7 @@ function loadDoctor(province) {
 }
 
 
-function loadDoctor(expertise) {
+function loadDoctorbyExpertise(expertise) {
     var settings = {
         type: "GET",
         url: "http://localhost:8080/doctors",
