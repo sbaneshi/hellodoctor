@@ -8,22 +8,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Almarai&amp;display=swap" rel="stylesheet">
     <title>دکترسلام</title>
 
-
-<link rel="stylesheet" href="./dist/css/mapp.min.css">
-<link rel="stylesheet" href="./dist/css/fa/style.css" data-locale="true">
+    <link rel="stylesheet" href="https://cdn.map.ir/web-sdk/1.4.2/css/mapp.min.css">
+    <link rel="stylesheet" href="https://cdn.map.ir/web-sdk/1.4.2/css/fa/style.css">
+<!--<link rel="stylesheet" href="./dist/css/mapp.min.css">-->
+<!--<link rel="stylesheet" href="./dist/css/fa/style.css" data-locale="true">-->
 <link rel="stylesheet" href="assets/css/doctor1.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Almarai&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<!-- add clock style
-<link href="http://weareoutman.github.io/clockpicker/dist/jquery-clockpicker.min.css" rel="stylesheet" />-->
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="assets/css/jquery-clockpicker.min1.css">
-  
-<!--<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">-->
-<!--<link rel="icon" type="image/png" href="../assets/img/favicon.png">-->
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
 <title>
   پنل کاربر
 </title>
@@ -54,13 +51,7 @@
   <div class="wrapper ">
   
     <div class="sidebar" id="navigation2" data-color="blue" >
-      <!--
-        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
-      
-     -->  
-        
-            
-      
+
       <div class="sidebar-wrapper" id="sidebar-wrapper">
       
         <ul class="nav" style="text-align:right; font-size:25px; margin-right:-40px;">
@@ -84,7 +75,7 @@
             </a>
           </li>
           <li>
-            <a href="./financial.html">
+            <a href="#">
               <i class="fa fa-users fa-fw"style="float:right;"></i>
               <p>بازخورد های من</p>
             </a>
@@ -142,7 +133,7 @@
                         
                           
                          <h4 class="my-center">نمایه من</h4>
-                         <img src="dr.png" class="my-circle" style="height:106px;width:106px;display:block;margin: 0 auto;" alt="Avatar">
+                         <img src="assets/dr.png" class="my-circle" style="height:106px;width:106px;display:block;margin: 0 auto;" alt="Avatar">
                          <hr>
                          <p style="text-align:center;"> دکتر حسین جلالی</p>
                          <p style="text-align:center;"> اصفهان،شهرضا</p>
@@ -300,7 +291,7 @@
                               
                                 
                               <div class="col-md-6" id="setCountPerHour">
-                                <label class="my-right-align"  style="float: right; line-height: 1.65;" ></label>
+                                <label class="my-right-align"  style="float: right; line-height: 1.65;" >مدت زمان هر ویزیت:</label>
                                 <div class="quantity">
                                   <input id="minute" type="number" min="5" max="45" step="1" value="5">
                                   </div>
@@ -337,7 +328,7 @@
                 <div class="my-container my-card my-white my-round my-margin"><br>
                   <!-- <img src="dr.png" alt="Avatar" class="my-left my-circle my-margin-right" style="width:60px"> -->
              
-                  <h4 style="text-align: center;"> بیماران</h4><br>
+                  <h4 style="text-align: center;margin:0 !important;"> بیماران</h4>
                   <hr class="my-clear my-hr">
                   <div class="mypatients">
                   <p style=" font-size: 20px;text-align: center; text-shadow: 1px 1px 4px #134E5E;"></p>
@@ -549,17 +540,15 @@
                       </div>
                       <div class="col-8">
                         <h3></h3>
-                        <div id="app" style="width: 100%; height: 100%;"></div>
+                        <div id="app" style="width: 100%; height: 90%;"></div>
                       </div>
                     </div>
                     <hr class="my-hr">
                   </div>
                   
-                  <hr class="my-clear my-hr">
+
                   
-               
-                  
-                  <a href="setting.html" class="my-button my-theme-d2 my-margin-bottom"> تغییر</a> 
+
                 </div> 
                 
                
@@ -685,6 +674,9 @@
         </div>
     
       </div>
+  <script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/mapp.env.js"></script>
+  <script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/mapp.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
@@ -733,12 +725,6 @@ $('.clockpicker2').clockpicker({
       }
     }
   );
-//change the top day shower
-  // document.querySelector('.tartools-tarikheshamsi a').setAttribute('href', "#");
-  // document.querySelector('.tartools-tarikheshamsi').style.borderRadius="20px";
-  // window.setTimeout(function() {
-  //   document.querySelector('.tartools-tarikheshamsi').style.display="block";
-  //       }, 1500);
-  
+
 </script>
         </body>

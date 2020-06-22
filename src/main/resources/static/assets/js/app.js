@@ -320,7 +320,7 @@ let head=localStorage.getItem('token');
                  console.log(response);
              });
 
-             workTime.forEach(function (element) {
+             workTime.forEach(function (element,index) {
                  var settings1 = {
                      url: "http://localhost:8080/api/doctor/worktime",
                      method: "POST",
@@ -329,19 +329,20 @@ let head=localStorage.getItem('token');
                      cache: false,
                      data: element,
                      statusCode: {
-                         200: function (response) {
+                         200: function () {
 
                          }
                      }
                  };
                  $.ajax(settings1).done(function (response) {
                      console.log(response);
+                     window.location="dr1.html"
                  })
 
 
              })
 
-             console.log(response);
+
          }
      }
     
