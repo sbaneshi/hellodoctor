@@ -252,8 +252,47 @@ function loadAppointments() {
         var Appointment = response.visits.doctor;
         console.log(Appointment);
         if (Appointment.length!==0) {
-            // makeList(Appointment);
-            // loadList(1);
+            var html=`
+                            <div class="table-responsive" >
+                                <table class="table" style="text-align:right; direction:rtl;">
+                                    <thead class=" text-info">
+                                    <th>
+                                        نام پزشک
+                                    </th>
+                                    <th>
+                                        شهر
+                                    </th>
+                                    <th>
+                                        تخصص
+                                    </th>
+                                    <th class="text-right">
+                                        تاریخ اخذ نوبت
+                                    </th>
+                                    </thead>
+                                    <tbody>
+                        `;
+            Appointment.forEach(function(appointment) {
+                html += `
+                        <tr>
+                          <td>
+                            ${appointment.name}
+                          </td>
+                          <td>
+                            ${appointment.city}
+                          </td>
+                          <td>
+                            ${appointment.expertise}
+                          </td>
+                          <td class="text-right">
+                            ${appointment.time}
+                          </td>
+
+                        </tr>
+
+                        `;
+            })
+            $(" #appointments").append(html);
+
 
         } else {
             $(" #appointments p").append(document.createTextNode("شما هنو نوبتی رزرو نکرده اید"));
@@ -335,47 +374,9 @@ function loadAppointments() {
         // for (r = 0; r < pageList.length; r++) {
         //     document.getElementById("list").innerHTML += pageList[r] + "<br/>";
         // }
-        var html=`
-                            <div class="table-responsive" >
-                                <table class="table" style="text-align:right; direction:rtl;">
-                                    <thead class=" text-info">
-                                    <th>
-                                        نام پزشک
-                                    </th>
-                                    <th>
-                                        شهر
-                                    </th>
-                                    <th>
-                                        تخصص
-                                    </th>
-                                    <th class="text-right">
-                                        تاریخ اخذ نوبت
-                                    </th>
-                                    </thead>
-                                    <tbody>
-                        `;
+
         for (r = 0; r < pageList.length; r++){
-            html+=`
-                        <tr>
-                          <td>
-                            ${pageList[r].name}
-                          </td>
-                          <td>
-                            ${pageList[r].city}
-                          </td>
-                          <td>
-                            ${pageList[r].expertise}
-                          </td>
-                          <td class="text-right">
-                            ${pageList[r].name}
-                          </td>
-                            <td>
-                              <button type="button" class="btn btn-info btn-group-xs" style="border-radius:20px;">لغو نوبت</button>
-                          </td>
-                        </tr>
-                        
-                        `;
-            $(" #appointments").append(html);
+
 
 
         }

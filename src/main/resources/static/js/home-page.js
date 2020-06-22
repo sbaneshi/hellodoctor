@@ -52,16 +52,34 @@ $(document).ready( function(){
 isLogin();
 $("#logout").click(logout);
 loadDoctor();
-
+$('#nav-login').click(gotologin);
 
 })
-async function isLogin(){
+function gotologin(){
+    window.location="index.html";
+}
+
+function isLogin(){
     let token=localStorage.getItem("token");
 
     if(token!==null) {
         let decode = (atob(token));
         let userInformation = decode.split(':');
          $('#nav-login').css("display","none");
+
+            var settings = {
+                url: "http://localhost:8080/api/patient/full",
+                method: "GET",
+                timeout: 100000,
+                cache:false,
+                headers: {
+                    "Authorization": "Basic " + btoa(userInformation[0] + ":" + userInformation[1])
+                }
+            };
+
+                $.ajax(settings).done(function (response) {
+                    $('#UserName').html(response.firstName + " " + response.lastName);
+                });
 
     }
     else{
@@ -96,7 +114,7 @@ function loadDoctor() {
             html = `
                         <div class="card-container">
                         <span class="pro"><i class="fa fa-heartbeat" style="font-size:36px; color:white;"></i></span>
-                        <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
+                        <img class="round" src="https://randomuser.me/api/portraits/men/41.jpg" alt="user" />
                         <h4><i class="fa fa-user-md" style="font-size:36px; margin-left:5px;"></i> دکتر ${dr.firstName} ${dr.lastName}</h4>
 
                         <h6>

@@ -111,7 +111,6 @@ function loadDoctor() {
         url: "http://localhost:8080/doctors",
         statusCode:{
             200:function (response) {
-                alert(response);
             }
         }
     };
@@ -133,7 +132,7 @@ function loadDoctor() {
                             </a>
                             <div class=" col-9 col-md-9 ">
                                 <div class="card-body ">
-                                    <h5 class="card-title ">دکتر ${dr.firstName} ${dr.lastName}</h5>
+                                    <h5 class="card-title "><i class="fa fa-user-md" style="font-size: 36px; margin-left: 5px; color: black;"></i>دکتر ${dr.firstName} ${dr.lastName}</h5>
                                     <p class="card-text ">تخصص: ${dr.expertise}</p>
                                     <p class="card-text ">استان: ${dr.state}</p>
                                 </div>
@@ -141,11 +140,10 @@ function loadDoctor() {
                             </div>
 
                         </div>
-                        <hr>
-                        <div id="" class="row no-gutters">
+                        <div id="" class="row no-gutters skill">
 
                             <div class="col-12">
-                                <button id="${dr.id}" type="button" class="btn btn-outline-primary float-left mb-3 ml-3 top">نوبت دهی</button>
+                                <button id="${dr.id}" type="button" class="btn btn-outline-primary float-left mt-2 ml-3 top" style="margin-bottom: 5px; border: 2px solid #007bff;">نوبت دهی</button>
                             </div>
                         </div>
                     </div>
@@ -168,7 +166,6 @@ function loadDoctorByBoth(expertise, province) {
         },
         status:{
             200:function (response) {
-                alert(response);
             }
         }
     };
@@ -222,7 +219,6 @@ function loadDoctorByProvince(province) {
         },
         status:{
             200:function (response) {
-                alert(response);
             }
         }
     };
@@ -276,7 +272,6 @@ function loadDoctorbyExpertise(expertise) {
         },
         status:{
             200:function (response) {
-                alert(response);
             }
         }
     };
