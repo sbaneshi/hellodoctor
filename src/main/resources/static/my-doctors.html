@@ -440,6 +440,7 @@
 <script>
 
   $(document).ready(function() {
+      let x;
       var app = new Mapp({
           element: '#app',
           presets: {
@@ -503,12 +504,18 @@
 
       app.markReverseGeocode({
           state: {
-              latlng: app.states.user.latlng,
+              latlng: {
+                  lat: 60,
+                  lng: 70
+              },
               zoom: 16,
           },
+
+
       });
 
   });
+
 </script>
 <script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/mapp.env.js"></script>

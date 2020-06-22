@@ -6,21 +6,51 @@ let $carousel = $('.carousel').flickity({
     wrapAround:false,
     pageDots:true
 });
+var collapseBtn = document.getElementById("navBtn");
+var nav = document.getElementById('nav');
 
-$('.button--append').on( 'click', function() {
-
-});
-
-var cellCount = 3;
-
-function makeCellHtml() {
-    cellCount++;
-    return '<div class="carousel-cell">' + cellCount + '</div>';
-}
 
 
 $(document).ready( function(){
 
+
+
+    collapseBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        nav.innerHTML = `
+  <button id="navBtn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+<i class="fa fa-bars text-white"></i>
+</button>
+<div>
+  <a class="navbar-brand navbar-logo btn btn-info" href="#" style=" border-radius:20px; line-height:1;">ورود/ثبت نام</a>
+  <a class="navbar-brand navbar-logo mr-auto" href="#">لوگوی دکتر سلام</a>
+
+</div>
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent" style="z-index: 10000; background-color:#212121 ">
+<ul class="navbar-nav ml-auto">
+    <div class="hori-selector">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+    <li class="nav-item active">
+        <a class="nav-link" href="javascript:void(0);">خانه</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="javascript:void(0);">رزرو نوبت</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="javascript:void(0);">پزشکان</a>
+    </li>
+
+    <li>
+        <a class="nav-link" href="javascript:void(0);">ارتباط با ما</a>
+    </li>
+</ul>
+</div>
+`;
+    })
 isLogin();
 $("#logout").click(logout);
 loadDoctor();

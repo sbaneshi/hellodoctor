@@ -109,10 +109,9 @@ function signUpRequest(e) {
     let userInformation = {
         phoneNumber: $('#phone-number').val(),
         password: $('#password').val(),
-        expertise: $('#expertise').val(),
+        expertise: $('#expertiseSelect').val(),
         maCode: parseInt($('#mid').val())
     };
-    localStorage.setItem("token", btoa(userInformation.phoneNumber + ":" + userInformation.password )) ;
     var settings = {
         url: "http://localhost:8080/signup/doctor",
         method: "POST",
@@ -121,15 +120,13 @@ function signUpRequest(e) {
         data: userInformation,
         statusCode:{
             200:function (response) {
-                alert(response);
-                window.location("continue.html")
             }
         }
     };
     if (!error) {
         $.ajax(settings).done(function (response) {
             console.log(response);
-            localStorage.setItem("token", btoa(userInformation.phoneNumber + ":" + userInformation.password )) ;
+            localStorage.setItem("token", btoa(response.phoneNumber + ":" + userInformation.password )) ;
             window.location="continue.html";
 
         })
@@ -184,10 +181,6 @@ function clearform() {
 
 }
 
-
-
-
-
 function loginRequest(e) {
     e.preventDefault();
     let password = $("#password-login").val();
@@ -207,16 +200,14 @@ function loginRequest(e) {
         },
         statusCode:{
             200:function (response) {
-                console.log(response);
-                alert(response.phoneNumber);
             }
         }
     };
     if (!error) {
         $.ajax(settings).done(function (response) {
-            localStorage.setItem("token", btoa(pho + ":" + password ));
+            localStorage.setItem("token", btoa(response.phoneNumber + ":" + password ));
             console.log(response);
-            window.location="dr.html";
+            window.location="dr1.html";
         });
     }else{
         nowuiDashboard.showNotification('top','left');

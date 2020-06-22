@@ -138,7 +138,7 @@ function loginRequest(e) {
     };
     if (!error) {
           $.ajax(settings).done(function (response) {
-            localStorage.setItem("token", Base64.encode(response.phoneNumber + ":" + userInformation.password + ":" + response.firstName + ":" +response.lastName));
+            localStorage.setItem("token", Base64.encode(response.phoneNumber + ":" + userInformation.password));
             window.location = "home.html";
         });
 
